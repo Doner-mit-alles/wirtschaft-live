@@ -8,6 +8,9 @@
 - Zielgruppenorientierte Barrierefreiheit
 - *zweisprachige Informationsdarstellung (Deutsch/Englisch) (nur wenn die "Kunden" dies wünschen)*
 
+## Kundenkommunikation und Ressourcen
+[Hier geht es zur Taskcard](https://bbs1-lueneburg.taskcards.app/#/board/d7e57835-06b7-4607-84d1-95c4b00c0c19/view?token=3122f675-a3ab-487d-8ee7-cc967a5bdaf4) 
+
 ---
 
 ## Vue things:
