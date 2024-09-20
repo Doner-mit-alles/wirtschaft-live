@@ -1,5 +1,17 @@
 # wirtschaft-live
 
+## Genereller Rahmen und Anforderungen:
+- Darstellung Schülerfirma, Produkte, Angebote
+- Responsive Webdesign für Mobile Devices
+- rechtlich notwendige Inhalte einer Webseite
+- Kontaktformular
+- Zielgruppenorientierte Barrierefreiheit
+- *zweisprachige Informationsdarstellung (Deutsch/Englisch) (nur wenn die "Kunden" dies wünschen)*
+
+---
+
+## Vue things:
+
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
