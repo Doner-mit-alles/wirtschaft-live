@@ -1,21 +1,29 @@
-import { createI18n } from 'vue-i18n';
-import en from '@/locales/en.json';
-import de from '@/locales/de.json';
+import { createI18n } from 'vue-i18n'
 
-const messages = {
-  en,
-  de,
-};
-
-const getBrowserLanguage = (): string => {
-  const lang = navigator.language || navigator.userLanguage;
-  return lang.split('-')[0];
-};
+export const getBrowserLanguage = (): string => {
+  const lang = navigator.language || navigator.userLanguage
+  return lang.split('-')[0]
+}
 
 const i18n = createI18n({
-  locale: getBrowserLanguage(),
+  locale: 'en',
   fallbackLocale: 'en',
-  messages,
-});
+  messages: {}
+})
 
-export default i18n;
+/**
+ * Load language file and set it into the i18n instance.
+ * Will throw an error if the file is not found.
+ * @param locale - language like 'de', 'en'
+ */
+export const loadLocaleMessages = async (locale: string): Promise<void> => {
+  try {
+    const messages = await import(`./locales/${locale}.json`)
+    i18n.global.setLocaleMessage(locale, messages.default)
+    i18n.global.locale = locale
+  } catch (error) {
+    console.error(`Cant load language file ${locale}: `, error)
+  }
+}
+
+export default i18n
