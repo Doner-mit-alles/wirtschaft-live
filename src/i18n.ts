@@ -1,7 +1,11 @@
 import { createI18n } from 'vue-i18n'
 
+/**
+ * Get the browser language.
+ * @returns - language like 'de', 'en'
+ */
 export const getBrowserLanguage = (): string => {
-  const lang = navigator.language || navigator.userLanguage
+  const lang = navigator.language || navigator.languages[0];
   return lang.split('-')[0]
 }
 
