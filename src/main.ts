@@ -5,6 +5,7 @@ import App from './App.vue'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap'
 import i18n, { loadLocaleMessages, getBrowserLanguage } from './i18n'
+import '@/assets/styles.css';
 
 const app = createApp(App)
 loadLocaleMessages(getBrowserLanguage()).then(() => {
