@@ -17,7 +17,7 @@ defineProps({
 
 <template>
   <div class="menu-bar-element">
-    <component :is="svg" />
+    <component :is="svg" :class="['menu-bar-element-icon', { 'move': isMinimised }]" />
     <p :class="['menu-bar-element-text', { 'menu-bar-element-text-hidden': isMinimised }]">
       {{ text }}
     </p>
@@ -41,9 +41,8 @@ defineProps({
 }
 
 .menu-bar-element-text-hidden {
-
+  display: none;
 }
-
 
 @keyframes shrink {
   from {
