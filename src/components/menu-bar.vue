@@ -4,28 +4,23 @@ import CalenderSVG from '@/assets/calendar.svg'
 import BookSVG from '@/assets/book-open.svg'
 import UserSVG from '@/assets/user.svg'
 import MenuElement from '@/components/menu-element.vue'
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 
 const isMinimised: ref<Boolean> = ref(false)
-onMounted(() => {
-  if (isMinimised.value) {
-    minimsMenuBar()
-  }
-})
 
-function minimsMenuBar(): void {
-  const divElement = document.getElementsByClassName('menu-bar')[0] as HTMLDivElement
-  const currentHeight = divElement.offsetHeight
-  divElement.style.height = `${currentHeight / 2}px`
-
-  divElement.style.borderRadius = 0
-  divElement.style.width = '100%'
-  divElement.style.margin = 0
+const handleScroll = () => {
+  isMinimised.value = window.scrollY > 10
 }
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
 </script>
 
 <template>
-  <div class="menu-bar">
+  <div :class="['menu-bar', { 'menu-bar-fixed': isMinimised }]">
     <p id="menu-team-name">Baller Los</p>
     <div class="menu-element-container">
       <MenuElement text="Neuigkeiten" :svg="NewsSVG" :is-minimised="isMinimised" />
@@ -48,6 +43,17 @@ function minimsMenuBar(): void {
   color: #ffffff;
   font-size: 22px;
   width: 95%;
+  transition: all 0.5s ease;
+}
+
+.menu-bar-fixed {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  border-radius: 0;
+  z-index: 1000;
+  height: 50px;
+  margin: 0;
 }
 
 #menu-team-name {

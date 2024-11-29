@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 defineProps({
   text: {
     type: String,
@@ -19,7 +18,9 @@ defineProps({
 <template>
   <div class="menu-bar-element">
     <component :is="svg" />
-    <p class="menu-bar-element-text" v-if="!isMinimised">{{ text }}</p>
+    <p :class="['menu-bar-element-text', { 'menu-bar-element-text-hidden': isMinimised }]">
+      {{ text }}
+    </p>
   </div>
 </template>
 
@@ -37,5 +38,19 @@ defineProps({
 .menu-bar-element-text {
   font-weight: 700;
   text-shadow: 4px 8px 6px #000000;
+}
+
+.menu-bar-element-text-hidden {
+
+}
+
+
+@keyframes shrink {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0;
+  }
 }
 </style>
