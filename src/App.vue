@@ -1,13 +1,10 @@
 <script setup lang="ts">
-
+import BootstrapTemplate from './components/BootstrapTemplate.vue';
 </script>
 
 <template>
-  <div>
-    
-  </div>
+  <BootstrapTemplate />
 </template>
 
 <style scoped>
-
 </style>
