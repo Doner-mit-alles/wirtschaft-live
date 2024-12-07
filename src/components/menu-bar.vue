@@ -4,7 +4,7 @@ import CalenderSVG from '@/assets/calendar.svg'
 import BookSVG from '@/assets/book-open.svg'
 import UserSVG from '@/assets/user.svg'
 import MenuElement from '@/components/menu-element.vue'
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, computed } from 'vue'
 import MenuLanguageButton from '@/components/menu-language-button.vue'
 
 const isMinimised = ref<boolean>(false)
@@ -12,29 +12,43 @@ const isMinimised = ref<boolean>(false)
 const handleScroll = () => {
   isMinimised.value = window.scrollY > 10
 }
+
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
 })
+
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
 })
+
+// Menu items data
+const menuItems = [
+  { text: 'menuBar.news', svg: NewsSVG },
+  { text: 'menuBar.rules', svg: BookSVG },
+  { text: 'menuBar.appointments', svg: CalenderSVG },
+  { text: 'menuBar.team', svg: UserSVG }
+]
+
+// Computed property for class binding
+const menuBarClasses = computed(() => ({
+  'menu-bar': true,
+  'menu-bar-fixed': isMinimised.value
+}))
 </script>
 
 <template>
-  <div :class="['menu-bar', { 'menu-bar-fixed': isMinimised }]">
+  <div :class="menuBarClasses">
     <p id="menu-team-name">Baller Los</p>
 
     <div class="menu-element-container">
-      <MenuElement :text="$t('menuBar.news')" :svg="NewsSVG" :is-minimised="isMinimised" />
-      <MenuElement :text="$t('menuBar.rules')" :svg="BookSVG" :is-minimised="isMinimised" />
       <MenuElement
-        :text="$t('menuBar.appointments')"
-        :svg="CalenderSVG"
+        v-for="(item, index) in menuItems"
+        :key="index"
+        :text="$t(item.text)"
+        :svg="item.svg"
         :is-minimised="isMinimised"
       />
-      <MenuElement :text="$t('menuBar.team')" :svg="UserSVG" :is-minimised="isMinimised" />
-      <menu-language-button />
-      <h1>{{}}</h1>
+      <MenuLanguageButton />
     </div>
   </div>
 </template>

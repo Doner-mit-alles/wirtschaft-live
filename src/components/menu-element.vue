@@ -43,9 +43,6 @@ defineProps({
   text-shadow: 4px 8px 6px #000000;
 }
 
-.menu-bar-element-text-hidden {
-}
-
 @keyframes shrink {
   from {
     width: 100%;
