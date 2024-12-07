@@ -1,15 +1,14 @@
 <script setup lang="ts">
+import { ref, onMounted, onUnmounted, computed, watch } from 'vue'
 import NewsSVG from '@/assets/news.svg'
 import CalenderSVG from '@/assets/calendar.svg'
 import BookSVG from '@/assets/book-open.svg'
 import UserSVG from '@/assets/user.svg'
 import MenuElement from '@/components/menu-element.vue'
-import { ref, onMounted, onUnmounted, computed, onBeforeUpdate } from 'vue'
 import MenuLanguageButton from '@/components/menu-language-button.vue'
 import { useMenuBarStore } from '@/stores/useMenuBarStore'
 
 const store = useMenuBarStore()
-
 const isMinimised = ref<boolean>(false)
 
 const handleScroll = () => {
@@ -20,16 +19,16 @@ onMounted(() => {
   window.addEventListener('scroll', handleScroll)
 })
 
-onBeforeUpdate(() => {
-  console.log(isMinimised.value)
-  store.setStatus(isMinimised.value)
-})
-
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
 })
 
-// Menu items data
+// Watch for changes in isMinimised and update the store
+watch(isMinimised, (newValue) => {
+  store.setStatus(newValue)
+})
+
+// Menu items data with type annotation
 const menuItems = [
   { text: 'menuBar.news', svg: NewsSVG, targetId: 'target1' },
   { text: 'menuBar.rules', svg: BookSVG, targetId: 'target2' },
@@ -45,7 +44,7 @@ const menuBarClasses = computed(() => ({
 </script>
 
 <template>
-  <div :class="menuBarClasses" id="menubar">
+  <div v-bind:class="menuBarClasses" id="menubar">
     <p id="menu-team-name">Baller Los</p>
 
     <div class="menu-element-container">
@@ -60,8 +59,6 @@ const menuBarClasses = computed(() => ({
       <MenuLanguageButton />
     </div>
   </div>
-
-  <!--  <div  style="visibility: hidden; height: 150px"></div>-->
 </template>
 
 <style scoped>
