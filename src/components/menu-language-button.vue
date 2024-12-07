@@ -1,16 +1,20 @@
 <script setup lang="ts">
 import i18n, { loadLocaleMessages } from '@/i18n'
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import germany from '@/assets/flag/germany_round.svg'
 import england from '@/assets/flag/england_round.svg'
 
 const selectedLanguage = ref(i18n.global.locale)
 const changeLanguage = async (locale: string) => {
   selectedLanguage.value = locale
-  toggleMenu()
+  isMenuVisible.value = false
   await loadLocaleMessages(locale)
 }
 const isMenuVisible = ref(false)
+
+const currentFlag = computed(() => {
+  return selectedLanguage.value === 'de' ? germany : england
+})
 
 const toggleMenu = (): void => {
   isMenuVisible.value = !isMenuVisible.value
@@ -21,29 +25,26 @@ const toggleMenu = (): void => {
     element.classList.remove('language-drop-box-container-open')
   }
 }
+
+const languages = [
+  { code: 'de', flag: germany, altText: 'Deutschland' },
+  { code: 'en', flag: england, altText: 'England' }
+]
 </script>
 
 <template>
   <div class="language-drop-box">
     <div class="language-drop-box-container" id="language-drop-box-container">
-      <component v-if="selectedLanguage === 'de'" :is="germany" @click="toggleMenu" />
-      <component
-        v-else-if="selectedLanguage === 'en'"
-        :is="england"
-        class="language-drop-box-select-child"
-        @click="toggleMenu"
-      />
+      <component :is="currentFlag" @click="toggleMenu" />
       <div v-if="isMenuVisible" class="language-drop-box-select">
-        <div style="margin-top: 5px; display: flex; align-items: center; justify-content: center;flex-direction: column; gap: 5px">
+        <div class="language-drop-box-selection">
           <component
-            :is="germany"
+            v-for="language in languages"
+            :key="language.code"
+            @click="changeLanguage(language.code)"
+            :is="language.flag"
             class="language-drop-box-select-child"
-            @click="changeLanguage('de')"
-          />
-          <component
-            :is="england"
-            class="language-drop-box-select-child"
-            @click="changeLanguage('en')"
+            :alt="language.altText"
           />
         </div>
       </div>
@@ -81,5 +82,14 @@ const toggleMenu = (): void => {
 .language-drop-box-container-open {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
+}
+
+.language-drop-box-selection {
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
 }
 </style>
