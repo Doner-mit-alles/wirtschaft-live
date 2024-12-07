@@ -17,7 +17,7 @@ const targets = [
 </script>
 
 <template>
-  <BootstrapTemplate />
+  <BootstrapTemplate v-if="false"/>
   <div class="main-container">
     <Menu />
     <div v-bind:class="{ 'app-container-margin': isMinimised }">
