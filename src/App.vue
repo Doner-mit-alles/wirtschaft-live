@@ -4,10 +4,9 @@ import { useMenuBarStore } from '@/stores/useMenuBarStore'
 import { storeToRefs } from 'pinia'
 import i18n from '@/i18n'
 
-// Access the store and its reactive properties
 const statusStore = useMenuBarStore()
 const { isMinimised } = storeToRefs(statusStore)
-// Define the targets data
+
 const targets = [
   { id: 'target1', text: i18n.global.t('welcome') },
   { id: 'target2', text: 'TEST' },

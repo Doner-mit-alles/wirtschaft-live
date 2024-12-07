@@ -45,7 +45,6 @@ const scrollToTarget = () => {
       top: scrollToPosition,
       behavior: 'smooth'
     })
-    // targetElement.value.scrollIntoView({ behavior: 'smooth' });
   }
 }
 </script>
