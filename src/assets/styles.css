@@ -12,9 +12,9 @@ p {
   --primary-color: #272727;
   --third-color: #494949;
   --secondary-color: #ffffff;
-  --forth-color: #20639B;
+  --forth-color: #20639b;
 }
 
 :root {
-  --primary-shadow: 4px 8px 6px #000000
+  --primary-shadow: 4px 8px 6px #000000;
 }
