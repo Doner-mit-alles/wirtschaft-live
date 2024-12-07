@@ -7,7 +7,7 @@ import Menu from '@/components/menu-bar.vue'
     <Menu />
 
     <div class="test-container">
-      <p>TEST</p>
+      <p>{{ $t('welcome') }}</p>
     </div>
 
     <div class="test-container">

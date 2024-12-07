@@ -5,8 +5,9 @@ import BookSVG from '@/assets/book-open.svg'
 import UserSVG from '@/assets/user.svg'
 import MenuElement from '@/components/menu-element.vue'
 import { ref, onMounted, onUnmounted } from 'vue'
+import MenuLanguageButton from '@/components/menu-language-button.vue'
 
-const isMinimised: ref<Boolean> = ref(false)
+const isMinimised = ref<boolean>(false)
 
 const handleScroll = () => {
   isMinimised.value = window.scrollY > 10
@@ -22,11 +23,17 @@ onUnmounted(() => {
 <template>
   <div :class="['menu-bar', { 'menu-bar-fixed': isMinimised }]">
     <p id="menu-team-name">Baller Los</p>
+
     <div class="menu-element-container">
-      <MenuElement text="Neuigkeiten" :svg="NewsSVG" :is-minimised="isMinimised" />
-      <MenuElement text="Spielregeln" :svg="BookSVG" :is-minimised="isMinimised" />
-      <MenuElement text="Termine" :svg="CalenderSVG" :is-minimised="isMinimised" />
-      <MenuElement text="Team" :svg="UserSVG" :is-minimised="isMinimised" />
+      <MenuElement :text="$t('menuBar.news')" :svg="NewsSVG" :is-minimised="isMinimised" />
+      <MenuElement :text="$t('menuBar.rules')" :svg="BookSVG" :is-minimised="isMinimised" />
+      <MenuElement
+        :text="$t('menuBar.appointments')"
+        :svg="CalenderSVG"
+        :is-minimised="isMinimised"
+      />
+      <MenuElement :text="$t('menuBar.team')" :svg="UserSVG" :is-minimised="isMinimised" />
+      <menu-language-button />
       <h1>{{}}</h1>
     </div>
   </div>
@@ -39,8 +46,8 @@ onUnmounted(() => {
   align-items: center;
   margin: 15px;
   border-radius: 50px;
-  background: #272727;
-  color: #ffffff;
+  background: var(--primary-color);
+  color: var(--secondary-color);
   font-size: 22px;
   width: 95%;
   transition: all 0.5s ease;
@@ -59,7 +66,7 @@ onUnmounted(() => {
 #menu-team-name {
   padding: 20px;
   font-weight: bold;
-  text-shadow: 4px 8px 6px #000000;
+  text-shadow: var(--primary-shadow);
   margin-left: 10px;
 }
 

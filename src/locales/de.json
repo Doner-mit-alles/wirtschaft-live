@@ -1,4 +1,10 @@
 {
   "welcome": "Willkommen",
-  "description": "Dies ist eine Beispielbeschreibung."
+  "description": "Dies ist eine Beispielbeschreibung.",
+  "menuBar": {
+    "news": "Neuigkeiten",
+    "rules": "Spielregelen",
+    "appointments": "Termine",
+    "team": "Team"
+  }
 }

@@ -5,7 +5,7 @@ defineProps({
     required: true
   },
   svg: {
-    type: Object,
+    type: String,
     required: true
   },
   isMinimised: {
@@ -18,7 +18,10 @@ defineProps({
 <template>
   <div class="menu-bar-element">
     <component :is="svg" />
-    <p :class="['menu-bar-element-text', { 'menu-bar-element-text-hidden': isMinimised }]">
+    <p
+      v-if="!isMinimised"
+      :class="['menu-bar-element-text', { 'menu-bar-element-text-hidden': isMinimised }]"
+    >
       {{ text }}
     </p>
   </div>
@@ -26,7 +29,7 @@ defineProps({
 
 <style scoped>
 .menu-bar-element {
-  width: min-content;
+  width: fit-content;
   margin: 0 5px 0 5px;
   display: flex;
   justify-content: center;
@@ -41,9 +44,7 @@ defineProps({
 }
 
 .menu-bar-element-text-hidden {
-
 }
-
 
 @keyframes shrink {
   from {
