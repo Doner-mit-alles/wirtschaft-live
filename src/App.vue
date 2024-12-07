@@ -1,26 +1,21 @@
 <script setup lang="ts">
-import BootstrapTemplate from './components/BootstrapTemplate.vue';
+import BootstrapTemplate from './components/BootstrapTemplate.vue'
 import Menu from '@/components/menu-bar.vue'
 import { useMenuBarStore } from '@/stores/useMenuBarStore'
 import { storeToRefs } from 'pinia'
-import i18n from '@/i18n'
-import { onBeforeUpdate, ref } from 'vue'
 
 const statusStore = useMenuBarStore()
 const { isMinimised } = storeToRefs(statusStore)
 
-onBeforeUpdate(()=> {
-  console.log("HI")
-})
-const targets = ref([
+const targets = [
   { id: 'target2', text: 'TEST' },
   { id: 'target3', text: 'TEST' },
   { id: 'target4', text: 'TEST' }
-])
+]
 </script>
 
 <template>
-  <BootstrapTemplate v-if="false"/>
+  <BootstrapTemplate v-if="false" />
   <div class="main-container">
     <Menu />
     <div v-bind:class="{ 'app-container-margin': isMinimised }">
