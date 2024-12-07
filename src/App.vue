@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import BootstrapTemplate from './components/BootstrapTemplate.vue';
 import Menu from '@/components/menu-bar.vue'
 import { useMenuBarStore } from '@/stores/useMenuBarStore'
 import { storeToRefs } from 'pinia'
@@ -16,6 +17,7 @@ const targets = [
 </script>
 
 <template>
+  <BootstrapTemplate />
   <div class="main-container">
     <Menu />
     <div v-bind:class="{ 'app-container-margin': isMinimised }">
