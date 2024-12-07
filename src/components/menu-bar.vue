@@ -4,17 +4,25 @@ import CalenderSVG from '@/assets/calendar.svg'
 import BookSVG from '@/assets/book-open.svg'
 import UserSVG from '@/assets/user.svg'
 import MenuElement from '@/components/menu-element.vue'
-import { ref, onMounted, onUnmounted, computed } from 'vue'
+import { ref, onMounted, onUnmounted, computed, onBeforeUpdate } from 'vue'
 import MenuLanguageButton from '@/components/menu-language-button.vue'
+import { useMenuBarStore } from '@/stores/useMenuBarStore'
+
+const store = useMenuBarStore()
 
 const isMinimised = ref<boolean>(false)
 
 const handleScroll = () => {
-  isMinimised.value = window.scrollY > 10
+  isMinimised.value = window.scrollY > 25
 }
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
+})
+
+onBeforeUpdate(() => {
+  console.log(isMinimised.value)
+  store.setStatus(isMinimised.value)
 })
 
 onUnmounted(() => {
@@ -23,10 +31,10 @@ onUnmounted(() => {
 
 // Menu items data
 const menuItems = [
-  { text: 'menuBar.news', svg: NewsSVG },
-  { text: 'menuBar.rules', svg: BookSVG },
-  { text: 'menuBar.appointments', svg: CalenderSVG },
-  { text: 'menuBar.team', svg: UserSVG }
+  { text: 'menuBar.news', svg: NewsSVG, targetId: 'target1' },
+  { text: 'menuBar.rules', svg: BookSVG, targetId: 'target2' },
+  { text: 'menuBar.appointments', svg: CalenderSVG, targetId: 'target3' },
+  { text: 'menuBar.team', svg: UserSVG, targetId: 'target4' }
 ]
 
 // Computed property for class binding
@@ -37,7 +45,7 @@ const menuBarClasses = computed(() => ({
 </script>
 
 <template>
-  <div :class="menuBarClasses">
+  <div :class="menuBarClasses" id="menubar">
     <p id="menu-team-name">Baller Los</p>
 
     <div class="menu-element-container">
@@ -47,10 +55,13 @@ const menuBarClasses = computed(() => ({
         :text="$t(item.text)"
         :svg="item.svg"
         :is-minimised="isMinimised"
+        :target-id="item.targetId"
       />
       <MenuLanguageButton />
     </div>
   </div>
+
+  <!--  <div  style="visibility: hidden; height: 150px"></div>-->
 </template>
 
 <style scoped>
@@ -68,13 +79,14 @@ const menuBarClasses = computed(() => ({
 }
 
 .menu-bar-fixed {
-  position: fixed;
+  position: sticky;
   width: 100%;
   top: 0;
   border-radius: 0;
   z-index: 1000;
   height: 50px;
   margin: 0;
+  font-weight: bold;
 }
 
 #menu-team-name {
