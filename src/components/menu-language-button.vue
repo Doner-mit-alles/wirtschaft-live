@@ -7,7 +7,7 @@ import england from '@/assets/flag/england_round.svg'
 const selectedLanguage = ref(i18n.global.locale)
 const changeLanguage = async (locale: string) => {
   selectedLanguage.value = locale
-  isMenuVisible.value = false
+  toggleMenu()
   await loadLocaleMessages(locale)
 }
 const isMenuVisible = ref(false)
