@@ -98,5 +98,6 @@ const menuBarClasses = computed(() => ({
   flex-direction: row;
   padding: 20px;
   margin-right: 10px;
+  gap: 10px;
 }
 </style>

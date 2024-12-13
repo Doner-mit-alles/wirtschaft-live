@@ -58,7 +58,7 @@ const languages = [
 
 <style scoped>
 .language-drop-box {
-  width: 35px;
+  width: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -78,8 +78,8 @@ const languages = [
 
 .language-drop-box-container {
   background: var(--forth-color);
-  height: 35px;
-  width: 35px;
+  height: 30px;
+  width: 30px;
   border-radius: 30px;
 }
 
@@ -89,7 +89,6 @@ const languages = [
 }
 
 .language-drop-box-selection {
-  margin-top: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
