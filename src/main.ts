@@ -1,9 +1,9 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-import '@/assets/style.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import '@/assets/styles.css';
 
 import App from './App.vue'
-import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap'
 import i18n, { loadLocaleMessages, getBrowserLanguage } from './i18n'
 
