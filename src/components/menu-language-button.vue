@@ -13,7 +13,10 @@ const changeLanguage = async (locale: string) => {
 const isMenuVisible = ref(false)
 
 const currentFlag = computed(() => {
-  return selectedLanguage.value === 'de' ? germany : england
+  return {
+    flag: selectedLanguage.value === 'de' ? germany : england,
+    language: selectedLanguage.value
+  };
 })
 
 const toggleMenu = (): void => {
@@ -35,17 +38,18 @@ const languages = [
 <template>
   <div class="language-drop-box">
     <div class="language-drop-box-container" id="language-drop-box-container">
-      <component :is="currentFlag" @click="toggleMenu" />
+      <component :is="currentFlag.flag" @click="toggleMenu" />
       <div v-if="isMenuVisible" class="language-drop-box-select">
         <div class="language-drop-box-selection">
-          <component
-            v-for="language in languages"
-            :key="language.code"
-            @click="changeLanguage(language.code)"
-            :is="language.flag"
-            class="language-drop-box-select-child"
-            :alt="language.altText"
-          />
+          <div style="width: 100%; height: 100%" v-for="language in languages" :key="language.code">
+            <component
+              v-if="currentFlag.language != language.code"
+              @click="changeLanguage(language.code)"
+              :is="language.flag"
+              class="language-drop-box-select-child"
+              :alt="language.altText"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -90,6 +94,5 @@ const languages = [
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 5px;
 }
 </style>
