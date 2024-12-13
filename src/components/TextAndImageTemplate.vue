@@ -4,7 +4,7 @@
 <template>
   <div class="row mb-4">
     <div class="col-md-4 col-12 bg-secondary text-white text-center p-0 border-radius-20-left">
-      <img class="object-fit-cover w-100 h-100 border-radius-20-left" src="@/assets/images/placeholder.png">
+      <img class="object-fit-cover w-100 h-100 border-radius-20-left" alt="Bild mit Spielbausteinen" src="@/assets/images/placeholder.png">
     </div>
     <div class="linear-gradiant-element-wrapper col-md-1 col-12 d-md-flex justify-content-end justify-content-lg-start align-items-end d-none bg-primary d-flex">
       <div class="linear-gradiant-element">
