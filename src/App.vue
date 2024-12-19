@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import TextAndImageTemplate from './components/TextAndImageTemplate.vue'
+import HeadlineContainer from './components/HeadlineContainer.vue'
 import BootstrapTemplate from './components/BootstrapTemplate.vue'
 import Menu from '@/components/menu-bar.vue'
 import { useMenuBarStore } from '@/stores/useMenuBarStore'
@@ -15,6 +17,14 @@ const targets = [
 </script>
 
 <template>
+  <main class="container mt-5 px-5 px-lg-5 px-md-4">
+<!--    BootstrapTemplate wieder reinsetzen-->
+    <BootstrapTemplate />
+    <HeadlineContainer />
+    <TextAndImageTemplate />
+  </main>
+  <footer class="container mt-5 px-5 px-md-5 mb-4" id="footer">
+  </footer>
   <BootstrapTemplate v-if="false" />
   <div class="main-container">
     <Menu />

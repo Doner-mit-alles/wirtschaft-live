@@ -13,8 +13,60 @@ p {
   --third-color: #494949;
   --secondary-color: #ffffff;
   --forth-color: #20639b;
+    --bs-primary: #272727;
+    --bs-primary-rgb: 39, 39, 39;
+    --bs-secondary: #4BC3B6;
+    --bs-secondary-rgb: 75, 195, 182;
 }
 
+h1, h2 {
+    font-family: Montserrat, sans-serif;
+    font-weight: 900; /* Black */
+}
+
+h2 {
+    @media (max-width: 576px) {
+        font-size: 1rem;
+    }
+}
+
+p {
+    font-size: 1rem;
+    @media (max-width: 576px) {
+        font-size: 0.75rem;
+    }
+}
+
+.container {
+    min-width: 200px;
+}
+
+.border-radius-20-right {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+@media (max-width: 768px) {
+    .border-radius-20-right {
+        color: red;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+}
+
+.border-radius-20-left {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+@media (max-width: 768px) {
+    .border-radius-20-left {
+        color: red;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+    }
 :root {
   --primary-shadow: 4px 8px 6px #000000;
 }
