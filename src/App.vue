@@ -5,6 +5,7 @@ import { useMenuBarStore } from '@/stores/useMenuBarStore'
 import { storeToRefs } from 'pinia'
 import TextAndImageTemplate from './components/TextAndImageTemplate.vue'
 import HeadlineContainer from './components/HeadlineContainer.vue'
+import MenuBar from '@/components/menu-bar.vue'
 
 const statusStore = useMenuBarStore()
 const { isMinimised } = storeToRefs(statusStore)
@@ -17,6 +18,7 @@ const targets = [
 </script>
 
 <template>
+  <menu-bar/>
   <main class="container mt-5 px-5 px-lg-5 px-md-4">
 <!--    BootstrapTemplate wieder reinsetzen-->
     <BootstrapTemplate />
@@ -25,18 +27,18 @@ const targets = [
   </main>
   <footer class="container mt-5 px-5 px-md-5 mb-4" id="footer">
   </footer>
-  <BootstrapTemplate v-if="false" />
-  <div class="main-container">
-    <Menu />
-    <div v-bind:class="{ 'app-container-margin': isMinimised }">
-      <div id="target1" class="test-container">
-        <p>{{ $t('welcome') }}</p>
-      </div>
-      <div v-for="(target, index) in targets" :key="index" :id="target.id" class="test-container">
-        <p>{{ target.text }}</p>
-      </div>
-    </div>
-  </div>
+<!--  <BootstrapTemplate v-if="false" />-->
+<!--  <div class="main-container">-->
+<!--    <Menu />-->
+<!--    <div v-bind:class="{ 'app-container-margin': isMinimised }">-->
+<!--      <div id="target1" class="test-container">-->
+<!--        <p>{{ $t('welcome') }}</p>-->
+<!--      </div>-->
+<!--      <div v-for="(target, index) in targets" :key="index" :id="target.id" class="test-container">-->
+<!--        <p>{{ target.text }}</p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
 </template>
 <style scoped>
 .main-container {

@@ -1,48 +1,24 @@
 @import url('https://fonts.googleapis.com/css?family=Alexandria');
 
 body {
-  font-family: 'Alexandria', serif;
+    font-family: 'Alexandria', serif;
 }
 
 p {
-  margin-block-end: 0;
+    margin-block-end: 0;
 }
 
 :root {
-    --bs-primary: #272727;
-    --bs-primary-rgb: 39, 39, 39;
-    --bs-secondary: #4BC3B6;
-    --bs-secondary-rgb: 75, 195, 182;
-}
-
-h1, h2 {
-    font-family: Montserrat, sans-serif;
-    font-weight: 900; /* Black */
-}
-
-h2 {
-    @media (max-width: 576px) {
-        font-size: 1rem;
-    }
-}
-
-p {
-    font-size: 1rem;
-    @media (max-width: 576px) {
-        font-size: 0.75rem;
-    }
-}
-
-.container {
-    min-width: 200px;
-  --primary-color: #272727;
-  --third-color: #494949;
-  --secondary-color: #ffffff;
-  --forth-color: #20639b;
+    --primary-color: #272727;
+    --third-color: #494949;
+    --secondary-color: #ffffff;
+    --forth-color: #20639b;
 }
 
 :root {
-  --primary-shadow: 4px 8px 6px #000000;
+    --primary-shadow: 4px 8px 6px #000000;
+}
+
 .border-radius-20-right {
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
@@ -70,3 +46,4 @@ p {
         border-top-left-radius: 20px;
     }
 }
+
