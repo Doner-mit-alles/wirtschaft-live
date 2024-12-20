@@ -7,6 +7,17 @@
     --bs-secondary-rgb: 75, 195, 182;
 }
 
+:root {
+    --primary-color: #272727;
+    --third-color: #494949;
+    --secondary-color: #ffffff;
+    --forth-color: #20639b;
+}
+
+:root {
+    --primary-shadow: 4px 8px 6px #000000;
+}
+
 h1, h2 {
     font-family: Montserrat, sans-serif;
     font-weight: 900; /* Black */

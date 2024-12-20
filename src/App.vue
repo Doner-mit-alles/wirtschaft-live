@@ -11,10 +11,8 @@ import FooterContainer from '@/components/FooterContainer.vue'
     <BootstrapTemplate />
     <HeadlineContainer />
     <TextAndImageTemplate />
-    <FooterContainer/>
   </main>
-  <footer class="container mt-5 px-5 px-md-5 mb-4" id="footer">
-  </footer>
+    <FooterContainer/>
 </template>
 
 <style scoped>
