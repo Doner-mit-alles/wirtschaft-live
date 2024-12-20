@@ -2,6 +2,7 @@
 import BootstrapTemplate from './components/BootstrapTemplate.vue';
 import TextAndImageTemplate from './components/TextAndImageTemplate.vue'
 import HeadlineContainer from './components/HeadlineContainer.vue'
+import FooterContainer from '@/components/FooterContainer.vue'
 </script>
 
 <template>
@@ -10,6 +11,7 @@ import HeadlineContainer from './components/HeadlineContainer.vue'
     <BootstrapTemplate />
     <HeadlineContainer />
     <TextAndImageTemplate />
+    <FooterContainer/>
   </main>
   <footer class="container mt-5 px-5 px-md-5 mb-4" id="footer">
   </footer>
