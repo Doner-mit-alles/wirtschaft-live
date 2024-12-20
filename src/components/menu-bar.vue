@@ -44,33 +44,32 @@ const menuBarClasses = computed(() => ({
 </script>
 
 <template>
-  <div v-bind:class="menuBarClasses" id="menubar">
+  <header v-bind:class="menuBarClasses" id="menubar"  class="d-flex justify-content-between align-items-center p-3 m-3">
     <p id="menu-team-name">Baller Los</p>
 
-    <div class="menu-element-container">
-      <MenuElement
-        v-for="(item, index) in menuItems"
-        :key="index"
-        :text="$t(item.text)"
-        :svg="item.svg"
-        :is-minimised="isMinimised"
-        :target-id="item.targetId"
-      />
-      <MenuLanguageButton />
-    </div>
-  </div>
+    <nav class="menu-element-container">
+      <ul class="p-0 mb-0 text-center" role="menubar">
+        <MenuElement
+          v-for="(item, index) in menuItems"
+          :key="index"
+          :text="$t(item.text)"
+          :svg="item.svg"
+          :is-minimised="isMinimised"
+          :target-id="item.targetId"
+          :tabIndex="index + 1"
+        />
+        <MenuLanguageButton />
+      </ul>
+    </nav>
+  </header>
 </template>
 
 <style scoped>
 .menu-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 15px;
   border-radius: 50px;
   background: var(--primary-color);
   color: var(--secondary-color);
-  font-size: 22px;
+  font-size: 1.37rem;
   width: 95%;
   transition: all 0.5s ease;
 }
@@ -81,23 +80,25 @@ const menuBarClasses = computed(() => ({
   top: 0;
   border-radius: 0;
   z-index: 1000;
-  height: 50px;
+  height: 3.5rem;
   margin: 0;
   font-weight: bold;
 }
 
 #menu-team-name {
-  padding: 20px;
   font-weight: bold;
   text-shadow: var(--primary-shadow);
-  margin-left: 10px;
+  margin-left: 0.625rem;
 }
 
 .menu-element-container {
   display: flex;
   flex-direction: row;
-  padding: 20px;
-  margin-right: 10px;
+  margin-right: 0.625rem;
   gap: 10px;
+  li {
+    display: inline-block;
+    line-height: 1;
+  }
 }
 </style>

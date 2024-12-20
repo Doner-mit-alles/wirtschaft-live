@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import i18n, { loadLocaleMessages } from '@/i18n'
-import { computed, ref } from 'vue'
+import { computed, ref, onMounted, onUnmounted } from 'vue'
 import germany from '@/assets/flag/germany_round.svg'
 import england from '@/assets/flag/england_round.svg'
 
@@ -33,15 +33,40 @@ const languages = [
   { code: 'de', flag: germany, altText: 'Deutschland' },
   { code: 'en', flag: england, altText: 'England' }
 ]
+
+const dropdownRef = ref<HTMLDivElement | null>(null)
+
+const closeMenu = (): void => {
+  isMenuVisible.value = false
+}
+
+onMounted(() => {
+  const handleClickOutside = (event: MouseEvent) => {
+    if (dropdownRef.value && !dropdownRef.value.contains(event.target as Node)) {
+      closeMenu()
+    }
+  }
+
+  document.addEventListener('click', handleClickOutside)
+
+  onUnmounted(() => {
+    document.removeEventListener('click', handleClickOutside)
+  })
+})
 </script>
 
 <template>
-  <div class="language-drop-box">
-    <div class="language-drop-box-container" id="language-drop-box-container">
+  <li class="language-drop-box" tabindex="5">
+    <div class="language-drop-box-container dropdown"
+         ref="dropdownRef"
+         id="language-drop-box-container"
+         aria-haspopup="true"
+         :aria-label="$t('menuBar.aria-label.language')"
+    >
       <component :is="currentFlag.flag" @click="toggleMenu" />
-      <div v-if="isMenuVisible" class="language-drop-box-select">
+      <div v-if="isMenuVisible" class="language-drop-box-select pt-1">
         <div class="language-drop-box-selection">
-          <div style="width: 100%; height: 100%" v-for="language in languages" :key="language.code">
+          <div style="width: 100%; height: 100%" v-for="language in languages" :title="language.altText" :key="language.code">
             <component
               v-if="currentFlag.language != language.code"
               @click="changeLanguage(language.code)"
@@ -53,7 +78,7 @@ const languages = [
         </div>
       </div>
     </div>
-  </div>
+  </li>
 </template>
 
 <style scoped>
@@ -64,6 +89,10 @@ const languages = [
   align-items: center;
   flex-direction: column;
   position: relative;
+}
+
+.language-drop-box:hover {
+  cursor: pointer;
 }
 
 .language-drop-box-select {

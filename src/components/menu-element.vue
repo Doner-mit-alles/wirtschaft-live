@@ -17,6 +17,10 @@ const props = defineProps({
   targetId: {
     type: String,
     required: true
+  },
+  tabIndex: {
+    type: Number,
+    required: true
   }
 })
 const targetElement = ref<HTMLElement | null>(null)
@@ -50,32 +54,40 @@ const scrollToTarget = () => {
 </script>
 
 <template>
-  <div class="menu-bar-element" @click="scrollToTarget">
+  <li class="menu-bar-element"
+      @click="scrollToTarget"
+      role="menuitem"
+      :tabindex="tabIndex"
+  >
     <component :is="svg" />
-    <p
-      v-if="!isMinimised"
-      :class="['menu-bar-element-text', { 'menu-bar-element-text-hidden': isMinimised }]"
+    <a v-if="!isMinimised"
+       :class="['menu-bar-element-text', { 'menu-bar-element-text-hidden': isMinimised }]"
+       :aria-label="`Navigation zu ${text}`"
+       class="text-decoration-none"
+       :title="text"
+       itemprop="url"
     >
       {{ text }}
-    </p>
-  </div>
+    </a>
+  </li>
 </template>
 
 <style scoped>
 .menu-bar-element {
   width: fit-content;
-  margin: 0 5px 0 5px;
-  display: flex;
+  margin: 0 5px;
   justify-content: center;
   align-items: center;
   gap: 5px;
-  font-size: 16px;
+  font-size: 1rem;
   cursor: pointer;
 }
 
 .menu-bar-element-text {
+  margin: 0 5px;
+  color: white;
   font-weight: 700;
-  text-shadow: 4px 8px 6px #000000;
+  text-shadow: var(--primary-shadow);
 }
 
 @keyframes shrink {

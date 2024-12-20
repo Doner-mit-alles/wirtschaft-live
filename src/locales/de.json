@@ -5,6 +5,9 @@
     "news": "Neuigkeiten",
     "rules": "Spielregelen",
     "appointments": "Termine",
-    "team": "Team"
+    "team": "Team",
+    "ariaLabel": {
+      "language": "Sprachauswahl"
+    }
   }
 }

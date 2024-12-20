@@ -5,6 +5,9 @@
     "news": "News",
     "rules": "Game Rules",
     "appointments": "Appointments",
-    "team": "Team"
+    "team": "Team",
+    "ariaLabel": {
+      "language": "Language Picker"
+    }
   }
 }
