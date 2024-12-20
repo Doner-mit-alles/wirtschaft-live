@@ -12,4 +12,16 @@
 
 <style scoped>
 
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px;
+  border-radius: 50px;
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  font-size: 22px;
+  width: 95%;
+  transition: all 0.5s ease;
+}
 </style>
