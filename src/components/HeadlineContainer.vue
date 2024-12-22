@@ -1,11 +1,31 @@
 <script setup lang="ts">
+import { ref, onMounted } from 'vue';
+
+const svgs = import.meta.glob('@/assets/images/*.svg', { as: 'component' });
+
+// Wird später zu einer geladenen Komponente
+const GamingIcon = ref<undefined | any>(null);
+
+// Das SVG als Komponente laden
+onMounted(async () => {
+  const iconModule = svgs[`/src/assets/images/gaming-element.svg`];
+  if (iconModule) {
+    GamingIcon.value = (await iconModule()).default;
+  }
+});
 </script>
 
 <template>
   <div class="row mb-4">
     <div class="col-12 text-center">
-        <h1>Ein Schülerunternehmen der BBS 1 Lüneburg
-          mit<span> Meerwert</span></h1>
+      <h1 class="headline" v-html="$t('containers.headline.content')"></h1>
+    </div>
+    <div class="col-12 text-center mt-4">
+      <div class="d-flex justify-content-center icons-wrapper">
+        <component class="mx-2" :is="GamingIcon" v-if="GamingIcon" />
+        <component class="mx-2" :is="GamingIcon" v-if="GamingIcon" />
+        <component class="mx-2" :is="GamingIcon" v-if="GamingIcon" />
+      </div>
     </div>
   </div>
 </template>
@@ -16,16 +36,13 @@ h1 {
   filter: drop-shadow(var(--primary-shadow));
 }
 
-span {
-  color: var(--fifth-color);
-}
 
 div {
   text-align: center;
 }
 
 @media screen and (max-width: 768px) {
-  h1{
+  h1 {
     font-size: 2.18rem;
   }
 }
