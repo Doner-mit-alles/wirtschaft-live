@@ -4,8 +4,16 @@ body {
     font-family: 'Alexandria', serif;
 }
 
-p {
-    margin-block-end: 0;
+h1, h2 {
+    font-family: Montserrat, sans-serif;
+    font-weight: 800;
+}
+
+:root {
+    --bs-primary: #272727;
+    --bs-primary-rgb: 39, 39, 39;
+    --bs-secondary: #4BC3B6;
+    --bs-secondary-rgb: 75, 195, 182;
 }
 
 :root {
@@ -13,6 +21,7 @@ p {
     --secondary-color: #ffffff;
     --third-color: #494949;
     --forth-color: #20639b;
+    --fifth-color: #4BC3B6;
 }
 
 :root {

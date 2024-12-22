@@ -4,10 +4,22 @@
   "menuBar": {
     "news": "News",
     "rules": "Game Rules",
-    "appointments": "Appointments",
+    "appointments": "Appointments & News",
     "team": "Team",
+    "aboutUs": "About us",
+    "contact": "Contact",
     "ariaLabel": {
       "language": "Language Picker"
+    },
+    "altText": {
+      "burgerMenuAltText": "Mobile Menu Trigger"
+    }
+  },
+  "containers": {
+    "aboutUs": {
+      "imageAltText": "Image with Board Game Elements",
+      "headline": "ABOUT US...",
+      "content": "<p>\nHello, we are HA24B, and this is our student company, \"Baller los,\" which means \"go full throttle\" – and that's exactly what we're doing.\n</p>\n<p>\nWe are 24 students aged between 15 and 18 years.\n</p>\n<p>\nWe founded this student company as part of the one-year vocational school for business at BBS I Lüneburg.\n</p>\n<p>\nWe are creating our own game and aim to raise awareness about environmental protection, especially concerning bodies of water, through this game.\n</p>\n<p>\nIt's only natural that we produce our game as environmentally friendly and high-quality as possible.\n</p>\n<p>\nWe use a 3D printer with recyclable and even recycled filament to manufacture our game pieces ourselves. Other materials, such as the game board and packaging, are recyclable or made from recycled materials.\n</p>\n<p>\nAdditionally, we investigate the pollution of the Ilmenau River (which flows through Lüneburg) by collecting and counting plastic waste.\n</p>\n<p>\nFor this website, we collaborate with the Lüneburg-based IT company \"webnetz\" and the IT specialist trainees in their third year of training from the IT22B class at our school.\n</p>"
     }
   }
 }

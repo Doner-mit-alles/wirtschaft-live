@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { onMounted, onUpdated, ref } from 'vue'
+import * as bootstrap from 'bootstrap';
 
 const props = defineProps({
   text: {
@@ -23,8 +24,10 @@ const props = defineProps({
     required: true
   }
 })
+
 const targetElement = ref<HTMLElement | null>(null)
 const menuHeight = ref<number>(0)
+
 onMounted(() => {
   targetElement.value = document.getElementById(props.targetId)
 })
@@ -49,13 +52,35 @@ const scrollToTarget = () => {
       top: scrollToPosition,
       behavior: 'smooth'
     })
+
+    const offcanvasElement = document.querySelector('#offcanvasMenu') as HTMLElement;
+    if (offcanvasElement) {
+      console.log("Found offcanvas element:", offcanvasElement);
+
+      const offcanvas = bootstrap.Offcanvas.getInstance(offcanvasElement);
+
+      if (!offcanvas) {
+        console.log("Creating new offcanvas instance.");
+        const offcanvas = new bootstrap.Offcanvas(offcanvasElement);
+        offcanvas.hide();
+      } else {
+        offcanvas.hide();
+      }
+    }
+  }
+}
+
+const handleKeydown = (event: KeyboardEvent) => {
+  if (event.key === 'Enter' || event.key === ' ' || event.key === 'Spacebar') {
+    scrollToTarget();
   }
 }
 </script>
 
 <template>
-  <li class="menu-bar-element"
+  <li class="menu-bar-element d-md-inline-block d-none"
       @click="scrollToTarget"
+      @keydown="handleKeydown"
       role="menuitem"
       :tabindex="tabIndex"
   >
@@ -81,13 +106,47 @@ const scrollToTarget = () => {
   gap: 5px;
   font-size: 1rem;
   cursor: pointer;
+  transition: font-size 0.3s ease;
+  svg {
+    transition: width 0.3s ease, height 0.3s ease;
+  }
+}
+
+@media (min-width: 768px) {
+  .menu-bar-element {
+    font-size: 0.812rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .menu-bar-element {
+    font-size: 1rem;
+  }
 }
 
 .menu-bar-element-text {
   margin: 0 5px;
   color: white;
-  font-weight: 700;
+  font-weight: 500;
   text-shadow: var(--primary-shadow);
+}
+
+@media (min-width: 768px) {
+  .menu-bar-element {
+    svg {
+      height: 1.375rem;
+      width: 1.375rem;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .menu-bar-element {
+    svg {
+      height: 1.5rem;
+      width: 1.5rem;
+    }
+  }
 }
 
 @keyframes shrink {

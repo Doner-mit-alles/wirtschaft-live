@@ -1,12 +1,15 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, computed, watch } from 'vue'
-import NewsSVG from '@/assets/news.svg'
-import CalenderSVG from '@/assets/calendar.svg'
-import BookSVG from '@/assets/book-open.svg'
-import UserSVG from '@/assets/user.svg'
+import NewsSVG from '@/assets/images/news.svg'
+import CalenderSVG from '@/assets/images/calendar.svg'
+import BookSVG from '@/assets/images/book-open.svg'
+import UserSVG from '@/assets/images/user.svg'
+import contactImage from '/src/assets/images/contact.svg';
 import MenuElement from '@/components/menu-element.vue'
 import MenuLanguageButton from '@/components/menu-language-button.vue'
 import { useMenuBarStore } from '@/stores/useMenuBarStore'
+import BurgerMenu from '@/components/BurgerMenu.vue'
+import BurgerMenuSVG from '@/assets/images/burger-menu.svg'
 
 const store = useMenuBarStore()
 const isMinimised = ref<boolean>(false)
@@ -30,10 +33,11 @@ watch(isMinimised, (newValue) => {
 
 // Menu items data with type annotation
 const menuItems = [
-  { text: 'menuBar.news', svg: NewsSVG, targetId: 'target1' },
-  { text: 'menuBar.rules', svg: BookSVG, targetId: 'target2' },
-  { text: 'menuBar.appointments', svg: CalenderSVG, targetId: 'target3' },
-  { text: 'menuBar.team', svg: UserSVG, targetId: 'target4' }
+  { text: 'menuBar.aboutUs', svg: NewsSVG, targetId: 'aboutUs' },
+  { text: 'menuBar.team', svg: UserSVG, targetId: 'team' },
+  { text: 'menuBar.rules', svg: BookSVG, targetId: 'gamingRules' },
+  { text: 'menuBar.appointments', svg: CalenderSVG, targetId: 'newsAndAppointments' },
+  { text: 'menuBar.contact', svg: contactImage, targetId: 'contact' }
 ]
 
 // Computed property for class binding
@@ -44,7 +48,7 @@ const menuBarClasses = computed(() => ({
 </script>
 
 <template>
-  <header v-bind:class="menuBarClasses" id="menubar"  class="d-flex justify-content-between align-items-center p-3 m-3">
+  <header v-bind:class="menuBarClasses" id="menubar"  class="d-flex justify-content-between align-items-center p-3 m-auto mt-2">
     <p id="menu-team-name">Baller Los</p>
 
     <nav class="menu-element-container">
@@ -58,6 +62,9 @@ const menuBarClasses = computed(() => ({
           :target-id="item.targetId"
           :tabIndex="index + 1"
         />
+        <BurgerMenu
+          :svg="BurgerMenuSVG"
+        />
         <MenuLanguageButton />
       </ul>
     </nav>
@@ -70,8 +77,17 @@ const menuBarClasses = computed(() => ({
   background: var(--primary-color);
   color: var(--secondary-color);
   font-size: 1.37rem;
-  width: 95%;
+  width: 88%;
   transition: all 0.5s ease;
+  @media (min-width: 768px) {
+    width: 95%;
+  }
+}
+
+@media (min-width:768px) and (max-width: 992px) {
+  .menu-bar {
+    font-size: 1rem;
+  }
 }
 
 .menu-bar-fixed {
@@ -86,9 +102,12 @@ const menuBarClasses = computed(() => ({
 }
 
 #menu-team-name {
+  white-space: nowrap;
   font-weight: bold;
   text-shadow: var(--primary-shadow);
+  margin-bottom: 0;
   margin-left: 0.625rem;
+  letter-spacing: 1px;
 }
 
 .menu-element-container {

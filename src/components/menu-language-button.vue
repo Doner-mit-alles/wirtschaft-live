@@ -5,11 +5,13 @@ import germany from '@/assets/flag/germany_round.svg'
 import england from '@/assets/flag/england_round.svg'
 
 const selectedLanguage = ref(i18n.global.locale)
+
 const changeLanguage = async (locale: string) => {
   selectedLanguage.value = locale
   toggleMenu()
   await loadLocaleMessages(locale)
 }
+
 const isMenuVisible = ref(false)
 
 const currentFlag = computed(() => {
@@ -26,6 +28,20 @@ const toggleMenu = (): void => {
     element.classList.add('language-drop-box-container-open')
   } else if (element) {
     element.classList.remove('language-drop-box-container-open')
+  }
+}
+
+const handleKeydown = (event: KeyboardEvent) => {
+  if (event.key === 'Enter' || event.key === ' ' || event.key === 'Spacebar') {
+    event.preventDefault()
+
+    const currentLanguage = selectedLanguage.value
+    console.log(currentLanguage);
+    const currentIndex = languages.findIndex(lang => lang.code === currentLanguage)
+    console.log(currentIndex);
+    const nextIndex = (currentIndex + 1) % languages.length
+
+    changeLanguage(languages[nextIndex].code)
   }
 }
 
@@ -56,7 +72,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <li class="language-drop-box" tabindex="5">
+  <li class="language-drop-box" tabindex="5" @keydown="handleKeydown">
     <div class="language-drop-box-container dropdown"
          ref="dropdownRef"
          id="language-drop-box-container"
@@ -66,7 +82,7 @@ onMounted(() => {
       <component :is="currentFlag.flag" @click="toggleMenu" />
       <div v-if="isMenuVisible" class="language-drop-box-select pt-1">
         <div class="language-drop-box-selection">
-          <div style="width: 100%; height: 100%" v-for="language in languages" :title="language.altText" :key="language.code">
+          <div class="w-100 h-100" v-for="language in languages" :title="language.altText" :key="language.code">
             <component
               v-if="currentFlag.language != language.code"
               @click="changeLanguage(language.code)"

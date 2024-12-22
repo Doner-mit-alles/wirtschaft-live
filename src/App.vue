@@ -3,7 +3,7 @@ import BootstrapTemplate from './components/BootstrapTemplate.vue'
 import Menu from '@/components/menu-bar.vue'
 import { useMenuBarStore } from '@/stores/useMenuBarStore'
 import { storeToRefs } from 'pinia'
-import TextAndImageTemplate from './components/TextAndImageTemplate.vue'
+import TextAndImageContainer from './components/TextAndImageContainer.vue'
 import HeadlineContainer from './components/HeadlineContainer.vue'
 import MenuBar from '@/components/menu-bar.vue'
 
@@ -23,7 +23,7 @@ const targets = [
 <!--    BootstrapTemplate wieder reinsetzen-->
     <BootstrapTemplate />
     <HeadlineContainer />
-    <TextAndImageTemplate />
+    <TextAndImageContainer />
   </main>
   <footer class="container mt-5 px-5 px-md-5 mb-4" id="footer">
   </footer>
