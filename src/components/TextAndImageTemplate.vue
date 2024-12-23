@@ -46,7 +46,7 @@
 .linear-gradiant-element-wrapper {
   gap: 0.6rem;
   .linear-gradiant-element {
-    background-image: linear-gradient(#4BC3B6, #2C86A5);
+    background-image: var(--linear-gradiant-element-vertical);
     width: 9px;
     height: 97%;
     @media (min-width: 992px) {

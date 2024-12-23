@@ -70,14 +70,14 @@
 
   <!-- Row mit 1 Spalte -->
   <div class="row g-3 mb-4">
-    <div class="col-12 col-12 bg-dark text-white text-center p-3">
+    <div class="col-12 bg-dark text-white text-center p-3">
       Kontaktformular (100%)
     </div>
   </div>
 
-  <!-- Footer -->
+  <!-- Footer, soll nicht hierrein, lediglich zum finden -->
   <footer class="row g-3 mb-4">
-    <div class="col-12 col-12 bg-success text-black text-center p-3">
+    <div class="col-12 bg-success text-black text-center p-3">
       Footer (100%)
     </div>
   </footer>

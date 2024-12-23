@@ -1,4 +1,17 @@
 {
-  "welcome": "Welcome",
-  "description": "This is an example description."
+  "container": {
+    "contactForm": {
+      "headline": "Contact Form",
+      "inputFields": {
+        "surname": "First Name*",
+        "lastname": "Last Name*",
+        "email": "Email*",
+        "subject": "Subject",
+        "message": "Message*"
+      },
+      "infoText": "* Fields marked with * are required!",
+      "submit": "Submit",
+      "privacyCheckbox": "I have read and agree to the <a href=\"{url}\">Privacy Policy</a>"
+    }
+  }
 }
