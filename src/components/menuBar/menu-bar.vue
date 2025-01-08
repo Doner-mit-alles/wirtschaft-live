@@ -5,10 +5,10 @@ import CalenderSVG from '@/assets/images/calendar.svg'
 import BookSVG from '@/assets/images/book-open.svg'
 import UserSVG from '@/assets/images/user.svg'
 import contactSVG from '/src/assets/images/contact.svg'
-import MenuElement from '@/components/menu-element.vue'
-import MenuLanguageButton from '@/components/menu-language-button.vue'
+import MenuElement from '@/components/menuBar/menu-element.vue'
+import MenuLanguageButton from '@/components/menuBar/menu-language-button.vue'
 import { useMenuBarStore } from '@/stores/useMenuBarStore'
-import BurgerMenu from '@/components/BurgerMenu.vue'
+import BurgerMenu from '@/components/menuBar/BurgerMenu.vue'
 import BurgerMenuSVG from '@/assets/images/burger-menu.svg'
 
 const store = useMenuBarStore()

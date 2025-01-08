@@ -5,7 +5,7 @@ import { useMenuBarStore } from '@/stores/useMenuBarStore'
 import { storeToRefs } from 'pinia'
 import TextAndImageContainer from '@/components/TextAndImageContainer.vue'
 import HeadlineContainer from '@/components/HeadlineContainer.vue'
-import MenuBar from '@/components/menu-bar.vue'
+import MenuBar from '@/components/menuBar/menu-bar.vue'
 import SpacingTool from '@/components/SpacingTool.vue'
 
 const statusStore = useMenuBarStore()
