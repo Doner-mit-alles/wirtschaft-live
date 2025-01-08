@@ -53,18 +53,18 @@ const scrollToTarget = () => {
       behavior: 'smooth'
     })
 
-    const offcanvasElement = document.querySelector('#offcanvasMenu') as HTMLElement;
-    if (offcanvasElement) {
-      console.log("Found offcanvas element:", offcanvasElement);
+    const offCanvasElement = document.querySelector('#offcanvasMenu') as HTMLElement;
+    if (offCanvasElement) {
+      console.log("Found offCanvas element:", offCanvasElement);
 
-      const offcanvas = bootstrap.Offcanvas.getInstance(offcanvasElement);
+      const offCanvas = bootstrap.Offcanvas.getInstance(offCanvasElement);
 
-      if (!offcanvas) {
-        console.log("Creating new offcanvas instance.");
-        const offcanvas = new bootstrap.Offcanvas(offcanvasElement);
+      if (!offCanvas) {
+        console.log("Creating new offCanvas instance.");
+        const offcanvas = new bootstrap.Offcanvas(offCanvasElement);
         offcanvas.hide();
       } else {
-        offcanvas.hide();
+        offCanvas.hide();
       }
     }
   }
