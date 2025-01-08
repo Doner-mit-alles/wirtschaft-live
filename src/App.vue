@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import TextAndImageTemplate from './components/TextAndImageTemplate.vue'
-import BootstrapTemplate from './components/BootstrapTemplate.vue'
+import TextAndImageTemplate from '@/components/TextAndImageContainer.vue'
+import BootstrapTemplate from '@/components/BootstrapTemplate.vue'
 import { useMenuBarStore } from '@/stores/useMenuBarStore'
 import { storeToRefs } from 'pinia'
-import TextAndImageContainer from './components/TextAndImageContainer.vue'
-import HeadlineContainer from './components/HeadlineContainer.vue'
+import TextAndImageContainer from '@/components/TextAndImageContainer.vue'
+import HeadlineContainer from '@/components/HeadlineContainer.vue'
 import MenuBar from '@/components/menu-bar.vue'
 import SpacingTool from '@/components/SpacingTool.vue'
 
