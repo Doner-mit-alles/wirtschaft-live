@@ -1,57 +1,58 @@
 @import url('https://fonts.googleapis.com/css?family=Alexandria');
 
 body {
-    font-family: 'Alexandria', serif;
+  font-family: 'Alexandria', serif;
 }
 
-h1, h2 {
-    font-family: Montserrat, sans-serif;
-    font-weight: 800;
-}
-
-:root {
-    --bs-primary: #272727;
-    --bs-primary-rgb: 39, 39, 39;
-    --bs-secondary: #4BC3B6;
-    --bs-secondary-rgb: 75, 195, 182;
+h1,
+h2 {
+  font-family: Montserrat, sans-serif;
+  font-weight: 800;
 }
 
 :root {
-    --primary-color: #272727;
-    --secondary-color: #ffffff;
-    --third-color: #494949;
-    --forth-color: #20639b;
-    --fifth-color: #4BC3B6;
+  --bs-primary: #272727;
+  --bs-primary-rgb: 39, 39, 39;
+  --bs-secondary: #4bc3b6;
+  --bs-secondary-rgb: 75, 195, 182;
 }
 
 :root {
-    --primary-shadow: 4px 8px 6px #000000;
+  --primary-color: #272727;
+  --secondary-color: #ffffff;
+  --third-color: #494949;
+  --forth-color: #20639b;
+  --fifth-color: #4bc3b6;
+}
+
+:root {
+  --primary-shadow: 4px 8px 6px #000000;
 }
 
 .border-radius-20-right {
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 @media (max-width: 768px) {
-    .border-radius-20-right {
-        color: red;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 20px;
-        border-bottom-left-radius: 20px;
-    }
+  .border-radius-20-right {
+    color: red;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
 }
 
 .border-radius-20-left {
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 
 @media (max-width: 768px) {
-    .border-radius-20-left {
-        color: red;
-        border-bottom-left-radius: 0;
-        border-top-right-radius: 20px;
-        border-top-left-radius: 20px;
-    }
+  .border-radius-20-left {
+    color: red;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+  }
 }

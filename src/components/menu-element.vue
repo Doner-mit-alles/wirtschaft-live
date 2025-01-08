@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted, onUpdated, ref } from 'vue'
-import * as bootstrap from 'bootstrap';
+import * as bootstrap from 'bootstrap'
 
 const props = defineProps({
   text: {
@@ -53,18 +53,18 @@ const scrollToTarget = () => {
       behavior: 'smooth'
     })
 
-    const offCanvasElement = document.querySelector('#offcanvasMenu') as HTMLElement;
+    const offCanvasElement = document.querySelector('#offcanvasMenu') as HTMLElement
     if (offCanvasElement) {
-      console.log("Found offCanvas element:", offCanvasElement);
+      console.log('Found offCanvas element:', offCanvasElement)
 
-      const offCanvas = bootstrap.Offcanvas.getInstance(offCanvasElement);
+      const offCanvas = bootstrap.Offcanvas.getInstance(offCanvasElement)
 
       if (!offCanvas) {
-        console.log("Creating new offCanvas instance.");
-        const offcanvas = new bootstrap.Offcanvas(offCanvasElement);
-        offcanvas.hide();
+        console.log('Creating new offCanvas instance.')
+        const offcanvas = new bootstrap.Offcanvas(offCanvasElement)
+        offcanvas.hide()
       } else {
-        offCanvas.hide();
+        offCanvas.hide()
       }
     }
   }
@@ -72,25 +72,27 @@ const scrollToTarget = () => {
 
 const handleKeydown = (event: KeyboardEvent) => {
   if (event.key === 'Enter' || event.key === ' ' || event.key === 'Spacebar') {
-    scrollToTarget();
+    scrollToTarget()
   }
 }
 </script>
 
 <template>
-  <li class="menu-bar-element d-md-inline-block d-none"
-      @click="scrollToTarget"
-      @keydown="handleKeydown"
-      role="menuitem"
-      :tabindex="tabIndex"
+  <li
+    class="menu-bar-element d-md-inline-block d-none"
+    @click="scrollToTarget"
+    @keydown="handleKeydown"
+    role="menuitem"
+    :tabindex="tabIndex"
   >
     <component :is="svg" />
-    <a v-if="!isMinimised"
-       :class="['menu-bar-element-text', { 'menu-bar-element-text-hidden': isMinimised }]"
-       :aria-label="`Navigation zu ${text}`"
-       class="text-decoration-none"
-       :title="text"
-       itemprop="url"
+    <a
+      v-if="!isMinimised"
+      :class="['menu-bar-element-text', { 'menu-bar-element-text-hidden': isMinimised }]"
+      :aria-label="`Navigation zu ${text}`"
+      class="text-decoration-none"
+      :title="text"
+      itemprop="url"
     >
       {{ text }}
     </a>
@@ -108,7 +110,9 @@ const handleKeydown = (event: KeyboardEvent) => {
   cursor: pointer;
   transition: font-size 0.3s ease;
   svg {
-    transition: width 0.3s ease, height 0.3s ease;
+    transition:
+      width 0.3s ease,
+      height 0.3s ease;
   }
 }
 
