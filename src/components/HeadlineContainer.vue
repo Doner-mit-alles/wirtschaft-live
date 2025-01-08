@@ -1,18 +1,6 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import GamingElement from "@/assets/images/gaming-element.svg"
 
-const svgs = import.meta.glob('@/assets/images/*.svg', { as: 'component' });
-
-// Wird später zu einer geladenen Komponente
-const GamingIcon = ref<undefined | any>(null);
-
-// Das SVG als Komponente laden
-onMounted(async () => {
-  const iconModule = svgs[`/src/assets/images/gaming-element.svg`];
-  if (iconModule) {
-    GamingIcon.value = (await iconModule()).default;
-  }
-});
 </script>
 
 <template>
@@ -22,9 +10,9 @@ onMounted(async () => {
     </div>
     <div class="col-12 text-center mt-4">
       <div class="d-flex justify-content-center icons-wrapper">
-        <component class="mx-2" :is="GamingIcon" v-if="GamingIcon" />
-        <component class="mx-2" :is="GamingIcon" v-if="GamingIcon" />
-        <component class="mx-2" :is="GamingIcon" v-if="GamingIcon" />
+        <component class="mx-2" :is="GamingElement"  />
+        <component class="mx-2" :is="GamingElement"  />
+        <component class="mx-2" :is="GamingElement"  />
       </div>
     </div>
   </div>

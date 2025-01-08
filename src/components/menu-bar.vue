@@ -4,7 +4,7 @@ import NewsSVG from '@/assets/images/news.svg'
 import CalenderSVG from '@/assets/images/calendar.svg'
 import BookSVG from '@/assets/images/book-open.svg'
 import UserSVG from '@/assets/images/user.svg'
-import contactImage from '/src/assets/images/contact.svg';
+import contactSVG from '/src/assets/images/contact.svg';
 import MenuElement from '@/components/menu-element.vue'
 import MenuLanguageButton from '@/components/menu-language-button.vue'
 import { useMenuBarStore } from '@/stores/useMenuBarStore'
@@ -37,7 +37,7 @@ const menuItems = [
   { text: 'menuBar.team', svg: UserSVG, targetId: 'team' },
   { text: 'menuBar.rules', svg: BookSVG, targetId: 'gamingRules' },
   { text: 'menuBar.appointments', svg: CalenderSVG, targetId: 'newsAndAppointments' },
-  { text: 'menuBar.contact', svg: contactImage, targetId: 'contact' }
+  { text: 'menuBar.contact', svg: contactSVG, targetId: 'contact' }
 ]
 
 // Computed property for class binding
