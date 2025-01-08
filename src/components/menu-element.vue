@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { onMounted, onUpdated, ref } from 'vue'
+import * as bootstrap from 'bootstrap';
 
 const props = defineProps({
   text: {
@@ -17,10 +18,16 @@ const props = defineProps({
   targetId: {
     type: String,
     required: true
+  },
+  tabIndex: {
+    type: Number,
+    required: true
   }
 })
+
 const targetElement = ref<HTMLElement | null>(null)
 const menuHeight = ref<number>(0)
+
 onMounted(() => {
   targetElement.value = document.getElementById(props.targetId)
 })
@@ -45,37 +52,101 @@ const scrollToTarget = () => {
       top: scrollToPosition,
       behavior: 'smooth'
     })
+
+    const offCanvasElement = document.querySelector('#offcanvasMenu') as HTMLElement;
+    if (offCanvasElement) {
+      console.log("Found offCanvas element:", offCanvasElement);
+
+      const offCanvas = bootstrap.Offcanvas.getInstance(offCanvasElement);
+
+      if (!offCanvas) {
+        console.log("Creating new offCanvas instance.");
+        const offcanvas = new bootstrap.Offcanvas(offCanvasElement);
+        offcanvas.hide();
+      } else {
+        offCanvas.hide();
+      }
+    }
+  }
+}
+
+const handleKeydown = (event: KeyboardEvent) => {
+  if (event.key === 'Enter' || event.key === ' ' || event.key === 'Spacebar') {
+    scrollToTarget();
   }
 }
 </script>
 
 <template>
-  <div class="menu-bar-element" @click="scrollToTarget">
+  <li class="menu-bar-element d-md-inline-block d-none"
+      @click="scrollToTarget"
+      @keydown="handleKeydown"
+      role="menuitem"
+      :tabindex="tabIndex"
+  >
     <component :is="svg" />
-    <p
-      v-if="!isMinimised"
-      :class="['menu-bar-element-text', { 'menu-bar-element-text-hidden': isMinimised }]"
+    <a v-if="!isMinimised"
+       :class="['menu-bar-element-text', { 'menu-bar-element-text-hidden': isMinimised }]"
+       :aria-label="`Navigation zu ${text}`"
+       class="text-decoration-none"
+       :title="text"
+       itemprop="url"
     >
       {{ text }}
-    </p>
-  </div>
+    </a>
+  </li>
 </template>
 
 <style scoped>
 .menu-bar-element {
   width: fit-content;
-  margin: 0 5px 0 5px;
-  display: flex;
+  margin: 0 5px;
   justify-content: center;
   align-items: center;
   gap: 5px;
-  font-size: 16px;
+  font-size: 1rem;
   cursor: pointer;
+  transition: font-size 0.3s ease;
+  svg {
+    transition: width 0.3s ease, height 0.3s ease;
+  }
+}
+
+@media (min-width: 768px) {
+  .menu-bar-element {
+    font-size: 0.812rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .menu-bar-element {
+    font-size: 1rem;
+  }
 }
 
 .menu-bar-element-text {
-  font-weight: 700;
-  text-shadow: 4px 8px 6px #000000;
+  margin: 0 5px;
+  color: white;
+  font-weight: 500;
+  text-shadow: var(--primary-shadow);
+}
+
+@media (min-width: 768px) {
+  .menu-bar-element {
+    svg {
+      height: 1.375rem;
+      width: 1.375rem;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .menu-bar-element {
+    svg {
+      height: 1.5rem;
+      width: 1.5rem;
+    }
+  }
 }
 
 @keyframes shrink {
