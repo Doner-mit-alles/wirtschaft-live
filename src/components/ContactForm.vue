@@ -50,7 +50,7 @@
             <p class="info">{{ $t("container.contactForm.infoText") }}</p>
 
             <label for="privacy-checkbox">
-              <input id="privacy-checkbox" name="privacy-checkbox" type="checkbox">
+              <input id="privacy-checkbox" name="privacy-checkbox" required type="checkbox">
               <span v-html="$t('container.contactForm.privacyCheckbox', { url: 'https://example.com/datenschutz' })"></span>
             </label>
 
@@ -105,7 +105,7 @@
   background-image: var(--linear-gradiant-element-horizontal);
   height: 9px;
   margin-bottom: 0.625rem;
-  margin-left: 46px;
+  margin-left: -8px;
   margin-right: -8px;
 }
 </style>
