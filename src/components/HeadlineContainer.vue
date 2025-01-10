@@ -1,11 +1,18 @@
 <script setup lang="ts">
+import GamingElement from '@/assets/images/gaming-element.svg'
 </script>
 
 <template>
   <div class="row mb-4">
-    <div class="col-12" id="headline">
-      <h1>Ein Schüler&shy;unternehmen der BBS 1 Lüneburg
-        mit<span> Meerwert</span></h1>
+    <div class="col-12 text-center">
+      <h1 class="headline" v-html="$t('containers.headline.content')"></h1>
+    </div>
+    <div class="col-12 text-center mt-4">
+      <div class="d-flex justify-content-center icons-wrapper">
+        <component class="mx-2" :is="GamingElement" />
+        <component class="mx-2" :is="GamingElement" />
+        <component class="mx-2" :is="GamingElement" />
+      </div>
     </div>
   </div>
 </template>
@@ -13,13 +20,7 @@
 <style scoped>
 h1 {
   color: white;
-  font-family: Montserrat, sans-serif;
-  font-weight: 900;
-  filter: drop-shadow(4px 8px 6px black);
-}
-
-span {
-  color: turquoise;
+  filter: drop-shadow(var(--primary-shadow));
 }
 
 div {
@@ -27,7 +28,7 @@ div {
 }
 
 @media screen and (max-width: 768px) {
-  h1{
+  h1 {
     font-size: 2.18rem;
   }
 }
