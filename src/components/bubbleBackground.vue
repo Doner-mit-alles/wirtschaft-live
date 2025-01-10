@@ -9,7 +9,7 @@
 <script lang="ts">
 import { defineComponent, ref, reactive, onMounted, onUpdated } from 'vue';
 import type { CSSProperties } from 'vue'; 
-
+import bubble from "@/assets/bubbles.png"
 export default defineComponent({
   name: 'RandomImageBehindText',
   setup() {
@@ -22,25 +22,25 @@ export default defineComponent({
     };
 
     const images = reactive([
-      { src: 'bubbles.png', alt: 'Random Image' },
-      { src: 'bubbles.png', alt: 'Random Image' },
-      { src: 'bubbles.png', alt: 'Random Image' },
-      { src: 'bubbles.png', alt: 'Random Image' },
-      { src: 'bubbles.png', alt: 'Random Image' },
-      { src: 'bubbles.png', alt: 'Random Image' },
-      { src: 'bubbles.png', alt: 'Random Image' },
-      { src: 'bubbles.png', alt: 'Random Image' },
-      { src: 'bubbles.png', alt: 'Random Image' },
-      { src: 'bubbles.png', alt: 'Random Image' },
-      { src: 'bubbles.png', alt: 'Random Image' },
-      { src: 'bubbles.png', alt: 'Random Image' },
-      { src: 'bubbles.png', alt: 'Random Image' },
-      { src: 'bubbles.png', alt: 'Random Image' },
-      { src: 'bubbles.png', alt: 'Random Image' },
-      { src: 'bubbles.png', alt: 'Random Image' },
-      { src: 'bubbles.png', alt: 'Random Image' },
-      { src: 'bubbles.png', alt: 'Random Image' },
-      { src: 'bubbles.png', alt: 'Random Image' },
+      { src: bubble, alt: 'Random Image' },
+      { src: bubble, alt: 'Random Image' },
+      { src: bubble, alt: 'Random Image' },
+      { src: bubble, alt: 'Random Image' },
+      { src: bubble, alt: 'Random Image' },
+      { src: bubble, alt: 'Random Image' },
+      { src: bubble, alt: 'Random Image' },
+      { src: bubble, alt: 'Random Image' },
+      { src: bubble, alt: 'Random Image' },
+      { src: bubble, alt: 'Random Image' },
+      { src: bubble, alt: 'Random Image' },
+      { src: bubble, alt: 'Random Image' },
+      { src: bubble, alt: 'Random Image' },
+      { src: bubble, alt: 'Random Image' },
+      { src: bubble, alt: 'Random Image' },
+      { src: bubble, alt: 'Random Image' },
+      { src: bubble, alt: 'Random Image' },
+      { src: bubble, alt: 'Random Image' },
+      { src: bubble, alt: 'Random Image' },
     ]);
 
     // Generate random style for each image
