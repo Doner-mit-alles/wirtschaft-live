@@ -5,6 +5,7 @@ import '@/assets/styles.css'
 
 import App from './App.vue'
 import 'bootstrap'
+import bubbleBackground from './components/bubbleBackground.vue'
 import i18n, { setLanguage, getBrowserLanguage } from './i18n'
 import router from './router'
 
