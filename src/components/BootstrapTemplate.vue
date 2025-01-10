@@ -12,7 +12,7 @@
   </div>
 
   <!-- Row mit 2 unterschiedlichen Spalten -->
-  <div class="row mb-4">
+  <div class="row mb-4" id="aboutUs">
     <div class="col-md-4 col-12 g-3 bg-primary text-white text-center p-3">
       Bild (33%)
     </div>
@@ -22,7 +22,7 @@
   </div>
 
   <!-- Row mit Inhalt -->
-  <div class="row mb-4">
+  <div class="row mb-4" id="team">
     <div class="col-md-12 col-12 bg-dark text-white text-center p-3">
       Umrandung (100%)
       <!-- Row mit 2 Spalten -->
@@ -53,13 +53,13 @@
   </div>
 
   <!-- Row mit 1 Spalte -->
-  <div class="row g-3 mb-4">
+  <div class="row g-3 mb-4" id="gamingRules">
     <div class="col-12 bg-warning text-dark text-center p-3">
       Regeln 1 (100%)
     </div>
   </div>
 
-  <div class="row g-3 mb-4">
+  <div class="row g-3 mb-4" id="newsAndAppointments">
     <div class="col-md-6 col-12 bg-info text-white p-3">
       Neuigkeiten (50%)
     </div>
@@ -69,14 +69,14 @@
   </div>
 
   <!-- Row mit 1 Spalte -->
-  <div class="row g-3 mb-4">
+  <div class="row g-3 mb-4" id="contact">
     <div class="col-12 col-12 bg-dark text-white text-center p-3">
       Kontaktformular (100%)
     </div>
   </div>
 
   <!-- Footer -->
-  <footer class="row g-3 mb-4">
+  <footer class="row g-3 mb-4" id="footer">
     <div class="col-12 col-12 bg-success text-black text-center p-3">
       Footer (100%)
     </div>

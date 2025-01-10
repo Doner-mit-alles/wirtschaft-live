@@ -1,4 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Alexandria');
+
+body {
+    font-family: 'Alexandria', serif;
+}
+
+h1, h2 {
+    font-family: Montserrat, sans-serif;
+    font-weight: 800;
+}
 
 :root {
     --bs-primary: #272727;
@@ -7,26 +16,16 @@
     --bs-secondary-rgb: 75, 195, 182;
 }
 
-h1, h2 {
-    font-family: Montserrat, sans-serif;
-    font-weight: 900; /* Black */
+:root {
+    --primary-color: #272727;
+    --secondary-color: #ffffff;
+    --third-color: #494949;
+    --forth-color: #20639b;
+    --fifth-color: #4BC3B6;
 }
 
-h2 {
-    @media (max-width: 576px) {
-        font-size: 1rem;
-    }
-}
-
-p {
-    font-size: 1rem;
-    @media (max-width: 576px) {
-        font-size: 0.75rem;
-    }
-}
-
-.container {
-    min-width: 200px;
+:root {
+    --primary-shadow: 4px 8px 6px #000000;
 }
 
 .border-radius-20-right {
@@ -56,3 +55,4 @@ p {
         border-top-left-radius: 20px;
     }
 }
+

@@ -7,6 +7,7 @@ import App from './App.vue'
 import 'bootstrap'
 import i18n, { loadLocaleMessages, getBrowserLanguage } from './i18n'
 
+//load the vue with the browser language
 const app = createApp(App)
 loadLocaleMessages(getBrowserLanguage()).then(() => {
   app.use(createPinia())
