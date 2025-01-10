@@ -3,11 +3,9 @@
 
 <template>
   <div class="row mb-4">
-    <div class="col-12">
-      <div id="headline">
-        <h1>Ein Schülerunternehmen der BBS 1 Lüneburg
-          mit<span> Meerwert</span></h1>
-      </div>
+    <div class="col-12" id="headline">
+      <h1>Ein Schüler&shy;unternehmen der BBS 1 Lüneburg
+        mit<span> Meerwert</span></h1>
     </div>
   </div>
 </template>
