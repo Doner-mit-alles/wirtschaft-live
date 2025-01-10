@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import TextAndImageTemplate from '@/components/TextAndImageContainer.vue'
 import BootstrapTemplate from '@/components/BootstrapTemplate.vue'
 import { useMenuBarStore } from '@/stores/useMenuBarStore'
 import { storeToRefs } from 'pinia'
@@ -7,6 +6,7 @@ import TextAndImageContainer from '@/components/TextAndImageContainer.vue'
 import HeadlineContainer from '@/components/HeadlineContainer.vue'
 import MenuBar from '@/components/menuBar/menu-bar.vue'
 import SpacingTool from '@/components/SpacingTool.vue'
+import ContactForm from '@/components/ContactForm.vue'
 
 const statusStore = useMenuBarStore()
 const { isMinimised } = storeToRefs(statusStore)
@@ -21,11 +21,12 @@ const targets = [
 <template>
   <menu-bar />
   <main class="container mt-5 px-5 px-lg-5 px-md-4">
-    <!--    BootstrapTemplate wieder reinsetzen-->
+    <!--    BootstrapTemplate wieder raus-->
     <BootstrapTemplate />
     <HeadlineContainer />
     <SpacingTool height="2rem"></SpacingTool>
     <TextAndImageContainer />
+    <ContactForm />
   </main>
   <footer class="container mt-5 px-5 px-md-5 mb-4" id="footer"></footer>
   <!--  <BootstrapTemplate v-if="false" />-->
