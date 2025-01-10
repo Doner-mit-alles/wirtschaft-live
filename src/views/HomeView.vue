@@ -7,6 +7,7 @@ import TextAndImageContainer from '@/components/TextAndImageContainer.vue'
 import HeadlineContainer from '@/components/HeadlineContainer.vue'
 import MenuBar from '@/components/menuBar/menu-bar.vue'
 import SpacingTool from '@/components/SpacingTool.vue'
+import TeamSpace from '@/components/teamSpace/TeamSpace.vue'
 
 const statusStore = useMenuBarStore()
 const { isMinimised } = storeToRefs(statusStore)
@@ -26,6 +27,7 @@ const targets = [
     <HeadlineContainer />
     <SpacingTool height="2rem"></SpacingTool>
     <TextAndImageContainer />
+    <TeamSpace />
   </main>
   <footer class="container mt-5 px-5 px-md-5 mb-4" id="footer"></footer>
   <!--  <BootstrapTemplate v-if="false" />-->
