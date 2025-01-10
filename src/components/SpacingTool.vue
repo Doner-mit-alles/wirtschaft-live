@@ -16,10 +16,7 @@ const props = defineProps({
     class="row mb-4"
     :style="{ height: props.height, width: props.width || 'auto' }"
     aria-hidden="true"
-  >
-  </div>
+  ></div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

@@ -4,11 +4,11 @@ import NewsSVG from '@/assets/images/news.svg'
 import CalenderSVG from '@/assets/images/calendar.svg'
 import BookSVG from '@/assets/images/book-open.svg'
 import UserSVG from '@/assets/images/user.svg'
-import contactSVG from '/src/assets/images/contact.svg';
-import MenuElement from '@/components/menu-element.vue'
-import MenuLanguageButton from '@/components/menu-language-button.vue'
+import contactSVG from '/src/assets/images/contact.svg'
+import MenuElement from '@/components/menuBar/menu-element.vue'
+import MenuLanguageButton from '@/components/menuBar/menu-language-button.vue'
 import { useMenuBarStore } from '@/stores/useMenuBarStore'
-import BurgerMenu from '@/components/BurgerMenu.vue'
+import BurgerMenu from '@/components/menuBar/BurgerMenu.vue'
 import BurgerMenuSVG from '@/assets/images/burger-menu.svg'
 
 const store = useMenuBarStore()
@@ -48,7 +48,11 @@ const menuBarClasses = computed(() => ({
 </script>
 
 <template>
-  <header v-bind:class="menuBarClasses" id="menubar"  class="d-flex justify-content-between align-items-center p-3 m-auto mt-2">
+  <header
+    v-bind:class="menuBarClasses"
+    id="menubar"
+    class="d-flex justify-content-between align-items-center p-3 m-auto mt-2"
+  >
     <p id="menu-team-name">Baller Los</p>
 
     <nav class="menu-element-container">
@@ -62,9 +66,7 @@ const menuBarClasses = computed(() => ({
           :target-id="item.targetId"
           :tabIndex="index + 1"
         />
-        <BurgerMenu
-          :svg="BurgerMenuSVG"
-        />
+        <BurgerMenu :svg="BurgerMenuSVG" />
         <MenuLanguageButton />
       </ul>
     </nav>
@@ -84,7 +86,7 @@ const menuBarClasses = computed(() => ({
   }
 }
 
-@media (min-width:768px) and (max-width: 992px) {
+@media (min-width: 768px) and (max-width: 992px) {
   .menu-bar {
     font-size: 1rem;
   }

@@ -1,24 +1,39 @@
 <script setup lang="ts">
-import i18n, { loadLocaleMessages } from '@/i18n'
+import i18n, { setLanguage, setLanguageToBrowserLanguage } from '@/i18n'
 import { computed, ref, onMounted, onUnmounted } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 import germany from '@/assets/flag/germany_round.svg'
 import england from '@/assets/flag/england_round.svg'
 
-const selectedLanguage = ref(i18n.global.locale)
+const selectedLanguage = ref('')
+const isMenuVisible = ref(false)
+const router = useRouter()
+const route = useRoute()
 
-const changeLanguage = async (locale: string) => {
-  selectedLanguage.value = locale
-  toggleMenu()
-  await loadLocaleMessages(locale)
+async function setVueLanguage() {
+  const lang: string | null = typeof route.query.lang === 'string' ? route.query.lang : null
+  if (lang == 'null' || lang == null) {
+    await setLanguageToBrowserLanguage()
+    return
+  }
+  await setLanguage(lang)
 }
 
-const isMenuVisible = ref(false)
+const changeLanguage = async (lang: string) => {
+  await router.push({
+    path: route.path,
+    query: { ...route.query, lang }
+  })
+  await setVueLanguage()
+  selectedLanguage.value = lang
+  toggleMenu()
+}
 
 const currentFlag = computed(() => {
   return {
     flag: selectedLanguage.value === 'de' ? germany : england,
     language: selectedLanguage.value
-  };
+  }
 })
 
 const toggleMenu = (): void => {
@@ -36,9 +51,9 @@ const handleKeydown = (event: KeyboardEvent) => {
     event.preventDefault()
 
     const currentLanguage = selectedLanguage.value
-    console.log(currentLanguage);
-    const currentIndex = languages.findIndex(lang => lang.code === currentLanguage)
-    console.log(currentIndex);
+    console.log(currentLanguage)
+    const currentIndex = languages.findIndex((lang) => lang.code === currentLanguage)
+    console.log(currentIndex)
     const nextIndex = (currentIndex + 1) % languages.length
 
     changeLanguage(languages[nextIndex].code)
@@ -49,6 +64,10 @@ const languages = [
   { code: 'de', flag: germany, altText: 'Deutschland' },
   { code: 'en', flag: england, altText: 'England' }
 ]
+
+setVueLanguage().then(() => {
+  selectedLanguage.value = i18n.global.locale
+})
 
 const dropdownRef = ref<HTMLDivElement | null>(null)
 
@@ -73,16 +92,22 @@ onMounted(() => {
 
 <template>
   <li class="language-drop-box" tabindex="5" @keydown="handleKeydown">
-    <div class="language-drop-box-container dropdown"
-         ref="dropdownRef"
-         id="language-drop-box-container"
-         aria-haspopup="true"
-         :aria-label="$t('menuBar.aria-label.language')"
+    <div
+      class="language-drop-box-container dropdown"
+      ref="dropdownRef"
+      id="language-drop-box-container"
+      aria-haspopup="true"
+      :aria-label="$t('menuBar.aria-label.language')"
     >
       <component :is="currentFlag.flag" @click="toggleMenu" />
       <div v-if="isMenuVisible" class="language-drop-box-select pt-1">
         <div class="language-drop-box-selection">
-          <div class="w-100 h-100" v-for="language in languages" :title="language.altText" :key="language.code">
+          <div
+            class="w-100 h-100"
+            v-for="language in languages"
+            :title="language.altText"
+            :key="language.code"
+          >
             <component
               v-if="currentFlag.language != language.code"
               @click="changeLanguage(language.code)"
