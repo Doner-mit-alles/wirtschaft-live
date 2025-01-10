@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import TextAndImageTemplate from '@/components/TextAndImageContainer.vue'
 import BootstrapTemplate from '@/components/BootstrapTemplate.vue'
 import { useMenuBarStore } from '@/stores/useMenuBarStore'
 import { storeToRefs } from 'pinia'
@@ -7,6 +6,7 @@ import TextAndImageContainer from '@/components/TextAndImageContainer.vue'
 import HeadlineContainer from '@/components/HeadlineContainer.vue'
 import MenuBar from '@/components/menuBar/menu-bar.vue'
 import SpacingTool from '@/components/SpacingTool.vue'
+import FooterContainer from '@/components/FooterContainer.vue'
 
 const statusStore = useMenuBarStore()
 const { isMinimised } = storeToRefs(statusStore)
@@ -27,19 +27,7 @@ const targets = [
     <SpacingTool height="2rem"></SpacingTool>
     <TextAndImageContainer />
   </main>
-  <footer class="container mt-5 px-5 px-md-5 mb-4" id="footer"></footer>
-  <!--  <BootstrapTemplate v-if="false" />-->
-  <!--  <div class="main-container">-->
-  <!--    <Menu />-->
-  <!--    <div v-bind:class="{ 'app-container-margin': isMinimised }">-->
-  <!--      <div id="target1" class="test-container">-->
-  <!--        <p>{{ $t('welcome') }}</p>-->
-  <!--      </div>-->
-  <!--      <div v-for="(target, index) in targets" :key="index" :id="target.id" class="test-container">-->
-  <!--        <p>{{ target.text }}</p>-->
-  <!--      </div>-->
-  <!--    </div>-->
-  <!--  </div>-->
+    <FooterContainer />
 </template>
 <style scoped>
 .main-container {

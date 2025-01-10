@@ -24,5 +24,20 @@
     "headline": {
       "content": "Ein Schülerunternehmen der BBS 1 Lüneburg mit <span style='color: #4BC3B6FF;'>Meerwert</span>"
     }
+  },
+  "footer": {
+    "street": "Spillbrunnenweg 1",
+    "streetTitle": "Adresse der BBS 1 Lüneburg auf Google Maps anzeigen",
+    "location": "Lüneburg",
+    "zipCode": "21337",
+    "phone": "04131 99220600",
+    "phoneArialLabel": "BBS 1 Lüneburg telefonisch kontaktieren",
+    "phoneTitle": "title",
+    "mail": "info@bbs1-lueneburg.de",
+    "mailTitle": "E-Mail an info@bbs1-lueneburg.de senden",
+    "impressum": "Impressum & Datenschutz",
+    "impressumTitle": "Zum Impressum und dem Datenschutz",
+    "instagramTitle": "Instagram-Profil der BBS 1 Lüneburg",
+    "instagramAriaLabel": "Instagram-Profil der BBS 1 Lüneburg öffnen"
   }
 }
