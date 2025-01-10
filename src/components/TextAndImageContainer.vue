@@ -5,8 +5,12 @@
     <div class="col-md-4 col-12 bg-primary text-white text-center p-0 border-radius-20-left">
       <img
         class="object-fit-cover w-100 h-100 border-radius-20-left"
-        :alt="$t('containers.aboutUs.imageAltText')"
-        src="@/assets/images/placeholder.png"
+        srcset="
+              @/assets/images/about-us-small.jpeg 600w,
+              @/assets/images/about-us.jpeg 1200w"
+        sizes="(max-width: 600px) 100vw, 50vw"
+        :alt="$t('container.aboutUs.imageAltText')"
+        src="@/assets/images/about-us.jpeg"
       />
     </div>
     <div
@@ -18,8 +22,8 @@
     <div
       class="col-md-7 col-12 bg-primary text-white text-left p-4 pl-3 p-md-5 border-radius-20-right"
     >
-      <h2 class="font-bold">{{ $t('containers.aboutUs.headline') }}</h2>
-      <div v-html="$t('containers.aboutUs.content')"></div>
+      <h2 class="font-bold">{{ $t('container.aboutUs.headline') }}</h2>
+      <div v-html="$t('container.aboutUs.content')"></div>
     </div>
   </div>
 </template>
