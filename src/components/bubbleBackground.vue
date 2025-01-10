@@ -8,6 +8,7 @@
 
 <script lang="ts">
 import { defineComponent, ref, reactive, onMounted, onUpdated } from 'vue';
+import type { CSSProperties } from 'vue'; 
 
 export default defineComponent({
   name: 'RandomImageBehindText',
@@ -43,7 +44,7 @@ export default defineComponent({
     ]);
 
     // Generate random style for each image
-    const getRandomStyle = () => {
+    const getRandomStyle = (): CSSProperties => {
       if (!containerRef.value) return {};
 
       const containerWidth: number = containerRef.value.offsetWidth;
