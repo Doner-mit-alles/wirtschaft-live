@@ -15,6 +15,7 @@ import BubbleBackground from './components/bubbleBackground.vue'
   </main>
   <footer class="container mt-5 px-5 px-md-5 mb-4" id="footer">
   </footer>
-
+</template>
 <style scoped>
+
 </style>

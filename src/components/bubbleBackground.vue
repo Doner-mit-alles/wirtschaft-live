@@ -1,137 +1,116 @@
 <template>
-  <div class="bcontainer">
-    <!-- Left Column -->
-    <div class="column left">
-      <img 
-        v-for="(image, index) in leftImages" 
-        :key="'left-image-' + index" 
-        src = "../assets/bubbles.png"
-        :style="image.style" 
-        class="image"
-      />
-    </div>
-    
-    <!-- Right Column -->
-    <div class="column right">
-      <img 
-        v-for="(image, index) in rightImages" 
-        :key="'right-image-' + index" 
-        src = "../assets/bubbles.png"
-        :style="image.style" 
-        class="image"
-      />
+  <div class="bubble-container" ref="containerRef">
+    <div v-for="(image, index) in images" :key="index" class="random-image" :style="getRandomStyle()">
+      <img src="../assets/bubbles.png" :alt="image.alt" />
     </div>
   </div>
 </template>
 
-<script>
-export default {
-  data() {
+<script lang="ts">
+import { defineComponent, ref, reactive, onMounted, onUpdated } from 'vue';
+
+export default defineComponent({
+  name: 'RandomImageBehindText',
+  setup() {
+    const containerRef = ref<HTMLElement | null>(null);
+
+    const updateFullPageDivHeight = () => {
+      if (containerRef.value) {
+        containerRef.value.style.height = `${document.documentElement.scrollHeight}px`;
+      }
+    };
+
+    const images = reactive([
+      { src: 'bubbles.png', alt: 'Random Image' },
+      { src: 'bubbles.png', alt: 'Random Image' },
+      { src: 'bubbles.png', alt: 'Random Image' },
+      { src: 'bubbles.png', alt: 'Random Image' },
+      { src: 'bubbles.png', alt: 'Random Image' },
+      { src: 'bubbles.png', alt: 'Random Image' },
+      { src: 'bubbles.png', alt: 'Random Image' },
+      { src: 'bubbles.png', alt: 'Random Image' },
+      { src: 'bubbles.png', alt: 'Random Image' },
+      { src: 'bubbles.png', alt: 'Random Image' },
+      { src: 'bubbles.png', alt: 'Random Image' },
+      { src: 'bubbles.png', alt: 'Random Image' },
+      { src: 'bubbles.png', alt: 'Random Image' },
+      { src: 'bubbles.png', alt: 'Random Image' },
+      { src: 'bubbles.png', alt: 'Random Image' },
+      { src: 'bubbles.png', alt: 'Random Image' },
+      { src: 'bubbles.png', alt: 'Random Image' },
+      { src: 'bubbles.png', alt: 'Random Image' },
+      { src: 'bubbles.png', alt: 'Random Image' },
+    ]);
+
+    // Generate random style for each image
+    const getRandomStyle = () => {
+      if (!containerRef.value) return {};
+
+      const containerWidth: number = containerRef.value.offsetWidth;
+      const containerHeight: number = containerRef.value.offsetHeight;
+
+      // Set random position within container bounds
+      const size: number = Math.random() * 250 + 50 - 50;
+      const rotation: number = Math.random() * 20 + 5 - 5;
+      const randomX: number = Math.random() * (containerWidth - size); // Adjust image size as needed
+      const randomY: number = Math.random() * (containerHeight - size); // Adjust image size as needed
+
+      return {
+        position: 'absolute',
+        left: `${randomX}px`,
+        top: `${randomY}px`,
+        rotate: `${rotation}deg`,
+        width: `${size}px`,
+        objectFit: 'cover',
+        zIndex: -1,
+      };
+    };
+
+    // Handle window resize to adjust the layout
+    onMounted(() => {
+      updateFullPageDivHeight();
+      window.addEventListener('resize', updateFullPageDivHeight);
+
+      const resizeObserver = new ResizeObserver(() => {
+        // Logic to handle container resize can be added here
+      });
+      if (containerRef.value) {
+        resizeObserver.observe(containerRef.value);
+      }
+    });
+
+    onUpdated(() => {
+      updateFullPageDivHeight();
+    });
+
     return {
-      // Generate a list of random images (e.g., 10 images)
-      images: this.generateRandomImages(16),
-      leftColumnHeight: 0, // Tracks the height of the left column
-      rightColumnHeight: 0, // Tracks the height of the right column
+      containerRef,
+      images,
+      getRandomStyle,
     };
   },
-  computed: {
-    // Split the images into left and right columns
-    leftImages() {
-      return this.images.slice(0, Math.ceil(this.images.length / 2));
-    },
-    rightImages() {
-      return this.images.slice(Math.ceil(this.images.length / 2));
-    },
-  },
-  methods: {
-    // Function to generate random images with random styles
-    generateRandomImages(count) {
-      const images = [];
-      for (let i = 0; i < count; i++) {
-        images.push({
-          style: this.getRandomStyle(), // Randomize the position, size, and opacity
-        });
-      }
-      return images;
-    },
-    
-    // Function to generate random styles for images
-    getRandomStyle() {
-      return {
-        position: 'relative',
-        width: `${Math.random() * 50 + 150 }px`,  // Random width (50px to 150px)
-        opacity: `${Math.random() * 0.5 + 0.5}`, // Random opacity (0.5 to 1)
-        transform: `rotate(${Math.random() * 7 - 7}deg)`, // Random rotation (0 to 360 degrees)
-      };
-    },
-
-    // Function to place images in random positions in columns without overlap
-    placeImages() {
-      this.leftImages.forEach((image) => {
-        let position = this.getNextAvailablePosition('left');
-        image.style.top = position.top + 'px';
-        this.leftColumnHeight = position.top + image.style.height.slice(0, -2); // Update the height of the left column
-      });
-
-      this.rightImages.forEach((image) => {
-        let position = this.getNextAvailablePosition('right');
-        image.style.top = position.top + 'px';
-        this.rightColumnHeight = position.top + image.style.height.slice(0, -2); // Update the height of the right column
-      });
-    },
-
-    // Function to calculate the next available position
-    getNextAvailablePosition(column) {
-      let positionTop = 0;
-      if (column === 'left') {
-        positionTop = this.leftColumnHeight;
-      } else if (column === 'right') {
-        positionTop = this.rightColumnHeight;
-      }
-      return { top: positionTop };
-    },
-  },
-
-  // Call placeImages when the component is mounted
-  mounted() {
-    this.placeImages();
-  },
-};
+});
 </script>
 
 <style scoped>
-/* Main container to hold the two columns */
-.bcontainer {
-  display: flex;
-  justify-content: center;  /* Center the columns horizontally */
-  align-items: flex-start;  /* Align columns to the top */
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-}
-
-/* Style for the image columns */
-.column {
+.bubble-container {
   position: absolute;
-  width: 15%;   /* Each column takes up 45% of the width */
-  height: 90%;  /* Full height of the container */
-  padding: 1em;
-  margin-left: 10%;
-  margin-right: 10%;
-}
-
-/* Left and right column specific styles */
-.left {
+  width: 95%;
+  overflow: hidden;
+  top: 0;
   left: 0;
+  margin: 0;
+  padding: 0;
+  z-index: -1;
 }
 
-.right {
-  right: 0;
-}
-
-/* Style for each image */
-.image {
+.random-image {
   position: absolute;
-  display: block;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 </style>
