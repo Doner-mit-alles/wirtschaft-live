@@ -22,9 +22,12 @@ import InstagramElement from '@/assets/icons/instagram.svg'
     >
       <h2 class="font-bold">{{ $t('containers.aboutUs.headline') }}</h2>
       <div v-html="$t('containers.aboutUs.content')"></div>
-      <p>Ihr wollt noch mehr erfahren? <br> Besucht uns auch gerne auf <b>Social Media!</b></p>
-      <div class="col-3 d-flex instagram align-items-center mb-2">
-        <div class="icon me-0 me-md-2 position-sticky">
+      <div class="col-3 d-flex instagram align-items-end w-100 mb-2 justify-content-between">
+        <p class="social-media-text mt-4 mb-0">
+          Ihr wollt noch mehr erfahren? <br />
+          Besucht uns auch gerne auf <b>Social Media!</b>
+        </p>
+        <div class="icon me-0 me-md-2 gentle-hover-shake">
           <a
             :aria-label="$t('footer.instagramAriaLabel')"
             :title="$t('footer.instagramTitle')"
@@ -52,6 +55,37 @@ import InstagramElement from '@/assets/icons/instagram.svg'
         margin-left: 0.9rem;
       }
     }
+  }
+}
+
+.instagram a {
+  color: white;
+
+}
+
+.gentle-hover-shake:hover {
+  animation: tilt-shaking 0.25s infinite;
+}
+
+.instagram a:hover {
+  color: orangered;
+}
+
+@keyframes tilt-shaking {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }
 </style>
