@@ -69,20 +69,6 @@ import PhoneElement from '@/assets/icons/phone.svg'
               </a>
             </div>
           </div>
-
-          <div class="vertical-line d-xl-block d-none" aria-hidden="true"></div>
-
-          <div class="col-2 d-flex instagram align-items-center mb-2">
-            <div class="icon me-0 me-md-2">
-              <a href="https://www.instagram.com/bbs1lg/"
-                 :aria-label="$t('footer.instagramAriaLabel')"
-                 :title="$t('footer.instagramTitle')"
-                 tabindex="104"
-              >
-                <component :is="InstagramElement" />
-              </a>
-            </div>
-          </div>
         </div>
       </div>
     </div>
