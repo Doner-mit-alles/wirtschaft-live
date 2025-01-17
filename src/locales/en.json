@@ -39,9 +39,14 @@
     }
   },
   "footer": {
+    "street": "Spillbrunnenweg 1",
     "streetTitle": "Show the address of BBS 1 Lüneburg on Google Maps",
+    "location": "Lüneburg",
+    "zipCode": "21337",
+    "phone": "04131 99220600",
     "phoneArialLabel": "Contact BBS 1 Lüneburg by phone",
     "phoneTitle": "phone number",
+    "mail": "info@bbs1-lueneburg.de",
     "mailTitle": "Send e-mail to info@bbs1-lueneburg.de",
     "impressum": "Imprint & Privacy Policy",
     "impressumTitle": "Go to imprint and data protection",
