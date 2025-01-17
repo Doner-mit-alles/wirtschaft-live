@@ -23,6 +23,13 @@
     },
     "headline": {
       "content": "Ein Schülerunternehmen der BBS 1 Lüneburg mit <span style='color: #4BC3B6FF;'>Meerwert</span>"
+    },
+    "gamingRules": {
+      "imageAltText": "Bild, welches die Spielunterlage aufzeigt. Es gibt Baustämme und Felder im Wasser, die mit Fischen aufgezeigt werden. Die Spielunterlage zeigt vom Start bis zum Ziel",
+      "rulesHeadline": "REGELN",
+      "rulesSecondHeadline": "Spielanleitung für \"Maximal sechs\"",
+      ""
+
     }
   }
 }

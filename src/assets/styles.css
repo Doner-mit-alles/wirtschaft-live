@@ -18,6 +18,12 @@ h2 {
   font-weight: 800;
 }
 
+h6 {
+  font-weight: 800;
+  font-size: 18px;
+
+}
+
 :root {
   --bs-primary: #272727;
   --bs-primary-rgb: 39, 39, 39;
@@ -44,7 +50,6 @@ h2 {
 
 @media (max-width: 768px) {
   .border-radius-20-right {
-    color: red;
     border-top-right-radius: 0;
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
@@ -58,7 +63,6 @@ h2 {
 
 @media (max-width: 768px) {
   .border-radius-20-left {
-    color: red;
     border-bottom-left-radius: 0;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
