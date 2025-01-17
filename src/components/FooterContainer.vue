@@ -13,7 +13,7 @@ import PhoneElement from '@/assets/icons/phone.svg'
         <div class="row d-md-flex ps-2 ps-md-2 d-block justify-content-lg-center justify-content-md-evenly mb-2 mt-3">
           <div class="col-2 d-flex align-items-center mb-2">
             <div class="text">
-              <a href="https://www.google.com/maps/place/Berufsbildende+Schulen+I/@53.2478897,10.423409,16z/data=!3m1!4b1!4m6!3m5!1s0x47b1ddd7656204bb:0xf16f2a9adcf3142f!8m2!3d53.2478897!4d10.423409!16s%2Fg%2F1tfc1234?entry=ttu&g_ep=EgoyMDI1MDEwOC4wIKXMDSoASAFQAw%3D%3D"
+              <a href="https://maps.apple.com/maps/place/Berufsbildende+Schulen+I/@53.2478897,10.423409,16z/data=!3m1!4b1!4m6!3m5!1s0x47b1ddd7656204bb:0xf16f2a9adcf3142f!8m2!3d53.2478897!4d10.423409!16s%2Fg%2F1tfc1234?entry=ttu&g_ep=EgoyMDI1MDEwOC4wIKXMDSoASAFQAw%3D%3D"
                  :aria-label="$t('footer.streetTitle')"
                  :title="$t('footer.streetTitle')"
                  class="d-flex"
