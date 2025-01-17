@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import GamingElement from '@/assets/images/gaming-element.svg'
+import GamingElement from '@/assets/icons/gaming-element.svg'
 </script>
 
 <template>

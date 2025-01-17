@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, computed, watch } from 'vue'
-import NewsSVG from '@/assets/images/news.svg'
-import CalenderSVG from '@/assets/images/calendar.svg'
-import BookSVG from '@/assets/images/book-open.svg'
-import UserSVG from '@/assets/images/user.svg'
-import contactSVG from '/src/assets/images/contact.svg'
+import NewsSVG from '@/assets/icons/news.svg'
+import CalenderSVG from '@/assets/icons/calendar.svg'
+import BookSVG from '@/assets/icons/book-open.svg'
+import UserSVG from '@/assets/icons/user.svg'
+import contactSVG from '/src/assets/icons/contact.svg'
 import MenuElement from '@/components/menuBar/menu-element.vue'
 import MenuLanguageButton from '@/components/menuBar/menu-language-button.vue'
 import { useMenuBarStore } from '@/stores/useMenuBarStore'
 import BurgerMenu from '@/components/menuBar/BurgerMenu.vue'
-import BurgerMenuSVG from '@/assets/images/burger-menu.svg'
+import BurgerMenuSVG from '@/assets/icons/burger-menu.svg'
 
 const store = useMenuBarStore()
 const isMinimised = ref<boolean>(false)

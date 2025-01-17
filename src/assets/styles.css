@@ -55,11 +55,32 @@ a {
 }
 
 :root {
-  --primary-color: #272727;
-  --secondary-color: #ffffff;
-  --third-color: #494949;
-  --forth-color: #20639b;
-  --fifth-color: #4bc3b6;
+    --primary-color: #272727;
+    --secondary-color: #ffffff;
+    --third-color: #494949;
+    --forth-color: #20639b;
+    --fifth-color: #4bc3b6;
+    --primary-shadow: 4px 8px 6px #000000;
+}
+
+h1, h2 {
+    font-family: Montserrat, sans-serif;
+    font-weight: 900; /* Black */
+}
+
+h2 {
+    @media (max-width: 576px) {
+        font-size: 1rem;
+    }
+}
+
+a {
+    transition: opacity 0.3s ease;
+}
+
+a:hover {
+    color: turquoise;
+    opacity: 0.5;
 }
 
 :root {
