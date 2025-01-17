@@ -14,18 +14,24 @@
         <h2>{{ $t('containers.gamingRules.rulesHeadline') }}</h2>
         <h6>{{ $t('containers.gamingRules.rulesSecondHeadline') }}</h6>
         <p>
-          <span class="fw-bold">Spieleranzahl:</span> 2 bis 6 Spieler <br />
-          <span class="fw-bold">Alter:</span> 12 bis 99 Jahre <br />
-          <span class="fw-bold">Spieldauer:</span> 10 bis 15 Minuten<br />
+          <span class="fw-bold">{{ $t('containers.gamingRules.numberOfPlayersLabel')}}</span> {{ $t('containers.gamingRules.numberOfPlayers')}} <br />
+          <span class="fw-bold">{{ $t('containers.gamingRules.ageLabel')}}</span> {{ $t('containers.gamingRules.age')}}<br />
+          <span class="fw-bold">{{ $t('containers.gamingRules.timeLabel')}}</span> {{ $t('containers.gamingRules.time')}}<br />
         </p>
-        <h6>Spielmaterialien:</h6>
+        <h6>{{ $t('containers.gamingRules.gameMaterials')}}</h6>
         <ul>
           <li>
-            Spielbrett mit Feldern (Fragefelder mit Fragezeichen, Ereignisfelder mit Ausrufezeichen)
+            {{ $t('containers.gamingRules.gameMaterialsOne')}}
           </li>
-          <li>Spielfiguren für jeden Spieler</li>
-          <li>Fragen- und Ereigniskarten</li>
-          <li>Würfel</li>
+          <li>
+            {{ $t('containers.gamingRules.gameMaterialsTwo')}}
+          </li>
+          <li>
+            {{ $t('containers.gamingRules.gameMaterialsThree')}}
+          </li>
+          <li>
+            {{ $t('containers.gamingRules.gameMaterialsFourth')}}
+          </li>
         </ul>
         <h6>Spielvorbereitung:</h6>
         <ol>

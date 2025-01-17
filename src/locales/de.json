@@ -28,8 +28,17 @@
       "imageAltText": "Bild, welches die Spielunterlage aufzeigt. Es gibt Baustämme und Felder im Wasser, die mit Fischen aufgezeigt werden. Die Spielunterlage zeigt vom Start bis zum Ziel",
       "rulesHeadline": "REGELN",
       "rulesSecondHeadline": "Spielanleitung für \"Maximal sechs\"",
-      ""
-
+      "age": "12 bis 99 Jahre",
+      "ageLabel": "Alter:",
+      "time": "10 bis 15 Minuten",
+      "timeLabel": "Spieldauer:",
+      "numberOfPlayers": "2 bis 6 Spieler",
+      "numberOfPlayersLabel": "Spieleranzahl:",
+      "gameMaterials": "Spielmaterialien:",
+      "gameMaterialsOne": "Spielbrett mit Feldern (Fragefelder mit Fragezeichen, Ereignisfelder mit Ausrufezeichen)",
+      "gameMaterialsTwo": "Spielfiguren für jeden Spieler",
+      "gameMaterialsThree": "Fragen- und Ereigniskarten",
+      "gameMaterialsFourth": "Würfel"
     }
   }
 }
