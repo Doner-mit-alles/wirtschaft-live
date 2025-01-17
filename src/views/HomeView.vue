@@ -6,6 +6,7 @@ import TextAndImageContainer from '@/components/TextAndImageContainer.vue'
 import HeadlineContainer from '@/components/HeadlineContainer.vue'
 import MenuBar from '@/components/menuBar/menu-bar.vue'
 import SpacingTool from '@/components/SpacingTool.vue'
+import ContactForm from '@/components/ContactForm.vue'
 import FooterContainer from '@/components/FooterContainer.vue'
 
 const statusStore = useMenuBarStore()
@@ -21,11 +22,12 @@ const targets = [
 <template>
   <menu-bar />
   <main class="container mt-5 px-5 px-lg-5 px-md-4">
-    <!--    BootstrapTemplate wieder reinsetzen-->
+    <!--    BootstrapTemplate wieder raus-->
     <BootstrapTemplate />
     <HeadlineContainer />
     <SpacingTool height="2rem"></SpacingTool>
     <TextAndImageContainer />
+    <ContactForm />
   </main>
     <FooterContainer />
 </template>

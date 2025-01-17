@@ -5,7 +5,7 @@ import GamingElement from '@/assets/icons/gaming-element.svg'
 <template>
   <div class="row mb-4">
     <div class="col-12 text-center">
-      <h1 class="headline" v-html="$t('containers.headline.content')"></h1>
+      <h1 class="headline" v-html="$t('container.headline.content')"></h1>
     </div>
     <div class="col-12 text-center mt-4">
       <div class="d-flex justify-content-center icons-wrapper">

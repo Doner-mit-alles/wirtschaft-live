@@ -15,7 +15,7 @@
       "burgerMenuAltText": "Mobile Menu Trigger"
     }
   },
-  "containers": {
+  "container": {
     "aboutUs": {
       "imageAltText": "Image with Board Game Elements",
       "headline": "ABOUT US...",
@@ -23,6 +23,19 @@
     },
     "headline": {
       "content": "A student-run business from BBS 1 Lüneburg with <span>extra value</span>"
+    },
+    "contactForm": {
+      "headline": "Contact Form",
+      "inputFields": {
+        "surname": "First Name*",
+        "lastname": "Last Name*",
+        "email": "Email*",
+        "subject": "Subject",
+        "message": "Message*"
+      },
+      "infoText": "* Fields marked with * are required!",
+      "submit": "Submit",
+      "privacyCheckbox": "I have read and agree to the <a href=\"{url}\">Privacy Policy</a>"
     }
   },
   "footer": {

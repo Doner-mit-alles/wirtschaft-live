@@ -18,11 +18,40 @@ h2 {
   font-weight: 800;
 }
 
+/*Bootstrap Variablen*/
 :root {
-  --bs-primary: #272727;
-  --bs-primary-rgb: 39, 39, 39;
-  --bs-secondary: #4bc3b6;
-  --bs-secondary-rgb: 75, 195, 182;
+    --bs-primary: #272727;
+    --bs-primary-rgb: 39, 39, 39;
+    --bs-secondary: #4BC3B6;
+    --bs-secondary-rgb: 75, 195, 182;
+    --border-radius: 20px;
+    --btn-hover-border-color: #4BC3B6;
+}
+
+:root {
+    --linear-gradiant-element-vertical: linear-gradient(#4BC3B6, #2C86A5);
+    --linear-gradiant-element-horizontal: linear-gradient(to right, #4BC3B6, #2C86A5);
+}
+
+a {
+    color: #4BC3B6;
+}
+
+.btn-primary {
+    background: var(--linear-gradiant-element-horizontal);
+    padding: 0.625rem 1.25rem;
+    color: white;
+    font-size: 1rem;
+    text-shadow: 0 0 7px rgba(0, 0, 0, 1);
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    border-color: transparent;
+}
+
+.btn-primary:hover {
+    border-color: var(--btn-hover-border-color);
+    background: none;
 }
 
 :root {
@@ -59,17 +88,16 @@ a:hover {
 }
 
 .border-radius-20-right {
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
 }
 
 @media (max-width: 768px) {
-  .border-radius-20-right {
-    color: red;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-  }
+    .border-radius-20-right {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: var(--border-radius);
+        border-bottom-left-radius: var(--border-radius);
+    }
 }
 
 .border-radius-20-left {
@@ -78,10 +106,9 @@ a:hover {
 }
 
 @media (max-width: 768px) {
-  .border-radius-20-left {
-    color: red;
-    border-bottom-left-radius: 0;
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
-  }
+    .border-radius-20-left {
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+    }
 }

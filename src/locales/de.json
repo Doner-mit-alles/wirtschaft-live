@@ -15,7 +15,7 @@
       "burgerMenuAltText": "Mobiler Menü Auslöser"
     }
   },
-  "containers": {
+  "container": {
     "aboutUs": {
       "imageAltText": "Bild mit Spielbausteinen",
       "headline": "WIR ÜBER UNS…",
@@ -23,6 +23,19 @@
     },
     "headline": {
       "content": "Ein Schülerunternehmen der BBS 1 Lüneburg mit <span style='color: #4BC3B6FF;'>Meerwert</span>"
+    },
+    "contactForm": {
+      "headline": "Kontaktformular",
+      "inputFields": {
+        "surname": "Vorname*",
+        "lastname": "Nachname*",
+        "email": "E-Mail*",
+        "subject": "Betreff",
+        "message": "Nachricht*"
+      },
+      "infoText": "* Mit * markierte Felder sind Pflichtfelder!",
+      "submit": "Senden",
+      "privacyCheckbox": "Ich habe die <a href=\"{url}\">Datenschutzerklärung</a> gelesen und bin einverstanden"
     }
   },
   "footer": {
