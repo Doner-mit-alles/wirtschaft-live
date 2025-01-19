@@ -37,7 +37,6 @@ const currentFlag = computed(() => {
 })
 
 const toggleMenu = (): void => {
-  console.log("Hi")
   isMenuVisible.value = !isMenuVisible.value
   const element = document.getElementById('language-drop-box-container')
   if (isMenuVisible.value && element) {
