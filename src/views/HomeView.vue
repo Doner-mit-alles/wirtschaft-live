@@ -33,21 +33,4 @@ const targets = [
 
 </template>
 <style scoped>
-.main-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.test-container {
-  width: 500px;
-  height: 400px;
-  margin: 25px;
-  border: solid var(--primary-color);
-}
-
-.app-container-margin {
-  margin-top: 45px;
-}
 </style>
