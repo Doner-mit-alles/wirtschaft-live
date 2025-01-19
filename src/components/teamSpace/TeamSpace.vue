@@ -1,23 +1,20 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="row mb-4 team border-radius-20" >
+  <div class="row mb-4 team border-radius-20">
     <div class="col-md-12 col-12 text-center p-3">
-      <div class="row g-3 m-1" style="display: flex; justify-content: center">
+      <div class="row g-3 m-1">
         <img
           src="@/assets/images/classPhotoLogo.png"
           class="class-photo-image border-radius-20"
-          alt=""
+          :alt="$t('teamContainer.classPhotoAlt')"
         />
       </div>
       <div class="row g-3 m-1">
         <div class="col-lg-12 col-12 text-light p-3 gradient-box-color-transition">
-          <h2 style="text-align: left">{{$t('teamContainer.title') }}</h2>
-          <p style="text-align: left; font-size: 18px; margin-top: 30px">
-            At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
-            sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
-            consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
-            magna aliquyam erat, sed diam volup
+          <h2 style="text-align: left">{{ $t('teamContainer.title') }}</h2>
+          <p class="team-content">
+            {{ $t('teamContainer.content') }}
           </p>
         </div>
       </div>
@@ -54,11 +51,6 @@
   box-shadow: var(--primary-shadow);
 }
 
-.gradient-box {
-  //border: solid 1px var(--fifth-color);
-  //background-color: #acacac;
-}
-
 .gradient-box-color-transition {
   position: relative;
   box-sizing: border-box;
@@ -80,5 +72,11 @@
     border-radius: inherit;
     background: linear-gradient(to right, #2c86a5 29%, #4bc3b6 64%);
   }
+}
+
+.team-content {
+  text-align: left;
+  font-size: 18px;
+  margin-top: 30px;
 }
 </style>
