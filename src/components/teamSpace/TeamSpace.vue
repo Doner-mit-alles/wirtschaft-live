@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="row mb-4 border-radius-20" id="team">
+  <div class="row mb-4 team border-radius-20" >
     <div class="col-md-12 col-12 text-center p-3">
       <div class="row g-3 m-1" style="display: flex; justify-content: center">
         <img
@@ -26,12 +26,8 @@
 </template>
 
 <style lang="scss" scoped>
-#team {
+.team {
   border: 5px solid var(--fifth-color);
-}
-
-.test {
-  background-color: #d9d9d9;
 }
 
 .logo-image {
