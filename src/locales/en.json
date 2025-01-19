@@ -38,6 +38,10 @@
       "privacyCheckbox": "I have read and agree to the <a href=\"{url}\">Privacy Policy</a>"
     }
   },
+  "teamContainer": {
+    "title": "The Team",
+    "content": "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam volup"
+  },
   "footer": {
     "street": "Spillbrunnenweg 1",
     "streetTitle": "Show the address of BBS 1 Lüneburg on Google Maps",

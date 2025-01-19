@@ -1,15 +1,18 @@
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <div class="row mb-4  border-radius-20" id="team">
+  <div class="row mb-4 border-radius-20" id="team">
     <div class="col-md-12 col-12 text-center p-3">
-      <div class="row g-3 m-1" style="display: flex; justify-content: center;">
-        <img src="@/assets/images/classPhotoLogo.png" class="class-photo-image border-radius-20" alt="">
+      <div class="row g-3 m-1" style="display: flex; justify-content: center">
+        <img
+          src="@/assets/images/classPhotoLogo.png"
+          class="class-photo-image border-radius-20"
+          alt=""
+        />
       </div>
       <div class="row g-3 m-1">
         <div class="col-lg-12 col-12 text-light p-3 gradient-box-color-transition">
-          <h2 style="text-align: left">Das Team</h2>
+          <h2 style="text-align: left">{{$t('teamContainer.title') }}</h2>
           <p style="text-align: left; font-size: 18px; margin-top: 30px">
             At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
             sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
@@ -23,12 +26,12 @@
 </template>
 
 <style lang="scss" scoped>
-#team{
+#team {
   border: 5px solid var(--fifth-color);
 }
+
 .test {
   background-color: #d9d9d9;
-
 }
 
 .logo-image {
@@ -45,7 +48,7 @@
   }
 }
 
-.class-photo-image{
+.class-photo-image {
   width: 100%;
 }
 
@@ -55,7 +58,7 @@
   box-shadow: var(--primary-shadow);
 }
 
-.gradient-box{
+.gradient-box {
   //border: solid 1px var(--fifth-color);
   //background-color: #acacac;
 }
