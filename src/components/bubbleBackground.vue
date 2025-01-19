@@ -1,22 +1,16 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
+import { Bubble } from '@/classes/bubble'
 
-const bubbles = ref<{ top: number; left: number; size: number; rotation: number }[]>([])
+const bubbles = ref<Bubble[]>([])
 
 
-const numberOfBubbles = Math.floor(Math.random() * 31) + 30
+const numberOfBubbles = Math.floor(Math.random() * 21) + 30;
 
 
 function generateRandomBubbles() {
   bubbles.value = Array.from({ length: numberOfBubbles }, () => {
-    const top = Math.random() * 100
-    const left = Math.random() * 100
-
-
-    const size = Math.random() * 120 + 60
-    const rotation = Math.random() * 180
-
-    return { top, left, size, rotation }
+    return new Bubble()
   })
 }
 
@@ -34,11 +28,11 @@ onMounted(() => {
         src="@/assets/bubbles.png"
         :style="{
           position: 'absolute',
-          top: bubble.top + '%',
-          left: bubble.left + '%',
-          width: bubble.size + 'px',
-          height: (bubble.size * 1.8) + 'px',
-          transform: `rotate(${bubble.rotation}deg)`
+          top: bubble.getTop() + '%',
+          left: bubble.getLeft() + '%',
+          width: bubble.getWidth() + 'px',
+          height: bubble.getHeight() + 'px',
+          transform: `rotate(${bubble.getRotation()}deg)`
         }"
         alt="bubble"
       />

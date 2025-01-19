@@ -21,7 +21,7 @@ const targets = [
 </script>
 
 <template>
-  <menu-bar />
+
   <main class="container mt-5 px-5 px-lg-5 px-md-4">
     <BubbleBackground>
       <HeadlineContainer />
@@ -30,7 +30,7 @@ const targets = [
       <ContactForm />
     </BubbleBackground>
   </main>
-  <FooterContainer />
+
 </template>
 <style scoped>
 .main-container {
