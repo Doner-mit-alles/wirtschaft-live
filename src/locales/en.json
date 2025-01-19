@@ -15,7 +15,7 @@
       "burgerMenuAltText": "Mobile Menu Trigger"
     }
   },
-  "containers": {
+  "container": {
     "aboutUs": {
       "imageAltText": "Image with Board Game Elements",
       "headline": "ABOUT US...",
@@ -23,6 +23,34 @@
     },
     "headline": {
       "content": "A student-run business from BBS 1 Lüneburg with <span>extra value</span>"
+    },
+    "contactForm": {
+      "headline": "Contact Form",
+      "inputFields": {
+        "surname": "First Name*",
+        "lastname": "Last Name*",
+        "email": "Email*",
+        "subject": "Subject",
+        "message": "Message*"
+      },
+      "infoText": "* Fields marked with * are required!",
+      "submit": "Submit",
+      "privacyCheckbox": "I have read and agree to the <a href=\"{url}\">Privacy Policy</a>"
     }
+  },
+  "footer": {
+    "street": "Spillbrunnenweg 1",
+    "streetTitle": "Show the address of BBS 1 Lüneburg on Google Maps",
+    "location": "Lüneburg",
+    "zipCode": "21337",
+    "phone": "04131 99220600",
+    "phoneArialLabel": "Contact BBS 1 Lüneburg by phone",
+    "phoneTitle": "phone number",
+    "mail": "info@bbs1-lueneburg.de",
+    "mailTitle": "Send e-mail to info@bbs1-lueneburg.de",
+    "impressum": "Imprint & Privacy Policy",
+    "impressumTitle": "Go to imprint and data protection",
+    "instagramTitle": "Instagram profile of BBS 1 Lüneburg",
+    "instagramAriaLabel": "Open the Instagram profile of BBS 1 Lüneburg"
   }
 }
