@@ -8,6 +8,7 @@ import MenuBar from '@/components/menuBar/menu-bar.vue'
 import SpacingTool from '@/components/SpacingTool.vue'
 import ContactForm from '@/components/ContactForm.vue'
 import FooterContainer from '@/components/FooterContainer.vue'
+import BubbleBackground from '@/components/bubbleBackground.vue'
 
 const statusStore = useMenuBarStore()
 const { isMinimised } = storeToRefs(statusStore)
@@ -22,14 +23,14 @@ const targets = [
 <template>
   <menu-bar />
   <main class="container mt-5 px-5 px-lg-5 px-md-4">
-    <!--    BootstrapTemplate wieder raus-->
-    <BootstrapTemplate />
-    <HeadlineContainer />
-    <SpacingTool height="2rem"></SpacingTool>
-    <TextAndImageContainer />
-    <ContactForm />
+    <BubbleBackground>
+      <HeadlineContainer />
+      <SpacingTool height="2rem"></SpacingTool>
+      <TextAndImageContainer />
+      <ContactForm />
+    </BubbleBackground>
   </main>
-    <FooterContainer />
+  <FooterContainer />
 </template>
 <style scoped>
 .main-container {
