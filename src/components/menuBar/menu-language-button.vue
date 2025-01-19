@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import i18n, { setLanguage, setLanguageToBrowserLanguage } from '@/i18n'
-import { computed, ref, onMounted, onUnmounted, onUpdated } from 'vue'
-import { useRouter, useRoute } from 'vue-router'
+import { computed, onMounted, onUnmounted, onUpdated, ref } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 import germany from '@/assets/flag/germany_round.svg'
 import england from '@/assets/flag/england_round.svg'
 
@@ -75,8 +75,7 @@ const closeMenu = (): void => {
 
 onUpdated(() => {
   const element = document.getElementById('language-drop-box-container')
-  if(!isMenuVisible.value && element.classList.contains("language-drop-box-container-open")){
-
+  if (!isMenuVisible.value && element != null && element.classList.contains('language-drop-box-container-open')) {
     element.classList.remove('language-drop-box-container-open')
   }
 })
@@ -106,7 +105,11 @@ onMounted(() => {
       :aria-label="$t('menuBar.aria-label.language')"
     >
       <component :is="currentFlag.flag" @click="toggleMenu" />
-      <div v-if="isMenuVisible" class="language-drop-box-select pt-1" id="language-drop-box-dropdown">
+      <div
+        v-if="isMenuVisible"
+        class="language-drop-box-select pt-1"
+        id="language-drop-box-dropdown"
+      >
         <div class="language-drop-box-selection">
           <div
             class="w-100 h-100"
