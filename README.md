@@ -17,6 +17,16 @@
 
 This template should help get you started developing with Vue 3 in Vite.
 
+## Docker
+### Build the image
+```sh
+docker build -t ballerlos/vue .
+```
+### Run the container
+```sh
+docker run -d -p 8080:80 --name vue-service ballerlos/vue
+```
+
 ## Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).

@@ -15,7 +15,7 @@
       "burgerMenuAltText": "Mobiler Menü Auslöser"
     }
   },
-  "containers": {
+  "container": {
     "aboutUs": {
       "imageAltText": "Bild mit Spielbausteinen",
       "headline": "WIR ÜBER UNS…",
@@ -23,6 +23,19 @@
     },
     "headline": {
       "content": "Ein Schülerunternehmen der BBS 1 Lüneburg mit <span style='color: #4BC3B6FF;'>Meerwert</span>"
+    },
+    "contactForm": {
+      "headline": "Kontaktformular",
+      "inputFields": {
+        "surname": "Vorname*",
+        "lastname": "Nachname*",
+        "email": "E-Mail*",
+        "subject": "Betreff",
+        "message": "Nachricht*"
+      },
+      "infoText": "* Mit * markierte Felder sind Pflichtfelder!",
+      "submit": "Senden",
+      "privacyCheckbox": "Ich habe die <a href=\"{url}\">Datenschutzerklärung</a> gelesen und bin einverstanden"
     },
     "gamingRules": {
       "imageAltText": "Bild, welches die Spielunterlage aufzeigt. Es gibt Baustämme und Felder im Wasser, die mit Fischen aufgezeigt werden. Die Spielunterlage zeigt vom Start bis zum Ziel",
@@ -55,5 +68,24 @@
       "gameGoal": "Der Spieler, der als erster das letzte Feld erreicht, gewinnt das Spiel und hat somit die anderen Spieler überlistet.",
       "notice": "Viel Spaß beim Spielen!"
     }
+  },
+  "teamContainer": {
+    "title": "Das Team",
+    "content": "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam volup",
+    "classPhotoAlt": "Klassen Photo"
+  },
+  "footer": {
+    "street": "Spillbrunnenweg 1",
+    "streetTitle": "Adresse der BBS 1 Lüneburg auf Google Maps anzeigen",
+    "location": "Lüneburg",
+    "zipCode": "21337",
+    "phone": "04131 99220600",
+    "phoneArialLabel": "BBS 1 Lüneburg telefonisch kontaktieren",
+    "phoneTitle": "Telefonnummer",
+    "mailTitle": "E-Mail an {email} senden",
+    "impressum": "Impressum & Datenschutz",
+    "impressumTitle": "Zum Impressum und dem Datenschutz",
+    "instagramTitle": "Instagram-Profil der BBS 1 Lüneburg",
+    "instagramAriaLabel": "Instagram-Profil der BBS 1 Lüneburg öffnen"
   }
 }

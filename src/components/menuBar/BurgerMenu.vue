@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import MenuElement from '@/components/menuBar/menu-element.vue'
-import NewsSVG from '@/assets/images/news.svg'
-import UserSVG from '@/assets/images/user.svg'
-import BookSVG from '@/assets/images/book-open.svg'
-import CalenderSVG from '@/assets/images/calendar.svg'
-import contactImage from '@/assets/images/contact.svg'
+import NewsSVG from '@/assets/icons/news.svg'
+import UserSVG from '@/assets/icons/user.svg'
+import BookSVG from '@/assets/icons/book-open.svg'
+import CalenderSVG from '@/assets/icons/calendar.svg'
+import contactImage from '@/assets/icons/contact.svg'
 import * as bootstrap from 'bootstrap'
 
 const props = defineProps({
