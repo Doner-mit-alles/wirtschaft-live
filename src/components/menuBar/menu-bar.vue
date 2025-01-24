@@ -36,7 +36,7 @@ const menuItems = [
   { text: 'menuBar.aboutUs', svg: NewsSVG, targetId: 'aboutUs' },
   { text: 'menuBar.team', svg: UserSVG, targetId: 'team' },
   { text: 'menuBar.rules', svg: BookSVG, targetId: 'gamingRules' },
-  { text: 'menuBar.appointments', svg: CalenderSVG, targetId: 'newsAndAppointments' },
+  { text: 'menuBar.appointments', svg: CalenderSVG, targetId: 'news-and-appointments' },
   { text: 'menuBar.contact', svg: contactSVG, targetId: 'contact' }
 ]
 
@@ -53,7 +53,9 @@ const menuBarClasses = computed(() => ({
     id="menubar"
     class="d-flex justify-content-between align-items-center p-3 m-auto mt-2"
   >
-    <router-link :to="{ path: '/', query: $route.query }" id="menu-team-name">Baller Los</router-link>
+    <router-link :to="{ path: '/', query: $route.query }" id="menu-team-name"
+      >Baller Los</router-link
+    >
 
     <nav class="menu-element-container">
       <ul class="p-0 mb-0 text-center" role="menubar">
@@ -123,6 +125,7 @@ const menuBarClasses = computed(() => ({
   flex-direction: row;
   margin-right: 0.625rem;
   gap: 10px;
+
   li {
     display: inline-block;
     line-height: 1;
