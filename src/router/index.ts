@@ -1,7 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '@/views/HomeView.vue'
-import ImprintAndPrivatePolicty from '@/views/ImprintAndPrivacyPoliceView.vue'
-
 
 const routes = [
   {
@@ -10,16 +7,15 @@ const routes = [
     component: () => import('@/views/HomeView.vue'),
     meta: { title: 'Home' }
   },
+  {
+    path: '/impressum-und-datenschutz',
+    name: 'Imprint and Privacy Police',
+    component: () => import('@/views/ImprintAndPrivacyPoliceView.vue'),
+  },
   // Catch-all route for undefined paths
   {
     path: '/:pathMatch(.*)*',
     redirect: '/'
-    component: () => HomeView
-  },
-  {
-    path: '/impressum-und-datenschutz',
-    name: 'Imprint and Privacy Police',
-    component: () => ImprintAndPrivatePolicty
   }
 ]
 
