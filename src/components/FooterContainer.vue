@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import LocationElement from '@/assets/icons/location.svg'
-import InstagramElement from '@/assets/icons/instagram.svg'
 import MailElement from '@/assets/icons/mail.svg'
 import NoteElement from '@/assets/icons/note.svg'
 import PhoneElement from '@/assets/icons/phone.svg'
+const bbsEmail = "info@bbs1-lueneburg.de"
+const bbsPhoneNumber = "+49413199220600"
 </script>
 
 <template>
@@ -25,11 +26,11 @@ import PhoneElement from '@/assets/icons/phone.svg'
             </div>
           </div>
 
-          <div class="vertical-line d-md-block d-none" aria-hidden="true"/>
+          <div class="vertical-line d-md-block d-none" aria-hidden="true"></div>
 
           <div class="col-2 d-flex align-items-center mb-2">
             <div class="text">
-              <a href="tel:+49413199220600"
+              <a :href="`tel:${bbsPhoneNumber}`"
                  :aria-label="$t('footer.phoneArialLabel')"
                  :title="$t('footer.phoneArialLabel')"
                  tabindex="101"
@@ -40,22 +41,22 @@ import PhoneElement from '@/assets/icons/phone.svg'
             </div>
           </div>
 
-          <div class="vertical-line d-md-block d-none" aria-hidden="true"/>
+          <div class="vertical-line d-md-block d-none" aria-hidden="true"></div>
 
           <div class="col-2 d-flex align-items-center mb-2">
             <div class="text">
-              <a href="mailto:info@bbs1-lueneburg.de"
-                 :aria-label="$t('footer.mailTitle')"
-                 :title="$t('footer.mailTitle')"
+              <a  :href="`mailto:${bbsEmail}`"
+                 :aria-label="$t('footer.mailTitle', {email:bbsEmail})"
+                 :title="$t('footer.mailTitle', {email:bbsEmail})"
                  tabindex="102"
               >
                 <component class="icon me-1 align-items-center" :is="MailElement" />
-                {{ $t('footer.mail') }}
+                {{ bbsEmail }}
               </a>
             </div>
           </div>
 
-          <div class="vertical-line d-md-block d-none" aria-hidden="true"/>
+          <div class="vertical-line d-md-block d-none" aria-hidden="true"></div>
 
           <div class="col-2 d-flex align-items-center mb-2">
             <div class="text">
