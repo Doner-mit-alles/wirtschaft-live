@@ -16,6 +16,16 @@
     }
   },
   "container": {
+    "news": {
+      "headline": "News",
+      "content": "Nothing here...",
+      "bottom_text": "No breaking news"
+    },
+    "appointments": {
+      "headline": "Appointments",
+      "content": "Nothing here...",
+      "bottom_text": "Nothing in near future"
+    },
     "aboutUs": {
       "imageAltText": "Image with Board Game Elements",
       "headline": "ABOUT US...",

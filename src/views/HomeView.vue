@@ -5,6 +5,7 @@ import { storeToRefs } from 'pinia'
 import TextAndImageContainer from '@/components/TextAndImageContainer.vue'
 import HeadlineContainer from '@/components/HeadlineContainer.vue'
 import MenuBar from '@/components/menuBar/menu-bar.vue'
+import NewsAndAppointmentsContainer from '@/components/NewsAndAppointmentsContainer.vue'
 import SpacingTool from '@/components/SpacingTool.vue'
 import ContactForm from '@/components/ContactForm.vue'
 import FooterContainer from '@/components/FooterContainer.vue'
@@ -34,8 +35,9 @@ const targets = [
     <SpacingTool height="3rem"></SpacingTool>
     <RulesContainer />
     <SpacingTool height="3rem"></SpacingTool>
-    <ContactForm />
+    <NewsAndAppointmentsContainer />
     <SpacingTool height="3 rem"></SpacingTool>
+    <ContactForm />
   </main>
     <FooterContainer />
 </template>
