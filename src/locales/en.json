@@ -16,6 +16,16 @@
     }
   },
   "container": {
+    "news": {
+      "headline": "News",
+      "content": "Nothing here...",
+      "bottom_text": "No breaking news"
+    },
+    "appointments": {
+      "headline": "Appointments",
+      "content": "Nothing here...",
+      "bottom_text": "Nothing in near future"
+    },
     "privacyPolice": {
       "headline": "Privacy Policy",
       "generalInfo": "The following information provides a simple overview of what happens to your personal data when you visit our website. Personal data is any data by which you can be personally identified.\n",

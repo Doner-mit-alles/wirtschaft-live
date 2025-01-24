@@ -3,7 +3,7 @@
   "description": "Dies ist eine Beispielbeschreibung.",
   "menuBar": {
     "news": "Neuigkeiten",
-    "rules": "Spielregeln",
+    "rules": "Spielregelen",
     "appointments": "Termine & Neues",
     "team": "Team",
     "aboutUs": "Über uns",
@@ -40,6 +40,17 @@
       "privacyPoliceHeadline": "Datenschutz",
       "privacyPolice": "Sofern innerhalb dieser Homepage die Möglichkeit zur Eingabe persönlicher oder geschäftlicher Daten (E-Mail-Adressen, Namen, Anschriften) besteht, so erfolgt die Preisgabe dieser Daten seitens des Nutzers ausdrücklich auf freiwilliger Ba\u00ADsis. Siehe unten: Datenschutzerklärung",
       "legalNotice": "Website & Programmierung by IT22B"
+    },
+    "news": {
+      "headline": "Neuigkeiten",
+      "content": "Wir sind bald live",
+      "bottom_text": "Eine Woche noch!"
+    },
+    "appointments": {
+      "headline": "Termine",
+      "content": "- Präsentation der Website",
+      "bottom_text": "Das kann ja was werden..."
+
     },
     "aboutUs": {
       "imageAltText": "Bild mit Spielbausteinen",
