@@ -1,4 +1,5 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+</script>
 
 <template>
   <div class="row g-3 mb-4 rules-wrapper" id="gamingRules">
@@ -33,51 +34,56 @@
             {{ $t('containers.gamingRules.gameMaterialsFourth')}}
           </li>
         </ul>
-        <h6>Spielvorbereitung:</h6>
+        <h6>{{ $t('containers.gamingRules.gamePreparation')}}</h6>
         <ol>
           <li>
-            Die Spieler wählen eine Spielfigur und stellen sie auf das Startfeld der Plattform.
+            {{ $t('containers.gamingRules.gamePreparationContent1')}}
           </li>
-          <li>Die Karten für Fragen und Ereignisse werden gemischt und bereitgelegt.</li>
+          <li>
+            {{ $t('containers.gamingRules.gamePreparationContent2')}}
+          </li>
         </ol>
       </div>
     </div>
     <div class="col-12 text-white">
-      <h6>Spielablauf</h6>
+      <h6>{{ $t('containers.gamingRules.gameplayLabel')}}</h6>
       <ol>
         <li>
-          Die Spieler würfeln reihum und ziehen ihre Spielfigur entsprechend der Augenzahl des
-          Würfels.
+          {{ $t('containers.gamingRules.gameplayStep1')}}
         </li>
         <li>
-          Landet ein Spieler auf einem Fragefeld, zieht er eine Fragekarte und muss die Frage
-          beantworten.
-          <ul>
-            <li>Bei richtiger Antwort darf der Spieler ggf. ein paar Felder vor ziehen.</li>
-            Bei falscher Antwort muss der Spieler ggf. zurück ziehen.
-          </ul>
-        </li>
-        <li>
-          Landet ein Spieler auf einem Ereignisfeld, zieht er eine Ereigniskarte und muss die
-          Aufgabe erfüllen.
+          {{ $t('containers.gamingRules.gameplayStep2')}}
           <ul>
             <li>
-              Wird die Aufgabe erfolgreich erledigt, darf der Spieler ggf.. ein paar Felder weiter
-              ziehen.
+              {{ $t('containers.gamingRules.gameplayStep2ConditionTrue')}}
             </li>
-            <li>Bei Nichterfüllung muss der Spieler ebenfalls zurück ziehen.</li>
+            <li>
+              {{ $t('containers.gamingRules.gameplayStep2ConditionFalse')}}
+            </li>
           </ul>
         </li>
         <li>
-          Das Spiel wird fortgesetzt, bis ein Spieler das letzte Feld des Spielbretts erreicht.
+          {{ $t('containers.gamingRules.gameplayStep3')}}
+          <ul>
+            <li>
+              {{ $t('containers.gamingRules.gameplayStep3ConditionTrue')}}
+            </li>
+            <li>
+              {{ $t('containers.gamingRules.gameplayStep3ConditionFalse')}}
+            </li>
+          </ul>
+        </li>
+        <li>
+          {{ $t('containers.gamingRules.gameplayStep4')}}
         </li>
       </ol>
-      <h6>Ziel des Spieles</h6>
+      <h6>{{ $t('containers.gamingRules.gameGoalLabel')}}</h6>
       <p>
-        Der Spieler, der als erster das letzte Feld erreicht, gewinnt das Spiel und hat somit die
-        anderen Spieler überlistet.
+        {{ $t('containers.gamingRules.gameGoal')}}
       </p>
-      <p>Viel Spaß beim Spielen!</p>
+      <p>
+        {{ $t('containers.gamingRules.notice')}}
+      </p>
     </div>
   </div>
 </template>
@@ -92,5 +98,9 @@
 
 .rules-content {
   background-color: transparent;
+}
+
+img {
+  border-radius: 20px;
 }
 </style>

@@ -38,7 +38,22 @@
       "gameMaterialsOne": "Spielbrett mit Feldern (Fragefelder mit Fragezeichen, Ereignisfelder mit Ausrufezeichen)",
       "gameMaterialsTwo": "Spielfiguren für jeden Spieler",
       "gameMaterialsThree": "Fragen- und Ereigniskarten",
-      "gameMaterialsFourth": "Würfel"
+      "gameMaterialsFourth": "Würfel",
+      "gamePreparation": "Spielvorbereitung",
+      "gamePreparationContent1": "Die Spieler wählen eine Spielfigur und stellen sie auf das Startfeld der Plattform.",
+      "gamePreparationContent2": "Die Karten für Fragen und Ereignisse werden gemischt und bereitgelegt.",
+      "gameplayLabel": "Spielablauf",
+      "gameplayStep1": "Die Spieler würfeln reihum und ziehen ihre Spielfigur entsprechend der Augenzahl des Würfels.",
+      "gameplayStep2": "Landet ein Spieler auf einem Fragefeld, zieht er eine Fragekarte und muss die Frage beantworten.",
+      "gameplayStep2ConditionTrue": "Bei richtiger Antwort darf der Spieler ggf. ein paar Felder vor ziehen.",
+      "gameplayStep2ConditionFalse": "Bei falscher Antwort muss der Spieler ggf. zurück ziehen.",
+      "gameplayStep3": "Landet ein Spieler auf einem Ereignisfeld, zieht er eine Ereigniskarte und muss die Aufgabe erfüllen.",
+      "gameplayStep3ConditionTrue": "Wird die Aufgabe erfolgreich erledigt, darf der Spieler ggf. ein paar Felder weiterziehen.",
+      "gameplayStep3ConditionFalse": "Bei Nichterfüllung muss der Spieler ebenfalls zurück ziehen.",
+      "gameplayStep4": "Das Spiel wird fortgesetzt, bis ein Spieler das letzte Feld des Spielbretts erreicht.",
+      "gameGoalLabel": "Ziel des Spieles",
+      "gameGoal": "Der Spieler, der als erster das letzte Feld erreicht, gewinnt das Spiel und hat somit die anderen Spieler überlistet.",
+      "notice": "Viel Spaß beim Spielen!"
     }
   }
 }
