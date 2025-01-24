@@ -38,6 +38,11 @@
       "privacyCheckbox": "Ich habe die <a href=\"{url}\">Datenschutzerklärung</a> gelesen und bin einverstanden"
     }
   },
+  "teamContainer": {
+    "title": "Das Team",
+    "content": "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam volup",
+    "classPhotoAlt": "Klassen Photo"
+  },
   "footer": {
     "street": "Spillbrunnenweg 1",
     "streetTitle": "Adresse der BBS 1 Lüneburg auf Google Maps anzeigen",
