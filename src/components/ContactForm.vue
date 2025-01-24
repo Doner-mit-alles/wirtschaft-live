@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div class="row g-3 mb-4 g-2">
+  <div id="contact" class="row g-3 mb-4 g-2">
     <div class="col-12 bg-primary container-wrapper">
       <h2 class="headline text-md-end text-left px-4 px-md-5 pt-md-5 pt-4 pb-2 pb-md-3">
         {{ $t("container.contactForm.headline")}}
@@ -51,7 +51,7 @@
 
             <label for="privacy-checkbox">
               <input id="privacy-checkbox" name="privacy-checkbox" required type="checkbox">
-              <span v-html="$t('container.contactForm.privacyCheckbox', { url: 'https://example.com/datenschutz' })"></span>
+              <span v-html="$t('container.contactForm.privacyCheckbox', { url: '/impressum-und-datenschutz' })"></span>
             </label>
 
             <div class="col-12 text-end">

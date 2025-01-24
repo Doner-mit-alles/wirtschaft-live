@@ -122,14 +122,4 @@ a {
     min-width: auto;
   }
 }
-
-.instagram {
-  position: absolute;
-  top: 41px;
-  right: 0.25rem;
-  @media (max-width: 576px) {
-    padding: 0;
-    right: 1.25rem;
-  }
-}
 </style>

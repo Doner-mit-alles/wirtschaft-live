@@ -53,7 +53,7 @@ const menuBarClasses = computed(() => ({
     id="menubar"
     class="d-flex justify-content-between align-items-center p-3 m-auto mt-2"
   >
-    <p id="menu-team-name">Baller Los</p>
+    <a href="/" id="menu-team-name">Baller Los</a>
 
     <nav class="menu-element-container">
       <ul class="p-0 mb-0 text-center" role="menubar">
@@ -109,7 +109,13 @@ const menuBarClasses = computed(() => ({
   text-shadow: var(--primary-shadow);
   margin-bottom: 0;
   margin-left: 0.625rem;
+  text-decoration: none;
   letter-spacing: 1px;
+  color: white;
+}
+
+#menu-team-name:hover {
+  color: white;
 }
 
 .menu-element-container {
