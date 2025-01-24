@@ -7,9 +7,7 @@ import InstagramElement from '@/assets/icons/instagram.svg'
     <div class="col-md-4 col-12 bg-primary text-white text-center p-0 border-radius-20-left">
       <img
         class="object-fit-cover w-100 h-100 border-radius-20-left"
-        srcset="
-              @/assets/images/about-us-small.jpeg 600w,
-              @/assets/images/about-us.jpeg 1200w"
+        srcset="@/assets/images/about-us-small.jpeg 600w, @/assets/images/about-us.jpeg 1200w"
         sizes="(max-width: 600px) 100vw, 50vw"
         :alt="$t('container.aboutUs.imageAltText')"
         src="@/assets/images/about-us.jpeg"
@@ -30,8 +28,7 @@ import InstagramElement from '@/assets/icons/instagram.svg'
         <p class="social-media-text mt-4 mb-0">
           {{ $t('container.aboutUs.socialMedia1') }}<br />
           {{ $t('container.aboutUs.socialMedia2') }}
-          <b>{{ $t('container.aboutUs.socialMedia2Bold') }}
-          </b>
+          <b>{{ $t('container.aboutUs.socialMedia2Bold') }} </b>
         </p>
         <div class="icon me-0 me-md-2 gentle-hover-shake">
           <a
@@ -66,7 +63,6 @@ import InstagramElement from '@/assets/icons/instagram.svg'
 
 .instagram a {
   color: white;
-
 }
 
 .gentle-hover-shake:hover {

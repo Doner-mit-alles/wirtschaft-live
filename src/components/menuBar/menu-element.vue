@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import { onMounted, onUpdated, ref, nextTick } from 'vue'
+import { ref } from 'vue'
 import * as bootstrap from 'bootstrap'
 import { useRouter, useRoute } from 'vue-router'
+import { useScrollStore } from '@/stores/useScrollStore'
 
 const router = useRouter()
 const route = useRoute()
-
+const currentPath = ref(route.path)
+const scrollStore = useScrollStore()
 const props = defineProps({
   text: {
     type: String,
@@ -29,36 +31,12 @@ const props = defineProps({
   }
 })
 
-const targetElement = ref<HTMLElement | null>(null)
-const menuHeight = ref<number>(0)
-
-onMounted(() => {
-  targetElement.value = document.getElementById(props.targetId)
-  scrollToTarget()
-})
-
-onUpdated(() => {
-  const menu = document.getElementById('menu')
-  menuHeight.value = menu ? menu.clientHeight : 0
-})
-
-const scrollToTarget = () => {
-  if (targetElement.value) {
-    const rect = targetElement.value.getBoundingClientRect()
-    console.log(targetElement);
-    const elementTop = rect.top + window.scrollY // Get the top position of the element relative to the document
-    const elementHeight = rect.height // Height of the element
-    const viewportHeight = window.innerHeight // Height of the viewport
-
-    // Calculate the scroll position to center the element, adjusted for the menu height
-    const scrollToPosition = elementTop - viewportHeight / 2 + elementHeight / 2 - menuHeight.value
-
-    // Scroll to the calculated position smoothly
-    window.scrollTo({
-      top: scrollToPosition,
-      behavior: 'smooth'
-    })
-
+const scrollToTarget = async () => {
+  if (props.targetId) {
+    if (currentPath.value !== '/') {
+      await router.push('/')
+    }
+    scrollStore.setTargetId(props.targetId)
     const offCanvasElement = document.querySelector('#offcanvasMenu') as HTMLElement
     if (offCanvasElement) {
       const offCanvas = bootstrap.Offcanvas.getInstance(offCanvasElement)
@@ -77,23 +55,12 @@ const handleKeydown = (event: KeyboardEvent) => {
     scrollToTarget()
   }
 }
-
-const scrollAndNavigate = async () => {
-  if (route.path !== '/') {
-    await router.push('/')
-    await nextTick(() => {
-      scrollToTarget()
-    })
-  } else {
-    scrollToTarget()
-  }
-}
 </script>
 
 <template>
   <li
     class="menu-bar-element d-md-inline-block d-none"
-    @click="scrollAndNavigate"
+    @click="scrollToTarget"
     @keydown="handleKeydown"
     role="menuitem"
     :tabindex="tabIndex"
@@ -122,6 +89,7 @@ const scrollAndNavigate = async () => {
   font-size: 1rem;
   cursor: pointer;
   transition: font-size 0.3s ease;
+
   svg {
     transition:
       width 0.3s ease,
