@@ -8,6 +8,8 @@ import MenuBar from '@/components/menuBar/menu-bar.vue'
 import SpacingTool from '@/components/SpacingTool.vue'
 import ContactForm from '@/components/ContactForm.vue'
 import FooterContainer from '@/components/FooterContainer.vue'
+import TeamSpace from '@/components/teamSpace/TeamSpace.vue'
+import RulesContainer from '@/components/RulesContainer.vue'
 
 const statusStore = useMenuBarStore()
 const { isMinimised } = storeToRefs(statusStore)
@@ -19,9 +21,15 @@ const { isMinimised } = storeToRefs(statusStore)
     <!--    BootstrapTemplate wieder raus-->
 <!--    <BootstrapTemplate />-->
     <HeadlineContainer />
-    <SpacingTool height="2rem"></SpacingTool>
+    <SpacingTool height="3rem"></SpacingTool>
     <TextAndImageContainer />
+    <SpacingTool height="3rem"></SpacingTool>
+    <TeamSpace />
+    <SpacingTool height="3rem"></SpacingTool>
+    <RulesContainer />
+    <SpacingTool height="3rem"></SpacingTool>
     <ContactForm />
+    <SpacingTool height="3 rem"></SpacingTool>
   </main>
     <FooterContainer />
 </template>

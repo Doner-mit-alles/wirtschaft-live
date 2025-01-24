@@ -43,6 +43,7 @@ export const setLanguage = async (locale: string): Promise<void> => {
     const messages = await import(`./locales/${locale}.json`)
     i18n.global.setLocaleMessage(locale, messages.default)
     i18n.global.locale = locale
+    document.documentElement.lang = locale;
   } catch (error) {
     console.error(`Cant load language file ${locale}: `, error)
   }

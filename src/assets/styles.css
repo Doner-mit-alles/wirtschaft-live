@@ -18,6 +18,12 @@ h2 {
   font-weight: 800;
 }
 
+h6 {
+    font-weight: 800;
+    font-size: 18px;
+
+}
+
 /*Bootstrap Variablen*/
 :root {
     --bs-primary: #272727;
@@ -62,6 +68,7 @@ a {
     --forth-color: #20639b;
     --fifth-color: #4bc3b6;
     --primary-shadow: 4px 8px 6px #000000;
+    --sixth-color: #0B2235;
 }
 
 h1, h2 {
@@ -91,6 +98,10 @@ a:hover {
 .border-radius-20-right {
     border-top-right-radius: var(--border-radius);
     border-bottom-right-radius: var(--border-radius);
+}
+
+.border-radius-20 {
+  border-radius: 20px;
 }
 
 @media (max-width: 768px) {
