@@ -1,6 +1,10 @@
 <script setup lang="ts">
-import { onMounted, onUpdated, ref } from 'vue'
+import { onMounted, onUpdated, ref, nextTick } from 'vue'
 import * as bootstrap from 'bootstrap'
+import { useRouter, useRoute } from 'vue-router'
+
+const router = useRouter()
+const route = useRoute()
 
 const props = defineProps({
   text: {
@@ -30,6 +34,7 @@ const menuHeight = ref<number>(0)
 
 onMounted(() => {
   targetElement.value = document.getElementById(props.targetId)
+  scrollToTarget()
 })
 
 onUpdated(() => {
@@ -40,6 +45,7 @@ onUpdated(() => {
 const scrollToTarget = () => {
   if (targetElement.value) {
     const rect = targetElement.value.getBoundingClientRect()
+    console.log(targetElement);
     const elementTop = rect.top + window.scrollY // Get the top position of the element relative to the document
     const elementHeight = rect.height // Height of the element
     const viewportHeight = window.innerHeight // Height of the viewport
@@ -55,12 +61,8 @@ const scrollToTarget = () => {
 
     const offCanvasElement = document.querySelector('#offcanvasMenu') as HTMLElement
     if (offCanvasElement) {
-      console.log('Found offCanvas element:', offCanvasElement)
-
       const offCanvas = bootstrap.Offcanvas.getInstance(offCanvasElement)
-
       if (!offCanvas) {
-        console.log('Creating new offCanvas instance.')
         const offcanvas = new bootstrap.Offcanvas(offCanvasElement)
         offcanvas.hide()
       } else {
@@ -75,12 +77,23 @@ const handleKeydown = (event: KeyboardEvent) => {
     scrollToTarget()
   }
 }
+
+const scrollAndNavigate = async () => {
+  if (route.path !== '/') {
+    await router.push('/')
+    await nextTick(() => {
+      scrollToTarget()
+    })
+  } else {
+    scrollToTarget()
+  }
+}
 </script>
 
 <template>
   <li
     class="menu-bar-element d-md-inline-block d-none"
-    @click="scrollToTarget"
+    @click="scrollAndNavigate"
     @keydown="handleKeydown"
     role="menuitem"
     :tabindex="tabIndex"

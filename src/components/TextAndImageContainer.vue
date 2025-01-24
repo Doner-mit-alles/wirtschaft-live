@@ -28,8 +28,10 @@ import InstagramElement from '@/assets/icons/instagram.svg'
       <div v-html="$t('container.aboutUs.content')"></div>
       <div class="col-3 d-flex instagram align-items-end w-100 mb-2 justify-content-between">
         <p class="social-media-text mt-4 mb-0">
-          Ihr wollt noch mehr erfahren? <br />
-          Besucht uns auch gerne auf <b>Social Media!</b>
+          {{ $t('container.aboutUs.socialMedia1') }}<br />
+          {{ $t('container.aboutUs.socialMedia2') }}
+          <b>{{ $t('container.aboutUs.socialMedia2Bold') }}
+          </b>
         </p>
         <div class="icon me-0 me-md-2 gentle-hover-shake">
           <a
@@ -53,7 +55,7 @@ import InstagramElement from '@/assets/icons/instagram.svg'
   .linear-gradiant-element {
     background-image: linear-gradient(#4bc3b6, #2c86a5);
     width: 9px;
-    height: 97%;
+    height: 100%;
     @media (min-width: 992px) {
       &:first-child {
         margin-left: 0.9rem;

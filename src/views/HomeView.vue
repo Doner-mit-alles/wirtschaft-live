@@ -11,19 +11,13 @@ import FooterContainer from '@/components/FooterContainer.vue'
 
 const statusStore = useMenuBarStore()
 const { isMinimised } = storeToRefs(statusStore)
-
-const targets = [
-  { id: 'target2', text: 'TEST' },
-  { id: 'target3', text: 'TEST' },
-  { id: 'target4', text: 'TEST' }
-]
 </script>
 
 <template>
   <menu-bar />
   <main class="container mt-5 px-5 px-lg-5 px-md-4">
     <!--    BootstrapTemplate wieder raus-->
-    <BootstrapTemplate />
+<!--    <BootstrapTemplate />-->
     <HeadlineContainer />
     <SpacingTool height="2rem"></SpacingTool>
     <TextAndImageContainer />

@@ -16,10 +16,38 @@
     }
   },
   "container": {
+    "privacyPolice": {
+      "headline": "Privacy Policy",
+      "generalInfo": "The following information provides a simple overview of what happens to your personal data when you visit our website. Personal data is any data by which you can be personally identified.\n",
+      "responsibleParty": "The responsible party within the meaning of the General Data Protection Regulation and other national data protection laws of the member states as well as other data protection regulations is",
+      "secondHeadline": "1. Types of Data Collected",
+      "secondContent1": "We collect personal data exclusively via the contact form on our website. The following data is processed:",
+      "listElement1": "Your name",
+      "listElement2": "Your email address",
+      "listElement3": "Your message",
+      "secondContent2": "The use of the contact form is voluntary. If you contact us via this form, the data you enter will be transmitted to us.\n",
+      "thirdHeadline": "2. Purpose of Data Processing",
+      "thirdContent": "The data collected is used exclusively for the purpose of processing your inquiry. Data will not be shared with third parties unless this is necessary for processing your request or we are legally obliged to do so.\n",
+      "fourthHeadline": "3. Use of EmailJS",
+      "fourthContent": "We use the service EmailJS to process and transmit your messages. EmailJS is a provider that handles the technical execution of email transmissions. The processing of data is based on a legitimate interest in accordance with Art. 6(1)(f) GDPR. For more information about data processing by EmailJS, please refer to their privacy policy at:",
+      "time": "As of: 01/24/2025"
+    },
+    "imprint": {
+      "headline": "Imprint",
+      "contentOwner": "This is a page of the",
+      "agencyHeadline": "Representation",
+      "agency": "Principal Heiko Lüdemann",
+      "privacyPoliceHeadline": "Privacy Policy",
+      "privacyPolice": "If this website provides the option to enter personal or business data (email addresses, names, addresses), the disclosure of this data by the user is explicitly on a voluntary basis. See below: Privacy Policy",
+      "legalNotice": "Website & Programming by IT22B"
+    },
     "aboutUs": {
       "imageAltText": "Image with Board Game Elements",
       "headline": "ABOUT US...",
-      "content": "<p>\nHello, we are HA24B, and this is our student company, \"Baller los,\" which means \"go full throttle\" – and that's exactly what we're doing.\n</p>\n<p>\nWe are 24 students aged between 15 and 18 years.\n</p>\n<p>\nWe founded this student company as part of the one-year vocational school for business at BBS I Lüneburg.\n</p>\n<p>\nWe are creating our own game and aim to raise awareness about environmental protection, especially concerning bodies of water, through this game.\n</p>\n<p>\nIt's only natural that we produce our game as environmentally friendly and high-quality as possible.\n</p>\n<p>\nWe use a 3D printer with recyclable and even recycled filament to manufacture our game pieces ourselves. Other materials, such as the game board and packaging, are recyclable or made from recycled materials.\n</p>\n<p>\nAdditionally, we investigate the pollution of the Ilmenau River (which flows through Lüneburg) by collecting and counting plastic waste.\n</p>\n<p>\nFor this website, we collaborate with the Lüneburg-based IT company \"webnetz\" and the IT specialist trainees in their third year of training from the IT22B class at our school.\n</p>"
+      "content": "<p>\nHello, we are HA24B, and this is our student company, \"Baller los,\" which means \"go full throttle\" – and that's exactly what we're doing.\n</p>\n<p>\nWe are 24 students aged between 15 and 18 years.\n</p>\n<p>\nWe founded this student company as part of the one-year vocational school for business at BBS I Lüneburg.\n</p>\n<p>\nWe are creating our own game and aim to raise awareness about environmental protection, especially concerning bodies of water, through this game.\n</p>\n<p>\nIt's only natural that we produce our game as environmentally friendly and high-quality as possible.\n</p>\n<p>\nWe use a 3D printer with recyclable and even recycled filament to manufacture our game pieces ourselves. Other materials, such as the game board and packaging, are recyclable or made from recycled materials.\n</p>\n<p>\nAdditionally, we investigate the pollution of the Ilmenau River (which flows through Lüneburg) by collecting and counting plastic waste.\n</p>\n<p>\nFor this website, we collaborate with the Lüneburg-based IT company \"webnetz\" and the IT specialist trainees in their third year of training from the IT22B class at our school.\n</p>",
+      "socialMedia1": "Want to learn more?",
+      "socialMedia2": "Feel free to visit us on",
+      "socialMedia2Bold": "Social Media!"
     },
     "headline": {
       "content": "A student-run business from BBS 1 Lüneburg with <span>extra value</span>"
