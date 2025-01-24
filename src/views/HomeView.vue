@@ -25,13 +25,17 @@ const targets = [
   <menu-bar />
   <main class="container mt-5 px-5 px-lg-5 px-md-4">
     <!--    BootstrapTemplate wieder raus-->
-    <BootstrapTemplate />
+<!--    <BootstrapTemplate />-->
     <HeadlineContainer />
-    <SpacingTool height="2rem"></SpacingTool>
+    <SpacingTool height="3rem"></SpacingTool>
     <TextAndImageContainer />
+    <SpacingTool height="3rem"></SpacingTool>
     <TeamSpace />
-    <ContactForm />
+    <SpacingTool height="3rem"></SpacingTool>
     <RulesContainer />
+    <SpacingTool height="3rem"></SpacingTool>
+    <ContactForm />
+    <SpacingTool height="3 rem"></SpacingTool>
   </main>
     <FooterContainer />
 </template>

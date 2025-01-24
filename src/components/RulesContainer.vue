@@ -3,86 +3,86 @@
 
 <template>
   <div class="row g-3 mb-4 rules-wrapper" id="gamingRules">
-    <div class="col-md-5 col-lg-5 col-12">
+    <div class="col-12 col-md-5 col-xl-3 col-12">
       <img
         src="@/assets/images/spielbrett.jpg"
         class="w-100"
-        :alt="$t('containers.gamingRules.imageAltText')"
+        :alt="$t('container.gamingRules.imageAltText')"
       />
     </div>
-    <div class="col-md-7 col-lg-7 col-12 text-white p-3 h-3">
+    <div class="col-12 col-md-7 col-xl-9 col-12 text-white pb-0 pb-md-3 p-3 p-md-3 h-3 content-wrapper">
       <div class="rules-content text-left">
-        <h2>{{ $t('containers.gamingRules.rulesHeadline') }}</h2>
-        <h6>{{ $t('containers.gamingRules.rulesSecondHeadline') }}</h6>
+        <h2>{{ $t('container.gamingRules.rulesHeadline') }}</h2>
+        <h6>{{ $t('container.gamingRules.rulesSecondHeadline') }}</h6>
         <p>
-          <span class="fw-bold">{{ $t('containers.gamingRules.numberOfPlayersLabel')}}</span> {{ $t('containers.gamingRules.numberOfPlayers')}} <br />
-          <span class="fw-bold">{{ $t('containers.gamingRules.ageLabel')}}</span> {{ $t('containers.gamingRules.age')}}<br />
-          <span class="fw-bold">{{ $t('containers.gamingRules.timeLabel')}}</span> {{ $t('containers.gamingRules.time')}}<br />
+          <span class="fw-bold">{{ $t('container.gamingRules.numberOfPlayersLabel')}}</span> {{ $t('container.gamingRules.numberOfPlayers')}} <br />
+          <span class="fw-bold">{{ $t('container.gamingRules.ageLabel')}}</span> {{ $t('container.gamingRules.age')}}<br />
+          <span class="fw-bold">{{ $t('container.gamingRules.timeLabel')}}</span> {{ $t('container.gamingRules.time')}}<br />
         </p>
-        <h6>{{ $t('containers.gamingRules.gameMaterials')}}</h6>
+        <h6>{{ $t('container.gamingRules.gameMaterials')}}</h6>
         <ul>
           <li>
-            {{ $t('containers.gamingRules.gameMaterialsOne')}}
+            {{ $t('container.gamingRules.gameMaterialsOne')}}
           </li>
           <li>
-            {{ $t('containers.gamingRules.gameMaterialsTwo')}}
+            {{ $t('container.gamingRules.gameMaterialsTwo')}}
           </li>
           <li>
-            {{ $t('containers.gamingRules.gameMaterialsThree')}}
+            {{ $t('container.gamingRules.gameMaterialsThree')}}
           </li>
           <li>
-            {{ $t('containers.gamingRules.gameMaterialsFourth')}}
+            {{ $t('container.gamingRules.gameMaterialsFourth')}}
           </li>
         </ul>
-        <h6>{{ $t('containers.gamingRules.gamePreparation')}}</h6>
+        <h6>{{ $t('container.gamingRules.gamePreparation')}}</h6>
         <ol>
           <li>
-            {{ $t('containers.gamingRules.gamePreparationContent1')}}
+            {{ $t('container.gamingRules.gamePreparationContent1')}}
           </li>
           <li>
-            {{ $t('containers.gamingRules.gamePreparationContent2')}}
+            {{ $t('container.gamingRules.gamePreparationContent2')}}
           </li>
         </ol>
       </div>
     </div>
-    <div class="col-12 text-white">
-      <h6>{{ $t('containers.gamingRules.gameplayLabel')}}</h6>
+    <div class="col-12 text-white content-wrapper">
+      <h6>{{ $t('container.gamingRules.gameplayLabel')}}</h6>
       <ol>
         <li>
-          {{ $t('containers.gamingRules.gameplayStep1')}}
+          {{ $t('container.gamingRules.gameplayStep1')}}
         </li>
         <li>
-          {{ $t('containers.gamingRules.gameplayStep2')}}
+          {{ $t('container.gamingRules.gameplayStep2')}}
           <ul>
             <li>
-              {{ $t('containers.gamingRules.gameplayStep2ConditionTrue')}}
+              {{ $t('container.gamingRules.gameplayStep2ConditionTrue')}}
             </li>
             <li>
-              {{ $t('containers.gamingRules.gameplayStep2ConditionFalse')}}
+              {{ $t('container.gamingRules.gameplayStep2ConditionFalse')}}
             </li>
           </ul>
         </li>
         <li>
-          {{ $t('containers.gamingRules.gameplayStep3')}}
+          {{ $t('container.gamingRules.gameplayStep3')}}
           <ul>
             <li>
-              {{ $t('containers.gamingRules.gameplayStep3ConditionTrue')}}
+              {{ $t('container.gamingRules.gameplayStep3ConditionTrue')}}
             </li>
             <li>
-              {{ $t('containers.gamingRules.gameplayStep3ConditionFalse')}}
+              {{ $t('container.gamingRules.gameplayStep3ConditionFalse')}}
             </li>
           </ul>
         </li>
         <li>
-          {{ $t('containers.gamingRules.gameplayStep4')}}
+          {{ $t('container.gamingRules.gameplayStep4')}}
         </li>
       </ol>
-      <h6>{{ $t('containers.gamingRules.gameGoalLabel')}}</h6>
+      <h6>{{ $t('container.gamingRules.gameGoalLabel')}}</h6>
       <p>
-        {{ $t('containers.gamingRules.gameGoal')}}
+        {{ $t('container.gamingRules.gameGoal')}}
       </p>
       <p>
-        {{ $t('containers.gamingRules.notice')}}
+        {{ $t('container.gamingRules.notice')}}
       </p>
     </div>
   </div>
@@ -102,5 +102,9 @@
 
 img {
   border-radius: 20px;
+}
+
+.content-wrapper > *{
+  text-shadow: 3px 4px 10px #000000;
 }
 </style>
