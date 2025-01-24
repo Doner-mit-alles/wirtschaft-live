@@ -5,9 +5,12 @@ import { storeToRefs } from 'pinia'
 import TextAndImageContainer from '@/components/TextAndImageContainer.vue'
 import HeadlineContainer from '@/components/HeadlineContainer.vue'
 import MenuBar from '@/components/menuBar/menu-bar.vue'
+import NewsAndAppointmentsContainer from '@/components/NewsAndAppointmentsContainer.vue'
 import SpacingTool from '@/components/SpacingTool.vue'
 import ContactForm from '@/components/ContactForm.vue'
 import FooterContainer from '@/components/FooterContainer.vue'
+import TeamSpace from '@/components/teamSpace/TeamSpace.vue'
+import RulesContainer from '@/components/RulesContainer.vue'
 import BubbleBackground from '@/components/bubbleBackground.vue'
 
 const statusStore = useMenuBarStore()
@@ -21,16 +24,21 @@ const targets = [
 </script>
 
 <template>
-
   <main class="container mt-5 px-5 px-lg-5 px-md-4">
     <BubbleBackground>
       <HeadlineContainer />
-      <SpacingTool height="2rem"></SpacingTool>
+      <SpacingTool height="3rem"></SpacingTool>
       <TextAndImageContainer />
+      <SpacingTool height="3rem"></SpacingTool>
+      <TeamSpace />
+      <SpacingTool height="3rem"></SpacingTool>
+      <RulesContainer />
+      <SpacingTool height="3rem"></SpacingTool>
+      <NewsAndAppointmentsContainer />
+      <SpacingTool height="3 rem"></SpacingTool>
       <ContactForm />
     </BubbleBackground>
   </main>
-
 </template>
 <style scoped>
 </style>
