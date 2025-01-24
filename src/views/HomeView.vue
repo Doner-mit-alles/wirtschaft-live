@@ -24,8 +24,8 @@ const targets = [
 </script>
 
 <template>
-  <main class="container mt-5 px-5 px-lg-5 px-md-4">
-    <BubbleBackground>
+  <BubbleBackground>
+    <main class="container mt-5 px-5 px-lg-5 px-md-4">
       <HeadlineContainer />
       <SpacingTool height="3rem"></SpacingTool>
       <TextAndImageContainer />
@@ -37,8 +37,7 @@ const targets = [
       <NewsAndAppointmentsContainer />
       <SpacingTool height="3 rem"></SpacingTool>
       <ContactForm />
-    </BubbleBackground>
-  </main>
+    </main>
+  </BubbleBackground>
 </template>
-<style scoped>
-</style>
+<style scoped></style>
