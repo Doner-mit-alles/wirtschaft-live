@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="row mb-4 team border-radius-20">
+  <div id="team" class="row mb-4 team border-radius-20">
     <div class="col-md-12 col-12 text-center p-3">
       <div class="row g-3 m-1">
         <img

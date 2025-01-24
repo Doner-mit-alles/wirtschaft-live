@@ -10,9 +10,13 @@ import ContactForm from '@/components/ContactForm.vue'
 import FooterContainer from '@/components/FooterContainer.vue'
 import TeamSpace from '@/components/teamSpace/TeamSpace.vue'
 import RulesContainer from '@/components/RulesContainer.vue'
-
+import { onMounted } from 'vue';
 const statusStore = useMenuBarStore()
-const { isMinimised } = storeToRefs(statusStore)
+
+onMounted(() => {
+  window.scrollTo(0, 0);
+});
+
 </script>
 
 <template>
