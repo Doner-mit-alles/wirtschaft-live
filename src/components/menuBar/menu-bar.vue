@@ -53,7 +53,7 @@ const menuBarClasses = computed(() => ({
     id="menubar"
     class="d-flex justify-content-between align-items-center p-3 m-auto mt-2"
   >
-    <a href="/" id="menu-team-name">Baller Los</a>
+    <router-link to="/" id="menu-team-name">Baller Los</router-link>
 
     <nav class="menu-element-container">
       <ul class="p-0 mb-0 text-center" role="menubar">

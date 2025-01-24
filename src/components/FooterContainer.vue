@@ -59,14 +59,14 @@ import PhoneElement from '@/assets/icons/phone.svg'
 
           <div class="col-2 d-flex align-items-center mb-2">
             <div class="text">
-              <a href="/impressum-und-datenschutz"
-                 :aria-label="$t('footer.impressumTitle')"
-                 :title="$t('footer.impressumTitle')"
-                 tabindex="103"
-              >
-                <component class="icon me-1 align-items-center" :is="NoteElement" />
-                {{ $t('footer.impressum') }}
-              </a>
+                <router-link to="/impressum-und-datenschutz"
+                             :aria-label="$t('footer.impressumTitle')"
+                             :title="$t('footer.impressumTitle')"
+                             tabindex="103"
+                >
+                  <component class="icon me-1 align-items-center" :is="NoteElement" />
+                  {{ $t('footer.impressum') }}
+                </router-link>
             </div>
           </div>
         </div>

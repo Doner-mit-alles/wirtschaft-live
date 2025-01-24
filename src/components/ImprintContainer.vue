@@ -10,11 +10,11 @@ import InstagramElement from '@/assets/icons/instagram.svg'
       </h1>
 
       <p>
-        {{ $t('container.imprint.contentOwner') }}
+        {{ $t('container.imprint.contentOwner') }}:<br>
+        BBS I Lüneburg <br>
+        Spillbrunnenweg 1 <br>
+        21337 Lüneburg <br>
       </p>
-      BBS I Lüneburg <br>
-      Spillbrunnenweg 1 <br>
-      21337 Lüneburg <br>
 
       <p>
         {{ $t('container.imprint.agencyHeadline') }}<br>
