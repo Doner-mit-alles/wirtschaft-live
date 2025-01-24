@@ -34,7 +34,7 @@ const props = defineProps({
 const scrollToTarget = async () => {
   if (props.targetId) {
     if (currentPath.value !== '/') {
-      await router.push('/')
+      await router.push({ path: '/', query: router.currentRoute.value.query })
     }
     scrollStore.setTargetId(props.targetId)
     const offCanvasElement = document.querySelector('#offcanvasMenu') as HTMLElement
