@@ -124,3 +124,14 @@ a:hover {
         border-top-left-radius: 20px;
     }
 }
+
+.no-select {
+    user-select: none;
+    pointer-events: none;
+}
+
+@media print {
+    .no-print {
+        display: none;
+    }
+}
