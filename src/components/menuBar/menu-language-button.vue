@@ -17,7 +17,7 @@ async function setVueLanguage() {
 const changeLanguage = async (lang: string) => {
   await router.push({
     path: route.path,
-    query: { ...route.query, lang }
+    query: { ...route.query, lang:lang }
   })
   await setVueLanguage()
   selectedLanguage.value = lang
@@ -79,7 +79,7 @@ onUpdated(() => {
   }
 })
 
-onMounted(() => {
+onMounted(async () => {
   const handleClickOutside = (event: MouseEvent) => {
     if (dropdownRef.value && !dropdownRef.value.contains(event.target as Node)) {
       closeMenu()
