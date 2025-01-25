@@ -9,6 +9,7 @@ import SpacingTool from '@/components/SpacingTool.vue'
 <template>
   <menu-bar />
   <main class="container mt-5 px-5 px-lg-5 px-md-4">
+    <h1 style="display: none;">Impressum & Datenschutz</h1>
     <ImprintContainer />
     <SpacingTool height="1rem"></SpacingTool>
     <PrivacyPoliceContainer />

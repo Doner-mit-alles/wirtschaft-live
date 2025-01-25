@@ -5,10 +5,16 @@ import InstagramElement from '@/assets/icons/instagram.svg'
 <template>
   <div class="row mb-4">
     <div class="col-12 bg-primary text-white privacy-police p-4 pl-3 p-md-5">
-      <h1>
-        {{ $t('container.privacyPolice.headline') }}
-      </h1>
+      <h2 class="break" v-html="$t('container.privacyPolice.headline')">
+      </h2>
 
+      <span
+        v-html="
+                  $t('container.contactForm.privacyCheckbox', {
+                    url: '/impressum-und-datenschutz'
+                  })
+                "
+      ></span>
       <p>
         {{ $t('container.privacyPolice.generalInfo') }}
       </p>
@@ -38,7 +44,7 @@ import InstagramElement from '@/assets/icons/instagram.svg'
       <h6>{{ $t('container.privacyPolice.fourthHeadline') }}</h6>
       <p>
         {{ $t('container.privacyPolice.fourthContent') }}
-        <a href="https://www.emailjs.com/legal/privacy-policy/">https://www.emailjs.com/legal/privacy-policy/</a>
+        <a class="break" href="https://www.emailjs.com/legal/privacy-policy/">https://www.emailjs.com/legal/privacy-policy/</a>
       </p>
 
       <p>
@@ -52,4 +58,11 @@ import InstagramElement from '@/assets/icons/instagram.svg'
 .privacy-police {
   border-radius: 20px;
 }
+
+.break {
+  hyphens: auto;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
 </style>

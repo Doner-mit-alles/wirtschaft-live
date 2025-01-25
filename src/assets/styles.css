@@ -20,8 +20,17 @@ h2 {
 
 h6 {
     font-weight: 800;
-    font-size: 18px;
+    font-size: 1.125rem;
+    @media (max-width: 576px) {
+        font-size: 1rem;
+    }
+}
 
+p {
+    @media (max-width: 576px) {
+        font-size: 0.875rem;
+    }
+    font-size: 1rem;
 }
 
 /*Bootstrap Variablen*/
@@ -78,7 +87,7 @@ h1, h2 {
 
 h2 {
     @media (max-width: 576px) {
-        font-size: 1rem;
+        font-size: 1.1875rem;
     }
 }
 
