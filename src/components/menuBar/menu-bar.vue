@@ -10,8 +10,10 @@ import MenuLanguageButton from '@/components/menuBar/menu-language-button.vue'
 import { useMenuBarStore } from '@/stores/useMenuBarStore'
 import BurgerMenu from '@/components/menuBar/BurgerMenu.vue'
 import BurgerMenuSVG from '@/assets/icons/burger-menu.svg'
+import { useScrollStore } from '@/stores/useScrollStore'
 
-const store = useMenuBarStore()
+const menuStore = useMenuBarStore()
+const scrollStore = useScrollStore()
 const isMinimised = ref<boolean>(false)
 
 const handleScroll = () => {
@@ -28,7 +30,7 @@ onUnmounted(() => {
 
 // Watch for changes in isMinimised and update the store
 watch(isMinimised, (newValue) => {
-  store.setStatus(newValue)
+  menuStore.setStatus(newValue)
 })
 
 // Menu items data with type annotation
@@ -53,7 +55,10 @@ const menuBarClasses = computed(() => ({
     id="menubar"
     class="d-flex justify-content-between align-items-center p-3 m-auto mt-2"
   >
-    <router-link :to="{ path: '/', query: $route.query }" id="menu-team-name"
+    <router-link
+      @click="scrollStore.setTargetId('')"
+      :to="{ path: '/', query: $route.query }"
+      id="menu-team-name"
       >Baller Los
     </router-link>
 
@@ -76,6 +81,10 @@ const menuBarClasses = computed(() => ({
 </template>
 
 <style scoped>
+/* 
+  Dont remove!!!
+  Are used in script tag
+ */
 .menu-bar {
   border-radius: 50px;
   background: var(--primary-color);
@@ -88,12 +97,20 @@ const menuBarClasses = computed(() => ({
   }
 }
 
+/* 
+  Dont remove!!!
+  Are used in script tag
+ */
 @media (min-width: 768px) and (max-width: 992px) {
   .menu-bar {
     font-size: 1rem;
   }
 }
 
+/* 
+  Dont remove!!!
+  Are used in script tag
+ */
 .menu-bar-fixed {
   position: sticky;
   width: 100%;
@@ -114,6 +131,7 @@ const menuBarClasses = computed(() => ({
   text-decoration: none;
   letter-spacing: 1px;
   color: white;
+  cursor: pointer;
 }
 
 #menu-team-name:hover {
