@@ -1,8 +1,10 @@
 <script setup lang="ts">
-import BubbleBackground from './components/bubbleBackground.vue'
+import MenuBar from '@/components/menuBar/menu-bar.vue'
+import FooterContainer from '@/components/FooterContainer.vue'
 </script>
 <template>
-  <BubbleBackground />
+  <menu-bar />
   <router-view />
+  <FooterContainer />
 </template>
 <style scoped></style>
