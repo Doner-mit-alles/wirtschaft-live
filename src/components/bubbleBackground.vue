@@ -1,117 +1,60 @@
+<script setup lang="ts">
+import { onMounted, ref } from 'vue'
+import { Bubble } from '@/classes/bubble'
+
+const bubbles = ref<Bubble[]>([])
+
+
+const numberOfBubbles = Math.floor(Math.random() * 21) + 30;
+
+
+function generateRandomBubbles() {
+  bubbles.value = Array.from({ length: numberOfBubbles }, () => {
+    return new Bubble()
+  })
+}
+
+onMounted(() => {
+  generateRandomBubbles()
+})
+</script>
+
 <template>
-  <div class="bubble-container" ref="containerRef">
-    <div v-for="(image, index) in images" :key="index" class="random-image" :style="getRandomStyle()">
-      <img src="../assets/bubbles.png" :alt="image.alt" />
+  <div class="bubble-container position-relative">
+    <div class="bubble w-100 h-100 position-absolute">
+      <img
+        v-for="(bubble, index) in bubbles"
+        :key="index"
+        src="@/assets/bubbles.png"
+        :style="{
+          position: 'absolute',
+          top: bubble.getTop() + '%',
+          left: bubble.getLeft() + '%',
+          width: bubble.getWidth() + 'px',
+          height: bubble.getHeight() + 'px',
+          transform: `rotate(${bubble.getRotation()}deg)`
+        }"
+        alt="bubble"
+      />
     </div>
+    <slot></slot>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref, reactive, onMounted, onUpdated } from 'vue';
-import type { CSSProperties } from 'vue'; 
-import bubble from "@/assets/bubbles.png"
-export default defineComponent({
-  name: 'RandomImageBehindText',
-  setup() {
-    const containerRef = ref<HTMLElement | null>(null);
-
-    const updateFullPageDivHeight = () => {
-      if (containerRef.value) {
-        containerRef.value.style.height = `${document.documentElement.scrollHeight}px`;
-      }
-    };
-
-    const images = reactive([
-      { src: bubble, alt: 'Random Image' },
-      { src: bubble, alt: 'Random Image' },
-      { src: bubble, alt: 'Random Image' },
-      { src: bubble, alt: 'Random Image' },
-      { src: bubble, alt: 'Random Image' },
-      { src: bubble, alt: 'Random Image' },
-      { src: bubble, alt: 'Random Image' },
-      { src: bubble, alt: 'Random Image' },
-      { src: bubble, alt: 'Random Image' },
-      { src: bubble, alt: 'Random Image' },
-      { src: bubble, alt: 'Random Image' },
-      { src: bubble, alt: 'Random Image' },
-      { src: bubble, alt: 'Random Image' },
-      { src: bubble, alt: 'Random Image' },
-      { src: bubble, alt: 'Random Image' },
-      { src: bubble, alt: 'Random Image' },
-      { src: bubble, alt: 'Random Image' },
-      { src: bubble, alt: 'Random Image' },
-      { src: bubble, alt: 'Random Image' },
-    ]);
-
-    // Generate random style for each image
-    const getRandomStyle = (): CSSProperties => {
-      if (!containerRef.value) return {};
-
-      const containerWidth: number = containerRef.value.offsetWidth;
-      const containerHeight: number = containerRef.value.offsetHeight;
-
-      // Set random position within container bounds
-      const size: number = Math.random() * 250 + 50 - 50;
-      const rotation: number = Math.random() * 20 + 5 - 5;
-      const randomX: number = Math.random() * (containerWidth - size); // Adjust image size as needed
-      const randomY: number = Math.random() * (containerHeight - size); // Adjust image size as needed
-
-      return {
-        position: 'absolute',
-        left: `${randomX}px`,
-        top: `${randomY}px`,
-        rotate: `${rotation}deg`,
-        width: `${size}px`,
-        objectFit: 'cover',
-        zIndex: -1,
-      };
-    };
-
-    // Handle window resize to adjust the layout
-    onMounted(() => {
-      updateFullPageDivHeight();
-      window.addEventListener('resize', updateFullPageDivHeight);
-
-      const resizeObserver = new ResizeObserver(() => {
-        // Logic to handle container resize can be added here
-      });
-      if (containerRef.value) {
-        resizeObserver.observe(containerRef.value);
-      }
-    });
-
-    onUpdated(() => {
-      updateFullPageDivHeight();
-    });
-
-    return {
-      containerRef,
-      images,
-      getRandomStyle,
-    };
-  },
-});
-</script>
-
 <style scoped>
 .bubble-container {
-  position: absolute;
-  width: 95%;
+  position: relative;
+  width: 100%;
+  min-height: 200vh;
   overflow: hidden;
-  top: 0;
-  left: 0;
-  margin: 0;
-  padding: 0;
+}
+
+.bubble {
   z-index: -1;
 }
 
-.random-image {
-  position: absolute;
-}
-
-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+slot {
+  position: relative;
+  z-index: 1;
 }
 </style>

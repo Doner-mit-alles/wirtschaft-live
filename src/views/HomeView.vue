@@ -1,62 +1,29 @@
 <script setup lang="ts">
-import BootstrapTemplate from '@/components/BootstrapTemplate.vue'
-import { useMenuBarStore } from '@/stores/useMenuBarStore'
-import { storeToRefs } from 'pinia'
 import TextAndImageContainer from '@/components/TextAndImageContainer.vue'
 import HeadlineContainer from '@/components/HeadlineContainer.vue'
-import MenuBar from '@/components/menuBar/menu-bar.vue'
 import NewsAndAppointmentsContainer from '@/components/NewsAndAppointmentsContainer.vue'
 import SpacingTool from '@/components/SpacingTool.vue'
 import ContactForm from '@/components/ContactForm.vue'
-import FooterContainer from '@/components/FooterContainer.vue'
 import TeamSpace from '@/components/teamSpace/TeamSpace.vue'
 import RulesContainer from '@/components/RulesContainer.vue'
-
-const statusStore = useMenuBarStore()
-const { isMinimised } = storeToRefs(statusStore)
-
-const targets = [
-  { id: 'target2', text: 'TEST' },
-  { id: 'target3', text: 'TEST' },
-  { id: 'target4', text: 'TEST' }
-]
+import BubbleBackground from '@/components/bubbleBackground.vue'
 </script>
 
 <template>
-  <menu-bar />
-  <main class="container mt-5 px-5 px-lg-5 px-md-4">
-    <!--    BootstrapTemplate wieder raus-->
-<!--    <BootstrapTemplate />-->
-    <HeadlineContainer />
-    <SpacingTool height="3rem"></SpacingTool>
-    <TextAndImageContainer />
-    <SpacingTool height="3rem"></SpacingTool>
-    <TeamSpace />
-    <SpacingTool height="3rem"></SpacingTool>
-    <RulesContainer />
-    <SpacingTool height="3rem"></SpacingTool>
-    <NewsAndAppointmentsContainer />
-    <SpacingTool height="3 rem"></SpacingTool>
-    <ContactForm />
-  </main>
-    <FooterContainer />
+  <BubbleBackground>
+    <main class="container mt-5 px-5 px-lg-5 px-md-4">
+      <HeadlineContainer />
+      <SpacingTool height="3rem"></SpacingTool>
+      <TextAndImageContainer />
+      <SpacingTool height="3rem"></SpacingTool>
+      <TeamSpace />
+      <SpacingTool height="3rem"></SpacingTool>
+      <RulesContainer />
+      <SpacingTool height="3rem"></SpacingTool>
+      <NewsAndAppointmentsContainer />
+      <SpacingTool height="3 rem"></SpacingTool>
+      <ContactForm />
+    </main>
+  </BubbleBackground>
 </template>
-<style scoped>
-.main-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.test-container {
-  width: 500px;
-  height: 400px;
-  margin: 25px;
-  border: solid var(--primary-color);
-}
-
-.app-container-margin {
-  margin-top: 45px;
-}
-</style>
+<style scoped></style>
