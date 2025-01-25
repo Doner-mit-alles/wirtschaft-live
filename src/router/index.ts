@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import i18n from '@/i18n'
 
 const routes = [
   {
