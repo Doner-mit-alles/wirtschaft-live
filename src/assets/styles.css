@@ -1,6 +1,28 @@
 @import url('https://fonts.googleapis.com/css?family=Alexandria');
 
+/* Variablen*/
+:root {
+    --bs-primary: #272727;
+    --bs-primary-rgb: 39, 39, 39;
+    --bs-secondary: #4BC3B6;
+    --bs-secondary-rgb: 75, 195, 182;
+    --border-radius: 20px;
+    --btn-hover-border-color: #4BC3B6;
+}
 
+:root {
+    --primary-color: #272727;
+    --secondary-color: #ffffff;
+    --third-color: #494949;
+    --forth-color: #20639b;
+    --fifth-color: #4bc3b6;
+    --primary-shadow: 4px 8px 6px #000000;
+    --sixth-color: #0B2235;
+    --linear-gradiant-element-vertical: linear-gradient(#4BC3B6, #2C86A5);
+    --linear-gradiant-element-horizontal: linear-gradient(to right, #4BC3B6, #2C86A5);
+}
+
+/*General*/
 body {
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -8,10 +30,23 @@ body {
   font-family: 'Alexandria', serif;
 }
 
+.modal-header {
+
+}
+
+
+/*Text*/
 h1,
 h2 {
   font-family: Montserrat, sans-serif;
   font-weight: 800;
+}
+
+h2 {
+    @media (max-width: 576px) {
+        font-size: 1.1875rem;
+    }
+    margin-bottom: 1rem;
 }
 
 h6 {
@@ -24,31 +59,23 @@ h6 {
 
 p {
     @media (max-width: 576px) {
-        font-size: 0.875rem;
+        font-size: 0.875rem!important;
     }
     font-size: 1rem;
 }
 
-/*Bootstrap Variablen*/
-:root {
-    --bs-primary: #272727;
-    --bs-primary-rgb: 39, 39, 39;
-    --bs-secondary: #4BC3B6;
-    --bs-secondary-rgb: 75, 195, 182;
-    --border-radius: 20px;
-    --btn-hover-border-color: #4BC3B6;
-}
-
-:root {
-    --linear-gradiant-element-vertical: linear-gradient(#4BC3B6, #2C86A5);
-    --linear-gradiant-element-horizontal: linear-gradient(to right, #4BC3B6, #2C86A5);
-}
-
-
+/*Links*/
 a {
+    transition: opacity 0.3s ease;
     color: #4BC3B6;
 }
 
+a:hover {
+    color: turquoise;
+    opacity: 0.5;
+}
+
+/*Buttons*/
 .btn-primary {
     background: var(--linear-gradiant-element-horizontal);
     padding: 0.625rem 1.25rem;
@@ -66,40 +93,8 @@ a {
     background: none;
 }
 
-:root {
-    --primary-color: #272727;
-    --secondary-color: #ffffff;
-    --third-color: #494949;
-    --forth-color: #20639b;
-    --fifth-color: #4bc3b6;
-    --primary-shadow: 4px 8px 6px #000000;
-    --sixth-color: #0B2235;
-}
 
-h1, h2 {
-    font-family: Montserrat, sans-serif;
-    font-weight: 900; /* Black */
-}
-
-h2 {
-    @media (max-width: 576px) {
-        font-size: 1.1875rem;
-    }
-}
-
-a {
-    transition: opacity 0.3s ease;
-}
-
-a:hover {
-    color: turquoise;
-    opacity: 0.5;
-}
-
-:root {
-  --primary-shadow: 4px 8px 6px #000000;
-}
-
+/*Borders*/
 .border-radius-20-right {
     border-top-right-radius: var(--border-radius);
     border-bottom-right-radius: var(--border-radius);

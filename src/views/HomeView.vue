@@ -13,16 +13,17 @@ import BubbleBackground from '@/components/bubbleBackground.vue'
   <BubbleBackground>
     <main class="container mt-5 px-5 px-lg-5 px-md-4">
       <HeadlineContainer />
-      <SpacingTool height="3rem"></SpacingTool>
+      <SpacingTool mobileHeight="2rem" height="3rem"></SpacingTool>
       <TextAndImageContainer />
-      <SpacingTool height="3rem"></SpacingTool>
+      <SpacingTool mobileHeight="2rem" height="3rem"></SpacingTool>
       <TeamSpace />
-      <SpacingTool height="3rem"></SpacingTool>
+      <SpacingTool mobileHeight="2rem" height="3rem"></SpacingTool>
       <RulesContainer />
-      <SpacingTool height="3rem"></SpacingTool>
+      <SpacingTool mobileHeight="2rem" height="3rem"></SpacingTool>
       <NewsAndAppointmentsContainer />
-      <SpacingTool height="3 rem"></SpacingTool>
+      <SpacingTool mobileHeight="2rem" height="3rem"></SpacingTool>
       <ContactForm />
+      <SpacingTool mobileHeight="2rem" height="4rem"></SpacingTool>
     </main>
   </BubbleBackground>
 </template>

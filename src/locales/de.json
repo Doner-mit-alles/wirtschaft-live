@@ -54,7 +54,7 @@
     },
     "aboutUs": {
       "imageAltText": "Bild mit Spielbausteinen",
-      "headline": "WIR ÜBER UNS…",
+      "headline": "Wir über uns...",
       "content": "<p>Moin, wir sind die HA24B und das ist unsere Schülerfirma „Baller los,“ was so viel wie mit voller Kraft loslegen bedeutet – und das machen wir.</p>\n\n<p>Wir sind 24 Schülerinnen und Schüler im Alter von 15 bis 18 Jahren. Diese Schülerfirma haben wir im Rahmen der einjährigen Berufsfachschule Wirtschaft an der BBS I Lüneburg gegründet.</p>\n\n<p>Wir stellen ein eigenes Spiel her und wollen mit diesem Spiel auf den Umweltschutz, besonders bei den Gewässern, aufmerksam machen. Daher ist es selbstverständlich, dass wir unser Spiel so umweltfreundlich und hochwertig wie möglich produzieren.</p>\n\n<p>Wir nutzen einen 3D-Drucker mit recyclefähigem und sogar Recycling-Filament, um unsere Figuren selbst herstellen zu können. Auch die anderen Materialien wie Spielbrett und Verpackung sind recyclefähig oder bestehen aus Recyclingmaterial.</p>\n\n<p>Zusätzlich untersuchen wir die Verschmutzung der Ilmenau (dieser Fluss fließt durch Lüneburg), indem wir Plastikmüll einsammeln und zählen.</p>\n\n<p>Für diese Website kooperieren wir mit dem Lüneburger IT-Unternehmen „webnetz“ und den Auszubildenden zum Fachinformatiker im 3. Lehrjahr aus der Klasse IT22B von unserer Schule.</p>",
       "socialMedia1": "Ihr wollt noch mehr erfahren?",
       "socialMedia2": "Besucht uns auch gerne auf",
@@ -78,7 +78,7 @@
     },
     "gamingRules": {
       "imageAltText": "Bild, welches die Spielunterlage aufzeigt. Es gibt Baustämme und Felder im Wasser, die mit Fischen aufgezeigt werden. Die Spielunterlage zeigt vom Start bis zum Ziel",
-      "rulesHeadline": "REGELN",
+      "rulesHeadline": "Regeln",
       "rulesSecondHeadline": "Spielanleitung für \"Maximal sechs\"",
       "age": "12 bis 99 Jahre",
       "ageLabel": "Alter:",

@@ -2,15 +2,43 @@
 </script>
 
 <template>
-  <div class="row g-3 mb-4 rules-wrapper" id="gamingRules">
+  <div class="row g-3 mb-4 p-2 rules-wrapper" id="gamingRules">
     <div class="col-12 col-md-5 col-xl-3 col-12">
       <img
         src="@/assets/images/spielbrett.jpg"
-        class="w-100"
+        class="w-100 rules-image"
         :alt="$t('container.gamingRules.imageAltText')"
+        data-bs-toggle="modal"
+        data-bs-target="#rulesImageModal"
       />
+
+      <!-- Bootstrap Modal -->
+      <div class="modal fade" id="rulesImageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <!-- Schließen-Button oben rechts -->
+            <div class="modal-header">
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+
+            <div class="modal-body p-0">
+              <!-- Vergrößertes Bild -->
+              <img
+                src="@/assets/images/spielbrett.jpg"
+                class="w-100"
+                :alt="$t('teamContainer.classPhotoAlt')"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="col-12 col-md-7 col-xl-9 col-12 text-white pb-0 pb-md-3 p-3 p-md-3 h-3 content-wrapper">
+    <div class="col-12 col-md-7 col-xl-9 col-12 text-white pb-0 pb-md-3 p-3 p-md-3 h-3 content-wrapper-first">
       <div class="rules-content text-left">
         <h2>{{ $t('container.gamingRules.rulesHeadline') }}</h2>
         <h6>{{ $t('container.gamingRules.rulesSecondHeadline') }}</h6>
@@ -45,7 +73,7 @@
         </ol>
       </div>
     </div>
-    <div class="col-12 text-white content-wrapper">
+    <div class="col-12 text-white content-wrapper-second">
       <h6>{{ $t('container.gamingRules.gameplayLabel')}}</h6>
       <ol>
         <li>
@@ -89,11 +117,20 @@
 </template>
 
 <style scoped>
+.rules-image {
+  cursor: pointer;
+}
+
+.rules-image:hover {
+  filter: brightness(75%);
+  transition: filter 0.5s ease;
+}
+
 .rules-wrapper {
   position: relative;
   border: 5px solid #4bc3b6;
-  padding: 10px;
   border-radius: 20px;
+  background-color: rgb(44 134 165 / 45%);
 }
 
 .rules-content {
@@ -104,7 +141,7 @@ img {
   border-radius: 20px;
 }
 
-.content-wrapper > *{
+.content-wrapper-first > *, .content-wrapper-second > *{
   text-shadow: 3px 4px 10px #000000;
 }
 </style>

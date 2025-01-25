@@ -133,6 +133,7 @@ onMounted(() => {
 
 <style scoped>
 .language-drop-box {
+  padding-left: 8px;
   width: 30px;
   display: flex;
   justify-content: center;
