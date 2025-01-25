@@ -7,6 +7,29 @@ import ContactForm from '@/components/ContactForm.vue'
 import TeamSpace from '@/components/teamSpace/TeamSpace.vue'
 import RulesContainer from '@/components/RulesContainer.vue'
 import BubbleBackground from '@/components/bubbleBackground.vue'
+import { useScrollStore } from '@/stores/useScrollStore'
+import { onMounted, ref, watch } from 'vue'
+
+const scrollStore = useScrollStore()
+const scrollTargetId = ref(scrollStore.getTargetId())
+
+onMounted(() => {
+  if (scrollTargetId.value == '') {
+    window.scrollTo(0, 0)
+  } else {
+    scrollStore.scrollToTarget()
+  }
+})
+
+watch(
+  () => scrollStore.getTargetId(),
+  () => {
+    if (scrollStore.getTargetId() !== '') {
+      scrollStore.scrollToTarget()
+      scrollStore.setTargetId('')
+    }
+  }
+)
 </script>
 
 <template>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, computed, watch } from 'vue'
+import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
 import NewsSVG from '@/assets/icons/news.svg'
 import CalenderSVG from '@/assets/icons/calendar.svg'
 import BookSVG from '@/assets/icons/book-open.svg'
@@ -54,8 +54,8 @@ const menuBarClasses = computed(() => ({
     class="d-flex justify-content-between align-items-center p-3 m-auto mt-2"
   >
     <router-link :to="{ path: '/', query: $route.query }" id="menu-team-name"
-      >Baller Los</router-link
-    >
+      >Baller Los
+    </router-link>
 
     <nav class="menu-element-container">
       <ul class="p-0 mb-0 text-center" role="menubar">
