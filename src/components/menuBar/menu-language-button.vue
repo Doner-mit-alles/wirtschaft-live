@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import i18n, { setLanguage, setLanguageToBrowserLanguage } from '@/i18n'
+import i18n, { getLangFromUrl, setLanguage } from '@/i18n'
 import { computed, onMounted, onUnmounted, onUpdated, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import germany from '@/assets/flag/germany_round.svg'
@@ -11,18 +11,13 @@ const router = useRouter()
 const route = useRoute()
 
 async function setVueLanguage() {
-  const lang: string | null = typeof route.query.lang === 'string' ? route.query.lang : null
-  if (lang == 'null' || lang == null) {
-    await setLanguageToBrowserLanguage()
-    return
-  }
-  await setLanguage(lang)
+  await setLanguage(getLangFromUrl())
 }
 
 const changeLanguage = async (lang: string) => {
   await router.push({
     path: route.path,
-    query: { ...route.query, lang }
+    query: { ...route.query, lang:lang }
   })
   await setVueLanguage()
   selectedLanguage.value = lang
@@ -75,12 +70,16 @@ const closeMenu = (): void => {
 
 onUpdated(() => {
   const element = document.getElementById('language-drop-box-container')
-  if (!isMenuVisible.value && element != null && element.classList.contains('language-drop-box-container-open')) {
+  if (
+    !isMenuVisible.value &&
+    element != null &&
+    element.classList.contains('language-drop-box-container-open')
+  ) {
     element.classList.remove('language-drop-box-container-open')
   }
 })
 
-onMounted(() => {
+onMounted(async () => {
   const handleClickOutside = (event: MouseEvent) => {
     if (dropdownRef.value && !dropdownRef.value.contains(event.target as Node)) {
       closeMenu()
@@ -116,12 +115,11 @@ onMounted(() => {
             v-for="language in languages"
             :title="language.altText"
             :key="language.code"
+            @click="changeLanguage(language.code)"
           >
             <component
               v-if="currentFlag.language != language.code"
-              @click="changeLanguage(language.code)"
               :is="language.flag"
-              class="language-drop-box-select-child"
               :alt="language.altText"
             />
           </div>

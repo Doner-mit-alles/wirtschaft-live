@@ -1,12 +1,10 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import * as bootstrap from 'bootstrap'
-import { useRouter, useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { useScrollStore } from '@/stores/useScrollStore'
 
 const router = useRouter()
 const route = useRoute()
-const currentPath = ref(route.path)
 const scrollStore = useScrollStore()
 const props = defineProps({
   text: {
@@ -33,7 +31,7 @@ const props = defineProps({
 
 const scrollToTarget = async () => {
   if (props.targetId) {
-    if (currentPath.value !== '/') {
+    if (route.path !== '/') {
       await router.push({ path: '/', query: router.currentRoute.value.query })
     }
     scrollStore.setTargetId(props.targetId)
@@ -50,7 +48,7 @@ const scrollToTarget = async () => {
   }
 }
 
-const handleKeydown = (event: KeyboardEvent) => {
+function handleKeydown(event: KeyboardEvent) {
   if (event.key === 'Enter' || event.key === ' ' || event.key === 'Spacebar') {
     scrollToTarget()
   }
@@ -60,7 +58,7 @@ const handleKeydown = (event: KeyboardEvent) => {
 <template>
   <li
     class="menu-bar-element d-md-inline-block d-none"
-    @click="scrollToTarget"
+    @click.stop="scrollToTarget"
     @keydown="handleKeydown"
     role="menuitem"
     :tabindex="tabIndex"
