@@ -18,11 +18,12 @@ const menuItems = [
   { text: 'menuBar.aboutUs', svg: NewsSVG, targetId: 'aboutUs' },
   { text: 'menuBar.team', svg: UserSVG, targetId: 'team' },
   { text: 'menuBar.rules', svg: BookSVG, targetId: 'gamingRules' },
-  { text: 'menuBar.appointments', svg: CalenderSVG, targetId: 'newsAndAppointments' },
+  { text: 'menuBar.appointments', svg: CalenderSVG, targetId: 'news-and-appointments' },
   { text: 'menuBar.contact', svg: contactImage, targetId: 'contact' }
 ]
 
 const handleKeydown = (event: KeyboardEvent) => {
+
   if (event.key === 'Enter' || event.key === ' ' || event.key === 'Spacebar') {
     event.preventDefault()
 
@@ -63,6 +64,8 @@ const handleKeydown = (event: KeyboardEvent) => {
           class="btn-close text-reset"
           data-bs-dismiss="offcanvas"
           aria-label="Close"
+          @keydown="handleKeydown"
+          tabindex="2"
         ></button>
       </div>
       <div class="offcanvas-body">
@@ -74,7 +77,7 @@ const handleKeydown = (event: KeyboardEvent) => {
             :svg="item.svg"
             :is-minimised="false"
             :target-id="item.targetId"
-            :tabIndex="index + 1"
+            :tabIndex="2 + index + 1"
           />
         </ul>
       </div>
@@ -86,6 +89,7 @@ const handleKeydown = (event: KeyboardEvent) => {
 .offcanvas {
   background-color: var(--primary-color);
   color: white;
+
   .menu-bar-element {
     display: block !important;
     margin-bottom: 20px;
