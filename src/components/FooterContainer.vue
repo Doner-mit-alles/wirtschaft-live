@@ -27,7 +27,7 @@ const bbsPhoneNumber = '+49413199220600'
                 :aria-label="$t('footer.streetTitle')"
                 :title="$t('footer.streetTitle')"
                 class="d-flex"
-                tabindex="100"
+                tabindex="500"
               >
                 <component class="icon me-1 align-items-center" :is="LocationElement" />
                 {{ $t('footer.street') }},<br />
@@ -44,7 +44,7 @@ const bbsPhoneNumber = '+49413199220600'
                 :href="`tel:${bbsPhoneNumber}`"
                 :aria-label="$t('footer.phoneArialLabel')"
                 :title="$t('footer.phoneArialLabel')"
-                tabindex="101"
+                tabindex="501"
               >
                 <component class="icon me-1 align-items-center" :is="PhoneElement" />
                 {{ $t('footer.phone') }}
@@ -60,7 +60,7 @@ const bbsPhoneNumber = '+49413199220600'
                 :href="`mailto:${bbsEmail}`"
                 :aria-label="$t('footer.mailTitle', { email: bbsEmail })"
                 :title="$t('footer.mailTitle', { email: bbsEmail })"
-                tabindex="102"
+                tabindex="502"
               >
                 <component class="icon me-1 align-items-center" :is="MailElement" />
                 {{ bbsEmail }}
@@ -76,7 +76,7 @@ const bbsPhoneNumber = '+49413199220600'
                 :to="{ path: '/impressum-und-datenschutz', query: $route.query }"
                 :aria-label="$t('footer.impressumTitle')"
                 :title="$t('footer.impressumTitle')"
-                tabindex="103"
+                tabindex="503"
               >
                 <component class="icon me-1 align-items-center" :is="NoteElement" />
                 {{ $t('footer.impressum') }}

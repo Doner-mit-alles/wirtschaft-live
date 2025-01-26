@@ -63,7 +63,7 @@ import InstagramElement from '@/assets/icons/instagram.svg'
             :aria-label="$t('footer.instagramAriaLabel')"
             :title="$t('footer.instagramTitle')"
             href="https://www.instagram.com/bbs1lg/"
-            tabindex="104"
+            tabindex="50"
           >
             <component :is="InstagramElement" />
           </a>

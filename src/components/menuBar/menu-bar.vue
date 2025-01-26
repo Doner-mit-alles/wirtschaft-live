@@ -59,6 +59,7 @@ const menuBarClasses = computed(() => ({
       @click="scrollStore.setTargetId('')"
       :to="{ path: '/', query: $route.query }"
       id="menu-team-name"
+      tabindex="2"
       >Baller Los
     </router-link>
 
@@ -71,7 +72,7 @@ const menuBarClasses = computed(() => ({
           :svg="item.svg"
           :is-minimised="isMinimised"
           :target-id="item.targetId"
-          :tabIndex="index + 1"
+          :tabIndex="1 + index + 1"
         />
         <BurgerMenu :svg="BurgerMenuSVG" />
         <MenuLanguageButton />

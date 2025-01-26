@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import InstagramElement from '@/assets/icons/instagram.svg'
 </script>
 
 <template>
@@ -44,7 +43,7 @@ import InstagramElement from '@/assets/icons/instagram.svg'
       <h6>{{ $t('container.privacyPolice.fourthHeadline') }}</h6>
       <p>
         {{ $t('container.privacyPolice.fourthContent') }}
-        <a class="break" href="https://www.emailjs.com/legal/privacy-policy/">https://www.emailjs.com/legal/privacy-policy/</a>
+        <a tabindex=401 class="break" href="https://www.emailjs.com/legal/privacy-policy/">https://www.emailjs.com/legal/privacy-policy/</a>
       </p>
 
       <p>

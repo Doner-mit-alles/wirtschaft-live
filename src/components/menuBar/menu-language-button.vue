@@ -9,6 +9,7 @@ const selectedLanguage = ref('')
 const isMenuVisible = ref(false)
 const router = useRouter()
 const route = useRoute()
+const dropdownRef = ref<HTMLDivElement | null>(null)
 
 async function setVueLanguage() {
   await setLanguage(getLangFromUrl())
@@ -17,7 +18,7 @@ async function setVueLanguage() {
 const changeLanguage = async (lang: string) => {
   await router.push({
     path: route.path,
-    query: { ...route.query, lang:lang }
+    query: { ...route.query, lang: lang }
   })
   await setVueLanguage()
   selectedLanguage.value = lang
@@ -41,15 +42,23 @@ const toggleMenu = (): void => {
   }
 }
 
-const handleKeydown = (event: KeyboardEvent) => {
+const handleKeydown = async (event: KeyboardEvent) => {
   if (event.key === 'Enter' || event.key === ' ' || event.key === 'Spacebar') {
     event.preventDefault()
+    await toggleMenu()
+    const child = document.getElementById('language-0') as HTMLElement
+    if (child) {
+      child.focus()
+    }
+  }
+}
 
-    const currentLanguage = selectedLanguage.value
-    const currentIndex = languages.findIndex((lang) => lang.code === currentLanguage)
-    const nextIndex = (currentIndex + 1) % languages.length
-
-    changeLanguage(languages[nextIndex].code)
+const handelKeyDownLanguageSelection = async (event: KeyboardEvent, lang: string) => {
+  if (event.key === 'Tab') {
+    await toggleMenu()
+  } else if (event.key === 'Enter' || event.key === ' ' || event.key === 'Spacebar') {
+    await changeLanguage(lang)
+    closeMenu()
   }
 }
 
@@ -57,12 +66,18 @@ const languages = [
   { code: 'de', flag: germany, altText: 'Deutschland' },
   { code: 'en', flag: england, altText: 'England' }
 ]
+const filterLanguageArray = () => {
+  const arrayCopy = [...languages]
+  const indexToRemove = arrayCopy.findIndex((item) => item.code === selectedLanguage.value)
+  if (indexToRemove !== -1) {
+    arrayCopy.splice(indexToRemove, 1)
+  }
 
+  return arrayCopy
+}
 setVueLanguage().then(() => {
   selectedLanguage.value = i18n.global.locale
 })
-
-const dropdownRef = ref<HTMLDivElement | null>(null)
 
 const closeMenu = (): void => {
   isMenuVisible.value = false
@@ -95,7 +110,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <li class="language-drop-box" tabindex="5" @keydown="handleKeydown">
+  <li class="language-drop-box" tabindex="7" @keydown="handleKeydown">
     <div
       class="language-drop-box-container dropdown"
       ref="dropdownRef"
@@ -112,16 +127,15 @@ onMounted(async () => {
         <div class="language-drop-box-selection">
           <div
             class="w-100 h-100"
-            v-for="language in languages"
+            v-for="(language, index) in filterLanguageArray()"
             :title="language.altText"
             :key="language.code"
+            :id="'language-' + index"
             @click="changeLanguage(language.code)"
+            @keydown="(event) => handelKeyDownLanguageSelection(event, language.code)"
+            :tabindex="7 + index"
           >
-            <component
-              v-if="currentFlag.language != language.code"
-              :is="language.flag"
-              :alt="language.altText"
-            />
+            <component :is="language.flag" :alt="language.altText" />
           </div>
         </div>
       </div>
