@@ -34,6 +34,16 @@ const handleKeydown = (event: KeyboardEvent) => {
     }
   }
 }
+
+const closeModal = () => {
+  const offcanvas = document.querySelector('.offcanvas.show') as HTMLElement | null;
+  if (offcanvas) {
+    const bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvas) || new bootstrap.Offcanvas(offcanvas);
+    if (bsOffcanvas) {
+      bsOffcanvas.hide();
+    }
+  }
+};
 </script>
 
 <template>
@@ -65,6 +75,7 @@ const handleKeydown = (event: KeyboardEvent) => {
           data-bs-dismiss="offcanvas"
           aria-label="Close"
           @keydown="handleKeydown"
+          @keydown.enter="closeModal"
           tabindex="2"
         ></button>
       </div>

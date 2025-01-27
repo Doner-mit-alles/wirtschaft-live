@@ -6,14 +6,7 @@
     <div class="col-12 bg-primary text-white privacy-police p-4 pl-3 p-md-5">
       <h2 class="break" v-html="$t('container.privacyPolice.headline')">
       </h2>
-
-      <span
-        v-html="
-                  $t('container.contactForm.privacyCheckbox', {
-                    url: '/impressum-und-datenschutz'
-                  })
-                "
-      ></span>
+      
       <p>
         {{ $t('container.privacyPolice.generalInfo') }}
       </p>

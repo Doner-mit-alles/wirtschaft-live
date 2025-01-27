@@ -74,7 +74,9 @@
       },
       "infoText": "* Mit * markierte Felder sind Pflichtfelder!",
       "submit": "Senden",
-      "privacyCheckbox": "Ich habe die <a tabindex=400 href=\"{url}\">Datenschutzerklärung</a> gelesen und bin einverstanden"
+      "privacyCheckbox1": "Ich habe die",
+      "privacyLink": "Datenschutzerkärung",
+      "privacyCheckbox2": "gelesen und bin einverstanden"
     },
     "gamingRules": {
       "imageAltText": "Bild, welches die Spielunterlage aufzeigt. Es gibt Baustämme und Felder im Wasser, die mit Fischen aufgezeigt werden. Die Spielunterlage zeigt vom Start bis zum Ziel",

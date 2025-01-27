@@ -13,6 +13,15 @@ const formValues = ref({
 const public_key = 'BZt0CRiWeDdtQ-hpj'
 const isCheckBoxClicked = ref(false)
 
+const checkPrivacyCheckbox = () => {
+  isCheckBoxClicked.value = true;
+
+  const checkbox = document.getElementById('privacy-checkbox') as HTMLInputElement;
+  if (checkbox) {
+    checkbox.focus();
+  }
+}
+
 const sendEmail = async (event: Event) => {
   event.preventDefault(); // Prevent default form submission
 
@@ -151,14 +160,23 @@ const sendEmail = async (event: Event) => {
             <!--Unterer Teil-->
             <p class="info">{{ $t('container.contactForm.infoText') }}</p>
             <label for="privacy-checkbox">
-              <input v-model="isCheckBoxClicked" id="privacy-checkbox" name="privacy-checkbox" required type="checkbox" tabindex="305"/>
-              <span
-                v-html="
-                  $t('container.contactForm.privacyCheckbox', {
-                    url: '/impressum-und-datenschutz'
-                  })
-                "
-              ></span>
+              <input v-model="isCheckBoxClicked"
+                     id="privacy-checkbox"
+                     tabindex="305"
+                     name="privacy-checkbox"
+                     required
+                     type="checkbox"
+                     @keydown.enter="checkPrivacyCheckbox"
+              />
+              {{ $t('container.contactForm.privacyCheckbox1') }}
+              <router-link
+                :to="{ path: '/impressum-und-datenschutz', query: $route.query }"
+                :aria-label="$t('footer.impressumTitle')"
+                :title="$t('footer.impressumTitle')"
+              >
+                 {{ $t('container.contactForm.privacyLink') }}
+              </router-link>
+              {{ $t('container.contactForm.privacyCheckbox2') }}
             </label>
 
             <div class="col-12 text-end">

@@ -73,7 +73,9 @@
       },
       "infoText": "* Fields marked with * are required!",
       "submit": "Submit",
-      "privacyCheckbox": "I have read and agree to the <a tabindex=400 href=\"{url}\">Privacy Policy</a>"
+      "privacyCheckbox1": "I have read and agree to the",
+      "privacyLink": "Privacy Policy",
+      "privacyCheckbox2": ""
     },
     "gamingRules": {
       "imageAltText": "Image showing the game board with logs and water fields marked with fish. The game board goes from start to finish.",
