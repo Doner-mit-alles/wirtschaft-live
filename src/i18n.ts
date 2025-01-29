@@ -34,8 +34,11 @@ const i18n = createI18n({
  * @param locale - language like 'de', 'en'
  * @see setLanguageToBrowserLanguage
  */
-export const setLanguage = async (locale: string): Promise<void> => {
+export const setLanguage = async (locale: string | null): Promise<void> => {
   try {
+    if(locale == null){
+      return
+    }
     if (!getAvailableLocales().includes(locale)) {
       await setLanguageToBrowserLanguage()
       return
