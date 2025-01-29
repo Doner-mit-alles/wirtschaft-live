@@ -21,7 +21,7 @@ onMounted(() => {
 
 <template>
   <div class="bubble-container position-relative">
-    <div class="bubble w-100 h-100 position-absolute">
+    <div class="bubble w-100 h-100 position-absolute no-select no-print">
       <img
         v-for="(bubble, index) in bubbles"
         :key="index"

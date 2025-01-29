@@ -34,8 +34,11 @@ const i18n = createI18n({
  * @param locale - language like 'de', 'en'
  * @see setLanguageToBrowserLanguage
  */
-export const setLanguage = async (locale: string): Promise<void> => {
+export const setLanguage = async (locale: string | null): Promise<void> => {
   try {
+    if(locale == null){
+      return
+    }
     if (!getAvailableLocales().includes(locale)) {
       await setLanguageToBrowserLanguage()
       return
@@ -43,7 +46,7 @@ export const setLanguage = async (locale: string): Promise<void> => {
     const messages = await import(`./locales/${locale}.json`)
     i18n.global.setLocaleMessage(locale, messages.default)
     i18n.global.locale = locale
-    document.documentElement.lang = locale;
+    document.documentElement.lang = locale
   } catch (error) {
     console.error(`Cant load language file ${locale}: `, error)
   }
@@ -78,6 +81,12 @@ export const getAvailableLocales = (): string[] => {
  */
 export const setLanguageToDefault = async () => {
   await setLanguage(DEFAULT_LANGUAGE)
+}
+
+export const getLangFromUrl = (): string | null => {
+  const parsedUrl = new URL(window.location.href)
+  const params = parsedUrl.searchParams
+  return params.get('lang')
 }
 
 export default i18n

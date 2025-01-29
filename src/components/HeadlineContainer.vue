@@ -37,4 +37,10 @@ div {
     font-size: 1.25rem;
   }
 }
+
+.icons-wrapper svg {
+  @media (max-width: 576px) {
+    width: 31px;
+  }
+}
 </style>

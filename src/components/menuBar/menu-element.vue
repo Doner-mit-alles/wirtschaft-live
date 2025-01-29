@@ -1,7 +1,11 @@
 <script setup lang="ts">
-import { onMounted, onUpdated, ref } from 'vue'
 import * as bootstrap from 'bootstrap'
+import { useRoute, useRouter } from 'vue-router'
+import { useScrollStore } from '@/stores/useScrollStore'
 
+const router = useRouter()
+const route = useRoute()
+const scrollStore = useScrollStore()
 const props = defineProps({
   text: {
     type: String,
@@ -25,42 +29,16 @@ const props = defineProps({
   }
 })
 
-const targetElement = ref<HTMLElement | null>(null)
-const menuHeight = ref<number>(0)
-
-onMounted(() => {
-  targetElement.value = document.getElementById(props.targetId)
-})
-
-onUpdated(() => {
-  const menu = document.getElementById('menu')
-  menuHeight.value = menu ? menu.clientHeight : 0
-})
-
-const scrollToTarget = () => {
-  if (targetElement.value) {
-    const rect = targetElement.value.getBoundingClientRect()
-    const elementTop = rect.top + window.scrollY // Get the top position of the element relative to the document
-    const elementHeight = rect.height // Height of the element
-    const viewportHeight = window.innerHeight // Height of the viewport
-
-    // Calculate the scroll position to center the element, adjusted for the menu height
-    const scrollToPosition = elementTop - viewportHeight / 2 + elementHeight / 2 - menuHeight.value
-
-    // Scroll to the calculated position smoothly
-    window.scrollTo({
-      top: scrollToPosition,
-      behavior: 'smooth'
-    })
-
+const scrollToTarget = async () => {
+  if (props.targetId) {
+    if (route.path !== '/') {
+      await router.push({ path: '/', query: router.currentRoute.value.query })
+    }
+    scrollStore.setTargetId(props.targetId)
     const offCanvasElement = document.querySelector('#offcanvasMenu') as HTMLElement
     if (offCanvasElement) {
-      console.log('Found offCanvas element:', offCanvasElement)
-
       const offCanvas = bootstrap.Offcanvas.getInstance(offCanvasElement)
-
       if (!offCanvas) {
-        console.log('Creating new offCanvas instance.')
         const offcanvas = new bootstrap.Offcanvas(offCanvasElement)
         offcanvas.hide()
       } else {
@@ -70,7 +48,7 @@ const scrollToTarget = () => {
   }
 }
 
-const handleKeydown = (event: KeyboardEvent) => {
+function handleKeydown(event: KeyboardEvent) {
   if (event.key === 'Enter' || event.key === ' ' || event.key === 'Spacebar') {
     scrollToTarget()
   }
@@ -80,7 +58,7 @@ const handleKeydown = (event: KeyboardEvent) => {
 <template>
   <li
     class="menu-bar-element d-md-inline-block d-none"
-    @click="scrollToTarget"
+    @click.stop="scrollToTarget"
     @keydown="handleKeydown"
     role="menuitem"
     :tabindex="tabIndex"
@@ -109,6 +87,7 @@ const handleKeydown = (event: KeyboardEvent) => {
   font-size: 1rem;
   cursor: pointer;
   transition: font-size 0.3s ease;
+
   svg {
     transition:
       width 0.3s ease,

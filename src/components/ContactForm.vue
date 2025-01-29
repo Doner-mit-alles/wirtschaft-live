@@ -11,6 +11,16 @@ const formValues = ref({
 })
 
 const public_key = 'BZt0CRiWeDdtQ-hpj'
+const isCheckBoxClicked = ref(false)
+
+const checkPrivacyCheckbox = () => {
+  isCheckBoxClicked.value = true;
+
+  const checkbox = document.getElementById('privacy-checkbox') as HTMLInputElement;
+  if (checkbox) {
+    checkbox.focus();
+  }
+}
 
 const sendEmail = async (event: Event) => {
   event.preventDefault(); // Prevent default form submission
@@ -21,6 +31,11 @@ const sendEmail = async (event: Event) => {
   if (!isValid) {
     alert('Please fill in all fields.');
     return;
+  }
+
+  if(!isCheckBoxClicked.value) {
+    alert('Please accept the privacy policy.');
+    return
   }
 
   try {
@@ -42,7 +57,7 @@ const sendEmail = async (event: Event) => {
 
 
 <template>
-  <div class="row g-3 mb-4 g-2">
+  <div id="contact" class="row g-3 mb-4 g-2">
     <div class="col-12 bg-primary container-wrapper">
       <h2 class="headline text-md-end text-left px-4 px-md-5 pt-md-5 pt-4 pb-2 pb-md-3">
         {{ $t('container.contactForm.headline') }}
@@ -70,6 +85,7 @@ const sendEmail = async (event: Event) => {
                   class="form-control"
                   required
                   aria-required="true"
+                  tabindex="300"
                 />
               </div>
 
@@ -86,6 +102,7 @@ const sendEmail = async (event: Event) => {
                   class="form-control"
                   required
                   aria-required="true"
+                  tabindex="301"
                 />
               </div>
 
@@ -102,6 +119,7 @@ const sendEmail = async (event: Event) => {
                   class="form-control"
                   required
                   aria-required="true"
+                  tabindex="302"
                 />
               </div>
             </div>
@@ -118,6 +136,7 @@ const sendEmail = async (event: Event) => {
                   name="subject"
                   type="text"
                   class="form-control"
+                  tabindex="303"
                 />
               </div>
 
@@ -134,25 +153,34 @@ const sendEmail = async (event: Event) => {
                   rows="5"
                   required
                   aria-required="true"
+                  tabindex="304"
                 ></textarea>
               </div>
             </div>
             <!--Unterer Teil-->
             <p class="info">{{ $t('container.contactForm.infoText') }}</p>
-
             <label for="privacy-checkbox">
-              <input id="privacy-checkbox" name="privacy-checkbox" required type="checkbox" />
-              <span
-                v-html="
-                  $t('container.contactForm.privacyCheckbox', {
-                    url: 'https://example.com/datenschutz'
-                  })
-                "
-              ></span>
+              <input v-model="isCheckBoxClicked"
+                     id="privacy-checkbox"
+                     tabindex="305"
+                     name="privacy-checkbox"
+                     required
+                     type="checkbox"
+                     @keydown.enter="checkPrivacyCheckbox"
+              />
+              {{ $t('container.contactForm.privacyCheckbox1') }}
+              <router-link
+                :to="{ path: '/impressum-und-datenschutz', query: $route.query }"
+                :aria-label="$t('footer.impressumTitle')"
+                :title="$t('footer.impressumTitle')"
+              >
+                 {{ $t('container.contactForm.privacyLink') }}
+              </router-link>
+              {{ $t('container.contactForm.privacyCheckbox2') }}
             </label>
 
             <div class="col-12 text-end">
-              <button class="btn btn-primary" type="submit" @click="sendEmail">
+              <button tabindex="310" class="btn btn-primary" type="submit" @click="sendEmail">
                 {{ $t('container.contactForm.submit') }}
               </button>
             </div>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, computed, watch } from 'vue'
+import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
 import NewsSVG from '@/assets/icons/news.svg'
 import CalenderSVG from '@/assets/icons/calendar.svg'
 import BookSVG from '@/assets/icons/book-open.svg'
@@ -10,8 +10,10 @@ import MenuLanguageButton from '@/components/menuBar/menu-language-button.vue'
 import { useMenuBarStore } from '@/stores/useMenuBarStore'
 import BurgerMenu from '@/components/menuBar/BurgerMenu.vue'
 import BurgerMenuSVG from '@/assets/icons/burger-menu.svg'
+import { useScrollStore } from '@/stores/useScrollStore'
 
-const store = useMenuBarStore()
+const menuStore = useMenuBarStore()
+const scrollStore = useScrollStore()
 const isMinimised = ref<boolean>(false)
 
 const handleScroll = () => {
@@ -28,7 +30,7 @@ onUnmounted(() => {
 
 // Watch for changes in isMinimised and update the store
 watch(isMinimised, (newValue) => {
-  store.setStatus(newValue)
+  menuStore.setStatus(newValue)
 })
 
 // Menu items data with type annotation
@@ -36,7 +38,7 @@ const menuItems = [
   { text: 'menuBar.aboutUs', svg: NewsSVG, targetId: 'aboutUs' },
   { text: 'menuBar.team', svg: UserSVG, targetId: 'team' },
   { text: 'menuBar.rules', svg: BookSVG, targetId: 'gamingRules' },
-  { text: 'menuBar.appointments', svg: CalenderSVG, targetId: 'newsAndAppointments' },
+  { text: 'menuBar.appointments', svg: CalenderSVG, targetId: 'news-and-appointments' },
   { text: 'menuBar.contact', svg: contactSVG, targetId: 'contact' }
 ]
 
@@ -53,7 +55,13 @@ const menuBarClasses = computed(() => ({
     id="menubar"
     class="d-flex justify-content-between align-items-center p-3 m-auto mt-2"
   >
-    <p id="menu-team-name">Baller Los</p>
+    <router-link
+      @click="scrollStore.setTargetId('')"
+      :to="{ path: '/', query: $route.query }"
+      id="menu-team-name"
+      tabindex="2"
+      >Baller Los
+    </router-link>
 
     <nav class="menu-element-container">
       <ul class="p-0 mb-0 text-center" role="menubar">
@@ -64,7 +72,7 @@ const menuBarClasses = computed(() => ({
           :svg="item.svg"
           :is-minimised="isMinimised"
           :target-id="item.targetId"
-          :tabIndex="index + 1"
+          :tabIndex="1 + index + 1"
         />
         <BurgerMenu :svg="BurgerMenuSVG" />
         <MenuLanguageButton />
@@ -74,6 +82,10 @@ const menuBarClasses = computed(() => ({
 </template>
 
 <style scoped>
+/* 
+  Dont remove!!!
+  Are used in script tag
+ */
 .menu-bar {
   border-radius: 50px;
   background: var(--primary-color);
@@ -86,12 +98,20 @@ const menuBarClasses = computed(() => ({
   }
 }
 
+/* 
+  Dont remove!!!
+  Are used in script tag
+ */
 @media (min-width: 768px) and (max-width: 992px) {
   .menu-bar {
     font-size: 1rem;
   }
 }
 
+/* 
+  Dont remove!!!
+  Are used in script tag
+ */
 .menu-bar-fixed {
   position: sticky;
   width: 100%;
@@ -109,7 +129,14 @@ const menuBarClasses = computed(() => ({
   text-shadow: var(--primary-shadow);
   margin-bottom: 0;
   margin-left: 0.625rem;
+  text-decoration: none;
   letter-spacing: 1px;
+  color: white;
+  cursor: pointer;
+}
+
+#menu-team-name:hover {
+  color: white;
 }
 
 .menu-element-container {
@@ -117,6 +144,7 @@ const menuBarClasses = computed(() => ({
   flex-direction: row;
   margin-right: 0.625rem;
   gap: 10px;
+
   li {
     display: inline-block;
     line-height: 1;

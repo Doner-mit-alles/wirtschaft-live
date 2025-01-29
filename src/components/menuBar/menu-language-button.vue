@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import i18n, { setLanguage, setLanguageToBrowserLanguage } from '@/i18n'
+import i18n, { getLangFromUrl, setLanguage } from '@/i18n'
 import { computed, onMounted, onUnmounted, onUpdated, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import germany from '@/assets/flag/germany_round.svg'
@@ -9,20 +9,16 @@ const selectedLanguage = ref('')
 const isMenuVisible = ref(false)
 const router = useRouter()
 const route = useRoute()
+const dropdownRef = ref<HTMLDivElement | null>(null)
 
 async function setVueLanguage() {
-  const lang: string | null = typeof route.query.lang === 'string' ? route.query.lang : null
-  if (lang == 'null' || lang == null) {
-    await setLanguageToBrowserLanguage()
-    return
-  }
-  await setLanguage(lang)
+  await setLanguage(getLangFromUrl())
 }
 
 const changeLanguage = async (lang: string) => {
   await router.push({
     path: route.path,
-    query: { ...route.query, lang }
+    query: { ...route.query, lang: lang }
   })
   await setVueLanguage()
   selectedLanguage.value = lang
@@ -46,15 +42,23 @@ const toggleMenu = (): void => {
   }
 }
 
-const handleKeydown = (event: KeyboardEvent) => {
+const handleKeydown = async (event: KeyboardEvent) => {
   if (event.key === 'Enter' || event.key === ' ' || event.key === 'Spacebar') {
     event.preventDefault()
+    await toggleMenu()
+    const child = document.getElementById('language-0') as HTMLElement
+    if (child) {
+      child.focus()
+    }
+  }
+}
 
-    const currentLanguage = selectedLanguage.value
-    const currentIndex = languages.findIndex((lang) => lang.code === currentLanguage)
-    const nextIndex = (currentIndex + 1) % languages.length
-
-    changeLanguage(languages[nextIndex].code)
+const handelKeyDownLanguageSelection = async (event: KeyboardEvent, lang: string) => {
+  if (event.key === 'Tab') {
+    await toggleMenu()
+  } else if (event.key === 'Enter' || event.key === ' ' || event.key === 'Spacebar') {
+    await changeLanguage(lang)
+    closeMenu()
   }
 }
 
@@ -62,12 +66,18 @@ const languages = [
   { code: 'de', flag: germany, altText: 'Deutschland' },
   { code: 'en', flag: england, altText: 'England' }
 ]
+const filterLanguageArray = () => {
+  const arrayCopy = [...languages]
+  const indexToRemove = arrayCopy.findIndex((item) => item.code === selectedLanguage.value)
+  if (indexToRemove !== -1) {
+    arrayCopy.splice(indexToRemove, 1)
+  }
 
+  return arrayCopy
+}
 setVueLanguage().then(() => {
   selectedLanguage.value = i18n.global.locale
 })
-
-const dropdownRef = ref<HTMLDivElement | null>(null)
 
 const closeMenu = (): void => {
   isMenuVisible.value = false
@@ -75,12 +85,16 @@ const closeMenu = (): void => {
 
 onUpdated(() => {
   const element = document.getElementById('language-drop-box-container')
-  if (!isMenuVisible.value && element != null && element.classList.contains('language-drop-box-container-open')) {
+  if (
+    !isMenuVisible.value &&
+    element != null &&
+    element.classList.contains('language-drop-box-container-open')
+  ) {
     element.classList.remove('language-drop-box-container-open')
   }
 })
 
-onMounted(() => {
+onMounted(async () => {
   const handleClickOutside = (event: MouseEvent) => {
     if (dropdownRef.value && !dropdownRef.value.contains(event.target as Node)) {
       closeMenu()
@@ -96,7 +110,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <li class="language-drop-box" tabindex="5" @keydown="handleKeydown">
+  <li class="language-drop-box" tabindex="7" @keydown="handleKeydown">
     <div
       class="language-drop-box-container dropdown"
       ref="dropdownRef"
@@ -113,17 +127,15 @@ onMounted(() => {
         <div class="language-drop-box-selection">
           <div
             class="w-100 h-100"
-            v-for="language in languages"
+            v-for="(language, index) in filterLanguageArray()"
             :title="language.altText"
             :key="language.code"
+            :id="'language-' + index"
+            @click="changeLanguage(language.code)"
+            @keydown="(event) => handelKeyDownLanguageSelection(event, language.code)"
+            :tabindex="7 + index"
           >
-            <component
-              v-if="currentFlag.language != language.code"
-              @click="changeLanguage(language.code)"
-              :is="language.flag"
-              class="language-drop-box-select-child"
-              :alt="language.altText"
-            />
+            <component :is="language.flag" :alt="language.altText" />
           </div>
         </div>
       </div>
@@ -133,6 +145,7 @@ onMounted(() => {
 
 <style scoped>
 .language-drop-box {
+  padding-left: 8px;
   width: 30px;
   display: flex;
   justify-content: center;
