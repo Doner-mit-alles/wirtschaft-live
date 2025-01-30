@@ -69,15 +69,13 @@ const languages = [
 const filterLanguageArray = () => {
   const arrayCopy = [...languages]
   const indexToRemove = arrayCopy.findIndex((item) => item.code === selectedLanguage.value)
+  selectedLanguage.value
   if (indexToRemove !== -1) {
     arrayCopy.splice(indexToRemove, 1)
   }
 
   return arrayCopy
 }
-setVueLanguage().then(() => {
-  selectedLanguage.value = i18n.global.locale
-})
 
 const closeMenu = (): void => {
   isMenuVisible.value = false
@@ -92,9 +90,14 @@ onUpdated(() => {
   ) {
     element.classList.remove('language-drop-box-container-open')
   }
+
+  selectedLanguage.value = i18n.global.locale
 })
 
 onMounted(async () => {
+  if (selectedLanguage.value == '') {
+    await setVueLanguage()
+  }
   const handleClickOutside = (event: MouseEvent) => {
     if (dropdownRef.value && !dropdownRef.value.contains(event.target as Node)) {
       closeMenu()

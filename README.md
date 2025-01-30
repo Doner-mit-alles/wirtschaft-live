@@ -1,15 +1,17 @@
 # wirtschaft-live
+This is the website for the Baller Los department of the student company of BBS 1 Lüneburg.
+It is used for the presentation of the board game “Maximal sechs”, which will be presented at the Wirtschaft Live trade fair
 
 ## Genereller Rahmen und Anforderungen:
-- Darstellung Schülerfirma, Produkte, Angebote
-- Responsive Webdesign für Mobile Devices
-- rechtlich notwendige Inhalte einer Webseite
-- Kontaktformular
-- Zielgruppenorientierte Barrierefreiheit
-- *zweisprachige Informationsdarstellung (Deutsch/Englisch) (nur wenn die "Kunden" dies wünschen)*
+- Presentation of student company, products, offers
+- Responsive web design for mobile devices
+- Legally required contents of a website
+- Contact form
+- Target group-oriented accessibility
+- Bilingual presentation of information (German/English) (only if the “customers” so wish)*
 
-## Kundenkommunikation und Ressourcen
-[Hier geht es zur Taskcard](https://bbs1-lueneburg.taskcards.app/#/board/d7e57835-06b7-4607-84d1-95c4b00c0c19/view?token=3122f675-a3ab-487d-8ee7-cc967a5bdaf4) 
+## Customer communication and resources
+[Click here for the taskcard](https://bbs1-lueneburg.taskcards.app/#/board/d7e57835-06b7-4607-84d1-95c4b00c0c19/view?token=3122f675-a3ab-487d-8ee7-cc967a5bdaf4) 
 
 ---
 

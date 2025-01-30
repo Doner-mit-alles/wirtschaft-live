@@ -43,6 +43,7 @@ export const setLanguage = async (locale: string | null): Promise<void> => {
       await setLanguageToBrowserLanguage()
       return
     }
+
     const messages = await import(`./locales/${locale}.json`)
     i18n.global.setLocaleMessage(locale, messages.default)
     i18n.global.locale = locale
