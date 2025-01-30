@@ -7,7 +7,7 @@ import CalenderSVG from '@/assets/icons/calendar.svg'
 import contactImage from '@/assets/icons/contact.svg'
 import * as bootstrap from 'bootstrap'
 
-const props = defineProps({
+defineProps({
   svg: {
     type: String,
     required: true
@@ -22,8 +22,11 @@ const menuItems = [
   { text: 'menuBar.contact', svg: contactImage, targetId: 'contact' }
 ]
 
+/**
+ * Handle keyboard inputs
+ * @param event
+ */
 const handleKeydown = (event: KeyboardEvent) => {
-
   if (event.key === 'Enter' || event.key === ' ' || event.key === 'Spacebar') {
     event.preventDefault()
 
@@ -35,15 +38,19 @@ const handleKeydown = (event: KeyboardEvent) => {
   }
 }
 
+/**
+ * Close menu
+ */
 const closeModal = () => {
-  const offcanvas = document.querySelector('.offcanvas.show') as HTMLElement | null;
+  const offcanvas = document.querySelector('.offcanvas.show') as HTMLElement | null
   if (offcanvas) {
-    const bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvas) || new bootstrap.Offcanvas(offcanvas);
+    const bsOffcanvas =
+      bootstrap.Offcanvas.getInstance(offcanvas) || new bootstrap.Offcanvas(offcanvas)
     if (bsOffcanvas) {
-      bsOffcanvas.hide();
+      bsOffcanvas.hide()
     }
   }
-};
+}
 </script>
 
 <template>

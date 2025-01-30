@@ -1,5 +1,4 @@
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div id="team" class="row mb-4 team border-radius-20">
@@ -15,7 +14,13 @@
         />
 
         <!-- Bootstrap Modal -->
-        <div class="modal fade" id="teamImageModal" tabindex="-1" aria-labelledby="teamImageModalLabel" aria-hidden="true">
+        <div
+          class="modal fade"
+          id="teamImageModal"
+          tabindex="-1"
+          aria-labelledby="teamImageModalLabel"
+          aria-hidden="true"
+        >
           <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
               <!-- Schließen-Button oben rechts -->
@@ -40,7 +45,9 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-12 col-12 text-light p-4 p-md-5 gradient-box-color-transition team-content">
+      <div
+        class="col-lg-12 col-12 text-light p-4 p-md-5 gradient-box-color-transition team-content"
+      >
         <h2 class="text-left">{{ $t('teamContainer.title') }}</h2>
         <p class="team-content">
           {{ $t('teamContainer.content') }}
@@ -76,7 +83,9 @@
 
 .class-photo-image {
   cursor: pointer;
-  transition: transform 0.3s ease, filter 0.5s ease;
+  transition:
+    transform 0.3s ease,
+    filter 0.5s ease;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   border-top-width: 0;

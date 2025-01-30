@@ -156,7 +156,8 @@ img {
   text-shadow: 3px 4px 10px #000000;
 }
 
-ul li, ol li {
+ul li,
+ol li {
   @media (max-width: 576px) {
     font-size: 0.875rem !important;
   }

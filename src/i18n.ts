@@ -42,7 +42,6 @@ const i18n = createI18n({
  */
 export const setLanguage = async (locale: string): Promise<void> => {
   try {
-
     if (!getAvailableLocales().includes(locale)) {
       await setLanguageToBrowserLanguage()
       return
@@ -96,7 +95,6 @@ export const setLanguageToDefault = async () => {
  * Get the lang query from the url
  */
 export const getLangFromUrl = (): string =>
-  new URLSearchParams(window.location.search).get('lang') ?? "";
-
+  new URLSearchParams(window.location.search).get('lang') ?? ''
 
 export default i18n

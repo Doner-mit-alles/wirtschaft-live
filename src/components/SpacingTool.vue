@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue';
+import { computed, onMounted, ref } from 'vue'
 
 const props = defineProps({
   height: {
@@ -14,23 +14,28 @@ const props = defineProps({
     type: String,
     required: false
   }
-});
+})
 
-const isMobile = ref(false);
+const isMobile = ref(false)
 
+/**
+ * Define the threshold value for mobile here (e.g. 768px)
+ */
 const checkMobile = () => {
-  isMobile.value = window.innerWidth <= 768; // Definiere hier den Schwellenwert für Mobile (z.B. 768px)
-};
+  isMobile.value = window.innerWidth <= 768
+}
+
+/**
+ * Calculated height based on mobileHeight and the screen size
+ */
+const dynamicHeight = computed(() => {
+  return isMobile.value && props.mobileHeight ? props.mobileHeight : props.height
+})
 
 onMounted(() => {
-  checkMobile();
-  window.addEventListener('resize', checkMobile);
-});
-
-// Berechnete Höhe basierend auf mobileHeight und der Bildschirmgröße
-const dynamicHeight = computed(() => {
-  return isMobile.value && props.mobileHeight ? props.mobileHeight : props.height;
-});
+  checkMobile()
+  window.addEventListener('resize', checkMobile)
+})
 </script>
 
 <template>

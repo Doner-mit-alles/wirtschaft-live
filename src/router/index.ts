@@ -5,7 +5,7 @@ const routes = [
     path: '/',
     name: 'Home',
     component: () => import('@/views/HomeView.vue'),
-    meta: {  title: 'Baller Los' }
+    meta: { title: 'Baller Los' }
   },
   {
     path: '/impressum-und-datenschutz',
@@ -26,8 +26,7 @@ const router = createRouter({
 })
 
 router.afterEach((to) => {
-  document.title = to.meta.title?.toString() || 'Default Title';
-});
-
+  document.title = to.meta.title?.toString() || 'Default Title'
+})
 
 export default router

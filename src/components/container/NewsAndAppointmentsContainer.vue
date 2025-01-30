@@ -1,5 +1,4 @@
-<script lang="ts" setup>
-</script>
+<script lang="ts" setup></script>
 
 <template>
   <div id="news-and-appointments" class="row mb-4">
@@ -13,7 +12,7 @@
         </div>
       </div>
       <div id="news-bottom-text">
-        <div> {{ $t('container.news.bottom_text') }} </div>
+        <div>{{ $t('container.news.bottom_text') }}</div>
       </div>
     </div>
     <div class="col-lg-5 col-12 ms-auto">
@@ -33,7 +32,6 @@
 </template>
 
 <style scoped>
-
 @media (max-width: 992px) {
   #news-bottom-text {
     margin-bottom: 10%;
@@ -45,12 +43,12 @@
 }
 
 .leftpad {
-  padding-left: 4%
+  padding-left: 4%;
 }
 
 #news-top-text {
   padding: 4%;
-  background-color: #2C86A5;
+  background-color: #2c86a5;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
@@ -64,7 +62,7 @@
 
 #news-bottom-text {
   padding: 2%;
-  background-color: #11333F;
+  background-color: #11333f;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   text-align: center;
@@ -72,17 +70,16 @@
 
 #appointments-top-text {
   padding: 4%;
-  background-color: #4BC3B6;
+  background-color: #4bc3b6;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
 
 #appointments-bottom-text {
   padding: 2%;
-  background-color: #245D57;
+  background-color: #245d57;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   text-align: center;
 }
-
 </style>

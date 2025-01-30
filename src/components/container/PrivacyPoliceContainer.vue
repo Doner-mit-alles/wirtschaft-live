@@ -1,20 +1,18 @@
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="row mb-4">
     <div class="col-12 bg-primary text-white privacy-police p-4 pl-3 p-md-5">
-      <h2 class="break" v-html="$t('container.privacyPolice.headline')">
-      </h2>
-      
+      <h2 class="break" v-html="$t('container.privacyPolice.headline')"></h2>
+
       <p>
         {{ $t('container.privacyPolice.generalInfo') }}
       </p>
 
       <p>
-        BBS I Lüneburg<br>
-        Spillbrunnenweg 1<br>
-        21337 Lüneburg<br>
+        BBS I Lüneburg<br />
+        Spillbrunnenweg 1<br />
+        21337 Lüneburg<br />
       </p>
 
       <h6>{{ $t('container.privacyPolice.secondHeadline') }}</h6>
@@ -36,7 +34,9 @@
       <h6>{{ $t('container.privacyPolice.fourthHeadline') }}</h6>
       <p>
         {{ $t('container.privacyPolice.fourthContent') }}
-        <a tabindex=401 class="break" href="https://www.emailjs.com/legal/privacy-policy/">https://www.emailjs.com/legal/privacy-policy/</a>
+        <a tabindex="401" class="break" href="https://www.emailjs.com/legal/privacy-policy/"
+          >https://www.emailjs.com/legal/privacy-policy/</a
+        >
       </p>
 
       <p>
@@ -56,5 +56,4 @@
   word-wrap: break-word;
   white-space: normal;
 }
-
 </style>

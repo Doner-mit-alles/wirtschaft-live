@@ -15,7 +15,13 @@ import InstagramElement from '@/assets/icons/instagram.svg'
       />
 
       <!-- Bootstrap Modal -->
-      <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+      <div
+        class="modal fade"
+        id="imageModal"
+        tabindex="-1"
+        aria-labelledby="imageModalLabel"
+        aria-hidden="true"
+      >
         <div class="modal-dialog modal-dialog-centered modal-lg">
           <div class="modal-content">
             <!-- Modal Header mit Schließen-Button -->
@@ -39,7 +45,6 @@ import InstagramElement from '@/assets/icons/instagram.svg'
           </div>
         </div>
       </div>
-
     </div>
     <div
       class="linear-gradiant-element-wrapper col-md-1 col-12 d-md-flex justify-content-end justify-content-lg-start align-items-end d-none bg-primary d-flex"
