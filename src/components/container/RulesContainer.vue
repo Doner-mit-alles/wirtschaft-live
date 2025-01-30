@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="row g-3 mb-4 p-2 rules-wrapper" id="gamingRules">
+  <div class="row g-3 mb-4 p-2 rules-wrapper default-shadow" id="gamingRules">
     <div class="col-12 col-md-5 col-xl-3 col-12">
       <img
         src="../../assets/images/spielbrett.jpg"

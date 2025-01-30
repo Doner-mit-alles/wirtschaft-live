@@ -1,12 +1,12 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div id="team" class="row mb-4 team border-radius-20">
+  <div id="team" class="row mb-4 team border-radius-20 default-shadow">
     <div class="team-wrapper p-3">
       <div class="col-md-12 col-12 text-center">
         <!-- Vorschau-Bild -->
         <img
-          src="@/assets/images/classPhotoLogo.png"
+          src="../../../assets/images/classPhotoLogo.png"
           class="class-photo-image"
           :alt="$t('teamContainer.classPhotoAlt')"
           data-bs-toggle="modal"
@@ -36,7 +36,7 @@
               <div class="modal-body p-0">
                 <!-- Vergrößertes Bild -->
                 <img
-                  src="@/assets/images/classPhotoLogo.png"
+                  src="../../../assets/images/classPhotoLogo.png"
                   class="w-100"
                   :alt="$t('teamContainer.classPhotoAlt')"
                 />

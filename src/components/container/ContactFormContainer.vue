@@ -69,7 +69,7 @@ const sendEmail = async (event: Event) => {
 
 <template>
   <div id="contact" class="row g-3 mb-4 g-2">
-    <div class="col-12 bg-primary container-wrapper">
+    <div class="col-12 bg-primary border-radius-20 default-shadow">
       <h2 class="headline text-md-end text-left px-4 px-md-5 pt-md-5 pt-4 pb-2 pb-md-3">
         {{ $t('container.contactForm.headline') }}
       </h2>

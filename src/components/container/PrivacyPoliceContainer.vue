@@ -2,7 +2,7 @@
 
 <template>
   <div class="row mb-4">
-    <div class="col-12 bg-primary text-white privacy-police p-4 pl-3 p-md-5">
+    <div class="col-12 bg-primary text-white privacy-police p-4 pl-3 p-md-5 default-shadow">
       <h2 class="break" v-html="$t('container.privacyPolice.headline')"></h2>
 
       <p>

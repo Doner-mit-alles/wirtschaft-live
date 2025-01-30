@@ -2,7 +2,7 @@
 
 <template>
   <div class="row mb-4">
-    <div class="col-12 bg-primary text-white imprint p-4 pl-3 p-md-5">
+    <div class="col-12 bg-primary text-white imprint p-4 pl-3 p-md-5 default-shadow">
       <h2>
         {{ $t('container.imprint.headline') }}
       </h2>

@@ -46,7 +46,7 @@ const menuBarClasses = computed(() => ({
   <header
     v-bind:class="menuBarClasses"
     id="menubar"
-    class="d-flex justify-content-between align-items-center p-3 m-auto mt-2"
+    class="d-flex justify-content-between align-items-center p-3 m-auto mt-2 default-shadow"
   >
     <router-link
       @click="scrollStore.setTargetId('')"
