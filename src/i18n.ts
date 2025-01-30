@@ -36,7 +36,7 @@ const i18n = createI18n({
  */
 export const setLanguage = async (locale: string | null): Promise<void> => {
   try {
-    if(locale == null){
+    if (locale === null && i18n.global.locale == '') {
       return
     }
     if (!getAvailableLocales().includes(locale)) {
