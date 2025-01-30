@@ -71,7 +71,7 @@
         "subject": "Subject",
         "message": "Message*"
       },
-      "infoText": "* Fields marked with * are required!",
+      "infoText": "Fields marked with * are required!",
       "submit": "Submit",
       "privacyCheckbox1": "I have read and agree to the",
       "privacyLink": "Privacy Policy",

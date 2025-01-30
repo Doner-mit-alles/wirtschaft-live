@@ -72,7 +72,7 @@
         "subject": "Betreff",
         "message": "Nachricht*"
       },
-      "infoText": "* Mit * markierte Felder sind Pflichtfelder!",
+      "infoText": "Mit * markierte Felder sind Pflichtfelder!",
       "submit": "Senden",
       "privacyCheckbox1": "Ich habe die",
       "privacyLink": "Datenschutzerkärung",
