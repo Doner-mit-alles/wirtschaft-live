@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import MenuElement from '@/components/menuBar/menu-element.vue'
+import MenuElement from '@/components/menuBar/MenuElement.vue'
 import NewsSVG from '@/assets/icons/news.svg'
 import UserSVG from '@/assets/icons/user.svg'
 import BookSVG from '@/assets/icons/book-open.svg'

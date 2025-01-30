@@ -9,7 +9,7 @@ import InstagramElement from '@/assets/icons/instagram.svg'
       <img
         class="object-fit-cover w-100 h-100 border-radius-20-left about-us-image"
         :alt="$t('container.aboutUs.imageAltText')"
-        src="@/assets/images/about-us-1.jpeg"
+        src="../../assets/images/about-us-1.jpeg"
         data-bs-toggle="modal"
         data-bs-target="#imageModal"
       />
@@ -31,7 +31,7 @@ import InstagramElement from '@/assets/icons/instagram.svg'
             <div class="modal-body p-0">
               <!-- Vergrößertes Bild -->
               <img
-                src="@/assets/images/about-us-1.jpeg"
+                src="../../assets/images/about-us-1.jpeg"
                 class="w-100"
                 :alt="$t('teamContainer.classPhotoAlt')"
               />

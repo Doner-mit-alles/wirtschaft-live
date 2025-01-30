@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import ImprintContainer from '@/components/ImprintContainer.vue'
-import PrivacyPoliceContainer from '@/components/PrivacyPoliceContainer.vue'
+import ImprintContainer from '@/components/container/ImprintContainer.vue'
+import PrivacyPoliceContainer from '@/components/container/PrivacyPoliceContainer.vue'
 import SpacingTool from '@/components/SpacingTool.vue'
 import { onMounted } from 'vue'
 import BubbleBackground from '@/components/bubbleBackground.vue'
