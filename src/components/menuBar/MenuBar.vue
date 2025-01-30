@@ -7,12 +7,10 @@ import UserSVG from '@/assets/icons/user.svg'
 import contactSVG from '/src/assets/icons/contact.svg'
 import MenuElement from '@/components/menuBar/MenuElement.vue'
 import MenuLanguageButton from '@/components/menuBar/MenuLanguageButton.vue'
-import { useMenuBarStore } from '@/stores/useMenuBarStore'
 import BurgerMenu from '@/components/menuBar/BurgerMenu.vue'
 import BurgerMenuSVG from '@/assets/icons/burger-menu.svg'
 import { useScrollStore } from '@/stores/useScrollStore'
 
-const menuStore = useMenuBarStore()
 const scrollStore = useScrollStore()
 const isMinimised = ref<boolean>(false)
 
@@ -26,11 +24,6 @@ onMounted(() => {
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
-})
-
-// Watch for changes in isMinimised and update the store
-watch(isMinimised, (newValue) => {
-  menuStore.setStatus(newValue)
 })
 
 // Menu items data with type annotation
