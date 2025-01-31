@@ -49,9 +49,9 @@
         class="col-lg-12 col-12 text-light p-4 p-md-5 gradient-box-color-transition team-content"
       >
         <h2 class="text-left">{{ $t('teamContainer.title') }}</h2>
-<!--        <p class="team-content">-->
-<!--          {{ $t('teamContainer.content') }}-->
-<!--        </p>-->
+        <p class="team-content">
+          {{ $t('teamContainer.content') }}
+        </p>
       </div>
     </div>
   </div>

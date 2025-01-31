@@ -203,7 +203,7 @@ const isValidEmail = (email: string): boolean => {
               {{ $t('container.contactForm.privacyCheckbox2') }}
             </label>
 
-            <div class="col-12 text-end mt-3">
+            <div class="col-12 text-end">
               <button tabindex="310" class="btn btn-primary" type="submit" @click="sendEmail">
                 {{ $t(buttonText) }}
               </button>
