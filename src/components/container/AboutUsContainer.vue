@@ -3,7 +3,7 @@ import InstagramElement from '@/assets/icons/instagram.svg'
 </script>
 
 <template>
-  <div id="aboutUs" class="row mb-4">
+  <div id="aboutUs" class="row mb-4 default-shadow border-radius-20">
     <div class="col-md-4 col-12 bg-primary text-white text-center p-0 border-radius-20-left">
       <!-- Vorschau-Bild -->
       <img

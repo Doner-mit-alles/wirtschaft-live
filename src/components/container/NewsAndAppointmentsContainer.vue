@@ -2,7 +2,7 @@
 
 <template>
   <div id="news-and-appointments" class="row mb-4">
-    <div class="col-lg-5 col-12 me-auto">
+    <div class="col-lg-5 col-12 me-auto default-shadow border-radius-20">
       <div id="news-top-text" class="leftpad">
         <div id="news-top-text-headline" class="leftpad">
           <h2>{{ $t('container.news.headline') }}</h2>
