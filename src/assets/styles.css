@@ -2,38 +2,36 @@
 
 /* Variablen*/
 :root {
-    --bs-primary: #272727;
-    --bs-primary-rgb: 39, 39, 39;
-    --bs-secondary: #4BC3B6;
-    --bs-secondary-rgb: 75, 195, 182;
-    --border-radius: 20px;
-    --btn-hover-border-color: #4BC3B6;
+  --bs-primary: #272727;
+  --bs-primary-rgb: 39, 39, 39;
+  --bs-secondary: #4bc3b6;
+  --bs-secondary-rgb: 75, 195, 182;
+  --border-radius: 20px;
+  --btn-hover-border-color: #4bc3b6;
 }
 
 :root {
-    --primary-color: #272727;
-    --secondary-color: #ffffff;
-    --third-color: #494949;
-    --forth-color: #20639b;
-    --fifth-color: #4bc3b6;
-    --primary-shadow: 4px 8px 6px #000000;
-    --sixth-color: #0B2235;
-    --linear-gradiant-element-vertical: linear-gradient(#4BC3B6, #2C86A5);
-    --linear-gradiant-element-horizontal: linear-gradient(to right, #4BC3B6, #2C86A5);
+  --primary-color: #272727;
+  --secondary-color: #ffffff;
+  --third-color: #494949;
+  --forth-color: #20639b;
+  --fifth-color: #4bc3b6;
+  --primary-shadow: 4px 8px 6px #000000;
+  --sixth-color: #0b2235;
+  --linear-gradiant-element-vertical: linear-gradient(#4bc3b6, #2c86a5);
+  --linear-gradiant-element-horizontal: linear-gradient(to right, #4bc3b6, #2c86a5);
 }
 
 /*General*/
 body {
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-image: linear-gradient(#20639B 0%, #0B2235 100%);
+  background-image: linear-gradient(#20639b 0%, #0b2235 100%);
   font-family: 'Alexandria', serif;
 }
 
 .modal-header {
-
 }
-
 
 /*Text*/
 h1,
@@ -43,73 +41,76 @@ h2 {
 }
 
 h2 {
-    @media (max-width: 576px) {
-        font-size: 1.1875rem;
-    }
-    margin-bottom: 1rem;
+  @media (max-width: 576px) {
+    font-size: 1.1875rem;
+  }
+  margin-bottom: 1rem;
 }
 
 h6 {
-    font-weight: 800;
-    font-size: 1.125rem;
-    @media (max-width: 576px) {
-        font-size: 1rem;
-    }
+  font-weight: 800;
+  font-size: 1.125rem;
+  @media (max-width: 576px) {
+    font-size: 1rem;
+  }
 }
 
 p {
-    @media (max-width: 576px) {
-        font-size: 0.875rem!important;
-    }
-    font-size: 1rem;
+  @media (max-width: 576px) {
+    font-size: 0.875rem !important;
+  }
+  font-size: 1rem;
 }
 
 /*Links*/
 a {
-    transition: opacity 0.3s ease;
-    color: #4BC3B6;
+  transition: opacity 0.3s ease;
+  color: #4bc3b6;
 }
 
 a:hover {
-    color: turquoise;
-    opacity: 0.5;
+  color: turquoise;
+  opacity: 0.5;
 }
 
 /*Buttons*/
 .btn-primary {
-    background: var(--linear-gradiant-element-horizontal);
-    padding: 0.625rem 1.25rem;
-    color: white;
-    font-size: 1rem;
-    text-shadow: 0 0 7px rgba(0, 0, 0, 1);
-    border-radius: 8px;
-    box-sizing: border-box;
-    transition: all 0.3s ease;
-    border-color: transparent;
+  background: var(--linear-gradiant-element-horizontal);
+  padding: 0.625rem 1.25rem;
+  color: white;
+  font-size: 1rem;
+  text-shadow: 0 0 7px rgba(0, 0, 0, 1);
+  border-radius: 8px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  border-color: transparent;
 }
 
 .btn-primary:hover {
-    border-color: var(--btn-hover-border-color);
-    background: none;
+  border-color: var(--btn-hover-border-color);
+  background: none;
 }
-
 
 /*Borders*/
 .border-radius-20-right {
-    border-top-right-radius: var(--border-radius);
-    border-bottom-right-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
 }
 
 .border-radius-20 {
   border-radius: 20px;
 }
 
+.default-shadow {
+  box-shadow: var(--primary-shadow);
+}
+
 @media (max-width: 768px) {
-    .border-radius-20-right {
-        border-top-right-radius: 0;
-        border-bottom-right-radius: var(--border-radius);
-        border-bottom-left-radius: var(--border-radius);
-    }
+  .border-radius-20-right {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
+  }
 }
 
 .border-radius-20-left {
@@ -118,20 +119,20 @@ a:hover {
 }
 
 @media (max-width: 768px) {
-    .border-radius-20-left {
-        border-bottom-left-radius: 0;
-        border-top-right-radius: 20px;
-        border-top-left-radius: 20px;
-    }
+  .border-radius-20-left {
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+  }
 }
 
 .no-select {
-    user-select: none;
-    pointer-events: none;
+  user-select: none;
+  pointer-events: none;
 }
 
 @media print {
-    .no-print {
-        display: none;
-    }
+  .no-print {
+    display: none;
+  }
 }

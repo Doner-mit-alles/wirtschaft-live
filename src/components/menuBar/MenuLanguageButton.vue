@@ -10,11 +10,33 @@ const isMenuVisible = ref(false)
 const router = useRouter()
 const route = useRoute()
 const dropdownRef = ref<HTMLDivElement | null>(null)
+const languages = [
+  { code: 'de', flag: germany, altText: 'Deutschland' },
+  { code: 'en', flag: england, altText: 'England' }
+]
 
+/**
+ * Component to load the flag
+ */
+const currentFlag = computed(() => {
+  return {
+    flag: selectedLanguage.value === 'de' ? germany : england,
+    language: selectedLanguage.value
+  }
+})
+
+/**
+ * Set the language of the vue based on if we have an lang query, or
+ * we support the language of the browser. If both do not apply than load english
+ */
 async function setVueLanguage() {
   await setLanguage(getLangFromUrl())
 }
 
+/**
+ * Set the language query, change the language of the vue and toggle the menu
+ * @param lang - lang to set
+ */
 const changeLanguage = async (lang: string) => {
   await router.push({
     path: route.path,
@@ -25,13 +47,9 @@ const changeLanguage = async (lang: string) => {
   toggleMenu()
 }
 
-const currentFlag = computed(() => {
-  return {
-    flag: selectedLanguage.value === 'de' ? germany : england,
-    language: selectedLanguage.value
-  }
-})
-
+/**
+ * Close or open the language selection
+ */
 const toggleMenu = (): void => {
   isMenuVisible.value = !isMenuVisible.value
   const element = document.getElementById('language-drop-box-container')
@@ -42,6 +60,10 @@ const toggleMenu = (): void => {
   }
 }
 
+/**
+ * Handle keyboard inputs
+ * @param event
+ */
 const handleKeydown = async (event: KeyboardEvent) => {
   if (event.key === 'Enter' || event.key === ' ' || event.key === 'Spacebar') {
     event.preventDefault()
@@ -53,6 +75,10 @@ const handleKeydown = async (event: KeyboardEvent) => {
   }
 }
 
+/**
+ * Handle keyboard inputs
+ * @param event
+ */
 const handelKeyDownLanguageSelection = async (event: KeyboardEvent, lang: string) => {
   if (event.key === 'Tab') {
     await toggleMenu()
@@ -62,23 +88,23 @@ const handelKeyDownLanguageSelection = async (event: KeyboardEvent, lang: string
   }
 }
 
-const languages = [
-  { code: 'de', flag: germany, altText: 'Deutschland' },
-  { code: 'en', flag: england, altText: 'England' }
-]
+/**
+ * Filter the selections of language. remove the language with is already selected
+ */
 const filterLanguageArray = () => {
   const arrayCopy = [...languages]
   const indexToRemove = arrayCopy.findIndex((item) => item.code === selectedLanguage.value)
+  selectedLanguage.value
   if (indexToRemove !== -1) {
     arrayCopy.splice(indexToRemove, 1)
   }
 
   return arrayCopy
 }
-setVueLanguage().then(() => {
-  selectedLanguage.value = i18n.global.locale
-})
 
+/**
+ * close menu
+ */
 const closeMenu = (): void => {
   isMenuVisible.value = false
 }
@@ -92,9 +118,14 @@ onUpdated(() => {
   ) {
     element.classList.remove('language-drop-box-container-open')
   }
+
+  selectedLanguage.value = i18n.global.locale
 })
 
 onMounted(async () => {
+  if (selectedLanguage.value == '') {
+    await setVueLanguage()
+  }
   const handleClickOutside = (event: MouseEvent) => {
     if (dropdownRef.value && !dropdownRef.value.contains(event.target as Node)) {
       closeMenu()

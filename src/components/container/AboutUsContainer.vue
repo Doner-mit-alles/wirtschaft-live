@@ -3,19 +3,25 @@ import InstagramElement from '@/assets/icons/instagram.svg'
 </script>
 
 <template>
-  <div id="aboutUs" class="row mb-4">
+  <div id="aboutUs" class="row mb-4 default-shadow border-radius-20">
     <div class="col-md-4 col-12 bg-primary text-white text-center p-0 border-radius-20-left">
       <!-- Vorschau-Bild -->
       <img
         class="object-fit-cover w-100 h-100 border-radius-20-left about-us-image"
         :alt="$t('container.aboutUs.imageAltText')"
-        src="@/assets/images/about-us-1.jpeg"
+        src="../../assets/images/about-us-1.jpeg"
         data-bs-toggle="modal"
         data-bs-target="#imageModal"
       />
 
       <!-- Bootstrap Modal -->
-      <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+      <div
+        class="modal fade"
+        id="imageModal"
+        tabindex="-1"
+        aria-labelledby="imageModalLabel"
+        aria-hidden="true"
+      >
         <div class="modal-dialog modal-dialog-centered modal-lg">
           <div class="modal-content">
             <!-- Modal Header mit Schließen-Button -->
@@ -31,7 +37,7 @@ import InstagramElement from '@/assets/icons/instagram.svg'
             <div class="modal-body p-0">
               <!-- Vergrößertes Bild -->
               <img
-                src="@/assets/images/about-us-1.jpeg"
+                src="../../assets/images/about-us-1.jpeg"
                 class="w-100"
                 :alt="$t('teamContainer.classPhotoAlt')"
               />
@@ -39,7 +45,6 @@ import InstagramElement from '@/assets/icons/instagram.svg'
           </div>
         </div>
       </div>
-
     </div>
     <div
       class="linear-gradiant-element-wrapper col-md-1 col-12 d-md-flex justify-content-end justify-content-lg-start align-items-end d-none bg-primary d-flex"

@@ -29,6 +29,10 @@ const props = defineProps({
   }
 })
 
+/**
+ * Scroll to the target id (html id)
+ * @see useScrollStore
+ */
 const scrollToTarget = async () => {
   if (props.targetId) {
     if (route.path !== '/') {
@@ -48,6 +52,10 @@ const scrollToTarget = async () => {
   }
 }
 
+/**
+ * Handle keyboard inputs
+ * @param event
+ */
 function handleKeydown(event: KeyboardEvent) {
   if (event.key === 'Enter' || event.key === ' ' || event.key === 'Spacebar') {
     scrollToTarget()

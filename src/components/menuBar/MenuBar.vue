@@ -5,14 +5,12 @@ import CalenderSVG from '@/assets/icons/calendar.svg'
 import BookSVG from '@/assets/icons/book-open.svg'
 import UserSVG from '@/assets/icons/user.svg'
 import contactSVG from '/src/assets/icons/contact.svg'
-import MenuElement from '@/components/menuBar/menu-element.vue'
-import MenuLanguageButton from '@/components/menuBar/menu-language-button.vue'
-import { useMenuBarStore } from '@/stores/useMenuBarStore'
+import MenuElement from '@/components/menuBar/MenuElement.vue'
+import MenuLanguageButton from '@/components/menuBar/MenuLanguageButton.vue'
 import BurgerMenu from '@/components/menuBar/BurgerMenu.vue'
 import BurgerMenuSVG from '@/assets/icons/burger-menu.svg'
 import { useScrollStore } from '@/stores/useScrollStore'
 
-const menuStore = useMenuBarStore()
 const scrollStore = useScrollStore()
 const isMinimised = ref<boolean>(false)
 
@@ -26,11 +24,6 @@ onMounted(() => {
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
-})
-
-// Watch for changes in isMinimised and update the store
-watch(isMinimised, (newValue) => {
-  menuStore.setStatus(newValue)
 })
 
 // Menu items data with type annotation
@@ -53,7 +46,7 @@ const menuBarClasses = computed(() => ({
   <header
     v-bind:class="menuBarClasses"
     id="menubar"
-    class="d-flex justify-content-between align-items-center p-3 m-auto mt-2"
+    class="d-flex justify-content-between align-items-center p-3 m-auto mt-2 default-shadow"
   >
     <router-link
       @click="scrollStore.setTargetId('')"

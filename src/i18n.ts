@@ -4,6 +4,9 @@ const availableLocales: string[] = []
 const localeFiles = import.meta.glob('./locales/*.json')
 const DEFAULT_LANGUAGE = 'en'
 
+/**
+ * load the language wjson files
+ */
 for (const path in localeFiles) {
   const match = path.match(/\/([a-z]{2})\.json$/)
   if (match) {
@@ -20,6 +23,9 @@ export const getBrowserLanguage = (): string => {
   return lang.split('-')[0]
 }
 
+/**
+ * create the i18n instance
+ */
 const i18n = createI18n({
   locale: DEFAULT_LANGUAGE,
   fallbackLocale: DEFAULT_LANGUAGE,
@@ -34,15 +40,17 @@ const i18n = createI18n({
  * @param locale - language like 'de', 'en'
  * @see setLanguageToBrowserLanguage
  */
-export const setLanguage = async (locale: string | null): Promise<void> => {
+export const setLanguage = async (locale: string): Promise<void> => {
   try {
-    if(locale == null){
-      return
-    }
     if (!getAvailableLocales().includes(locale)) {
       await setLanguageToBrowserLanguage()
       return
     }
+
+    if (locale == '') {
+      return
+    }
+
     const messages = await import(`./locales/${locale}.json`)
     i18n.global.setLocaleMessage(locale, messages.default)
     i18n.global.locale = locale
@@ -83,10 +91,10 @@ export const setLanguageToDefault = async () => {
   await setLanguage(DEFAULT_LANGUAGE)
 }
 
-export const getLangFromUrl = (): string | null => {
-  const parsedUrl = new URL(window.location.href)
-  const params = parsedUrl.searchParams
-  return params.get('lang')
-}
+/**
+ * Get the lang query from the url
+ */
+export const getLangFromUrl = (): string =>
+  new URLSearchParams(window.location.search).get('lang') ?? ''
 
 export default i18n

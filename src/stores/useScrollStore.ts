@@ -11,6 +11,9 @@ export const useScrollStore = defineStore('scrollbarStore', {
     getTargetId(): string {
       return this.targetId
     },
+    /**
+     * Scroll to the html id
+     */
     scrollToTarget() {
       const targetElement = document.getElementById(this.targetId)
       if (targetElement == null) return

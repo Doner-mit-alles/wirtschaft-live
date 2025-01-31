@@ -1,10 +1,10 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="row g-3 mb-4 p-2 rules-wrapper" id="gamingRules">
+  <div class="row g-3 mb-4 p-2 rules-wrapper default-shadow" id="gamingRules">
     <div class="col-12 col-md-5 col-xl-3 col-12">
       <img
-        src="@/assets/images/spielbrett.jpg"
+        src="../../assets/images/spielbrett.jpg"
         class="w-100 rules-image"
         :alt="$t('container.gamingRules.imageAltText')"
         data-bs-toggle="modal"
@@ -34,7 +34,7 @@
             <div class="modal-body p-0">
               <!-- Vergrößertes Bild -->
               <img
-                src="@/assets/images/spielbrett.jpg"
+                src="../../assets/images/spielbrett.jpg"
                 class="w-100"
                 :alt="$t('teamContainer.classPhotoAlt')"
               />
@@ -156,7 +156,8 @@ img {
   text-shadow: 3px 4px 10px #000000;
 }
 
-ul li, ol li {
+ul li,
+ol li {
   @media (max-width: 576px) {
     font-size: 0.875rem !important;
   }

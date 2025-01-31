@@ -12,53 +12,76 @@ const formValues = ref({
 
 const public_key = 'BZt0CRiWeDdtQ-hpj'
 const isCheckBoxClicked = ref(false)
+const buttonText = ref("container.contactForm.submit")
 
+/**
+ * is privacy agreement confirmed
+ */
 const checkPrivacyCheckbox = () => {
-  isCheckBoxClicked.value = true;
+  isCheckBoxClicked.value = true
 
-  const checkbox = document.getElementById('privacy-checkbox') as HTMLInputElement;
+  const checkbox = document.getElementById('privacy-checkbox') as HTMLInputElement
   if (checkbox) {
-    checkbox.focus();
+    checkbox.focus()
   }
 }
 
+/**
+ * Send the email to the EmailJS API
+ * @param event
+ */
 const sendEmail = async (event: Event) => {
-  event.preventDefault(); // Prevent default form submission
+  event.preventDefault() // Prevent default form submission
 
   // Check if all fields are filled
-  const isValid = Object.values(formValues.value).every(value => value.trim() !== '');
+  const isValid = Object.values(formValues.value).every((value) => value.trim() !== '')
 
   if (!isValid) {
-    alert('Please fill in all fields.');
-    return;
+    alert('Please fill in all fields.')
+    return
   }
 
-  if(!isCheckBoxClicked.value) {
-    alert('Please accept the privacy policy.');
+  if (!isCheckBoxClicked.value) {
+    alert('Please accept the privacy policy.')
+    return
+  }
+
+  if (!isValidEmail(formValues.value.email)) {
+    alert('Please enter a valid email address.')
     return
   }
 
   try {
-    const res = await emailjs.send('service_rzywpjm', 'template_rqyr469', formValues.value, public_key);
+    buttonText.value = 'container.contactForm.wait'
+    await emailjs.send('service_rzywpjm', 'template_rqyr469', formValues.value, public_key)
     formValues.value = {
       subject: '',
       surname: '',
       lastname: '',
       email: '',
       message: ''
-    };
-    alert('Success: ' + res.status);
+    }
+    buttonText.value = 'container.contactForm.submit'
+    alert('E-mail sent successfully')
   } catch (error) {
-    console.error('Error sending email:', error);
-    alert('Error sending mail');
+    console.error('Error sending email:', error)
+    alert('Error sending mail')
   }
+}
+
+/**
+ * check if the email has a valid format
+ * @param email to check
+ */
+const isValidEmail = (email: string): boolean => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  return emailRegex.test(email)
 }
 </script>
 
-
 <template>
   <div id="contact" class="row g-3 mb-4 g-2">
-    <div class="col-12 bg-primary container-wrapper">
+    <div class="col-12 bg-primary border-radius-20 default-shadow">
       <h2 class="headline text-md-end text-left px-4 px-md-5 pt-md-5 pt-4 pb-2 pb-md-3">
         {{ $t('container.contactForm.headline') }}
       </h2>
@@ -160,13 +183,14 @@ const sendEmail = async (event: Event) => {
             <!--Unterer Teil-->
             <p class="info">{{ $t('container.contactForm.infoText') }}</p>
             <label for="privacy-checkbox">
-              <input v-model="isCheckBoxClicked"
-                     id="privacy-checkbox"
-                     tabindex="305"
-                     name="privacy-checkbox"
-                     required
-                     type="checkbox"
-                     @keydown.enter="checkPrivacyCheckbox"
+              <input
+                v-model="isCheckBoxClicked"
+                id="privacy-checkbox"
+                tabindex="305"
+                name="privacy-checkbox"
+                required
+                type="checkbox"
+                @keydown.enter="checkPrivacyCheckbox"
               />
               {{ $t('container.contactForm.privacyCheckbox1') }}
               <router-link
@@ -174,14 +198,14 @@ const sendEmail = async (event: Event) => {
                 :aria-label="$t('footer.impressumTitle')"
                 :title="$t('footer.impressumTitle')"
               >
-                 {{ $t('container.contactForm.privacyLink') }}
+                {{ $t('container.contactForm.privacyLink') }}
               </router-link>
               {{ $t('container.contactForm.privacyCheckbox2') }}
             </label>
 
             <div class="col-12 text-end">
               <button tabindex="310" class="btn btn-primary" type="submit" @click="sendEmail">
-                {{ $t('container.contactForm.submit') }}
+                {{ $t(buttonText) }}
               </button>
             </div>
           </div>

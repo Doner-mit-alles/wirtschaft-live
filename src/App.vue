@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import MenuBar from '@/components/menuBar/menu-bar.vue'
-import FooterContainer from '@/components/FooterContainer.vue'
+import MenuBar from '@/components/menuBar/MenuBar.vue'
+import FooterContainer from '@/components/container/FooterContainer.vue'
 </script>
 <template>
   <menu-bar />

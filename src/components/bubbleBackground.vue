@@ -4,10 +4,15 @@ import { Bubble } from '@/classes/bubble'
 
 const bubbles = ref<Bubble[]>([])
 
+/**
+ * Generate a random number, min 30.
+ */
+const numberOfBubbles = Math.floor(Math.random() * 21) + 30
 
-const numberOfBubbles = Math.floor(Math.random() * 21) + 30;
-
-
+/**
+ * Generate based on numberOfBubbles, a number of bubbles with different sizes and positions
+ * @see Bubble
+ */
 function generateRandomBubbles() {
   bubbles.value = Array.from({ length: numberOfBubbles }, () => {
     return new Bubble()

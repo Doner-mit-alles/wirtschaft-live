@@ -15,7 +15,7 @@ const bbsPhoneNumber = '+49413199220600'
     role="contentinfo"
     aria-labelledby="footer-title"
   >
-    <div class="row footer-wrapper justify-content-evenly pb-0 position-relative">
+    <div class="row footer-wrapper justify-content-evenly pb-0 position-relative default-shadow">
       <div class="col-12">
         <div
           class="row d-md-flex ps-2 ps-md-2 d-block justify-content-lg-center justify-content-md-evenly mb-2 mt-3"
