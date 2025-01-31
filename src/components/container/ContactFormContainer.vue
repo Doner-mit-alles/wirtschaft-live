@@ -45,13 +45,13 @@ const sendEmail = async (event: Event) => {
     return
   }
 
+  if (!isValidEmail(formValues.value.email)) {
+    alert('Please enter a valid email address.')
+    return
+  }
+
   try {
-    const res = await emailjs.send(
-      'service_rzywpjm',
-      'template_rqyr469',
-      formValues.value,
-      public_key
-    )
+    await emailjs.send('service_rzywpjm', 'template_rqyr469', formValues.value, public_key)
     formValues.value = {
       subject: '',
       surname: '',
@@ -59,11 +59,16 @@ const sendEmail = async (event: Event) => {
       email: '',
       message: ''
     }
-    alert('Success: ' + res.status)
+    alert('E-mail sent successfully')
   } catch (error) {
     console.error('Error sending email:', error)
     alert('Error sending mail')
   }
+}
+
+const isValidEmail = (email: string): boolean => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  return emailRegex.test(email)
 }
 </script>
 
