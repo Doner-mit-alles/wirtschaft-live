@@ -1,31 +1,36 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+</script>
 
 <template>
   <div id="news-and-appointments" class="row mb-4">
-    <div class="col-lg-5 col-12 me-auto default-shadow border-radius-20">
-      <div id="news-top-text" class="leftpad">
-        <div id="news-top-text-headline" class="leftpad">
-          <h2>{{ $t('container.news.headline') }}</h2>
+    <div class="col-lg-5 col-12 me-auto">
+      <div class="default-shadow border-radius-20">
+        <div id="news-top-text" class="leftpad">
+          <div id="news-top-text-headline" class="leftpad">
+            <h2>{{ $t('container.news.headline') }}</h2>
+          </div>
+          <div class="leftpad">
+            <p>{{ $t('container.news.content') }}</p>
+          </div>
         </div>
-        <div class="leftpad">
-          <p>{{ $t('container.news.content') }}</p>
+        <div id="news-bottom-text">
+          <div>{{ $t('container.news.bottom_text') }}</div>
         </div>
-      </div>
-      <div id="news-bottom-text">
-        <div>{{ $t('container.news.bottom_text') }}</div>
       </div>
     </div>
     <div class="col-lg-5 col-12 ms-auto">
-      <div id="appointments-top-text" class="leftpad">
-        <div id="appointments-top-text-headline" class="leftpad">
-          <h2>{{ $t('container.appointments.headline') }}</h2>
+      <div class="default-shadow border-radius-20">
+        <div id="appointments-top-text" class="leftpad">
+          <div id="appointments-top-text-headline" class="leftpad">
+            <h2>{{ $t('container.appointments.headline') }}</h2>
+          </div>
+          <div class="leftpad">
+            <p>{{ $t('container.appointments.content') }}</p>
+          </div>
         </div>
-        <div class="leftpad">
-          <p>{{ $t('container.appointments.content') }}</p>
+        <div id="appointments-bottom-text">
+          {{ $t('container.appointments.bottom_text') }}
         </div>
-      </div>
-      <div id="appointments-bottom-text">
-        {{ $t('container.appointments.bottom_text') }}
       </div>
     </div>
   </div>
