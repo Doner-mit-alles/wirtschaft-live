@@ -116,6 +116,7 @@
       },
       "infoText": "Mit * markierte Felder sind Pflichtfelder!",
       "submit": "Senden",
+      "wait": "Wird gesendet...",
       "privacyCheckbox1": "Ich habe die",
       "privacyLink": "Datenschutzerkärung",
       "privacyCheckbox2": "gelesen und bin einverstanden"

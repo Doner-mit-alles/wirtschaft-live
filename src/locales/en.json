@@ -73,6 +73,7 @@
       },
       "infoText": "Fields marked with * are required!",
       "submit": "Submit",
+      "wait": "Will be sent...",
       "privacyCheckbox1": "I have read and agree to the",
       "privacyLink": "Privacy Policy",
       "privacyCheckbox2": ""

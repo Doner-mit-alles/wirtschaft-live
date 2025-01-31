@@ -12,6 +12,7 @@ const formValues = ref({
 
 const public_key = 'BZt0CRiWeDdtQ-hpj'
 const isCheckBoxClicked = ref(false)
+const buttonText = ref("container.contactForm.submit")
 
 /**
  * is privacy agreement confirmed
@@ -45,13 +46,14 @@ const sendEmail = async (event: Event) => {
     return
   }
 
+  if (!isValidEmail(formValues.value.email)) {
+    alert('Please enter a valid email address.')
+    return
+  }
+
   try {
-    const res = await emailjs.send(
-      'service_rzywpjm',
-      'template_rqyr469',
-      formValues.value,
-      public_key
-    )
+    buttonText.value = 'container.contactForm.wait'
+    await emailjs.send('service_rzywpjm', 'template_rqyr469', formValues.value, public_key)
     formValues.value = {
       subject: '',
       surname: '',
@@ -59,11 +61,21 @@ const sendEmail = async (event: Event) => {
       email: '',
       message: ''
     }
-    alert('Success: ' + res.status)
+    buttonText.value = 'container.contactForm.submit'
+    alert('E-mail sent successfully')
   } catch (error) {
     console.error('Error sending email:', error)
     alert('Error sending mail')
   }
+}
+
+/**
+ * check if the email has a valid format
+ * @param email to check
+ */
+const isValidEmail = (email: string): boolean => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  return emailRegex.test(email)
 }
 </script>
 
@@ -193,7 +205,7 @@ const sendEmail = async (event: Event) => {
 
             <div class="col-12 text-end">
               <button tabindex="310" class="btn btn-primary" type="submit" @click="sendEmail">
-                {{ $t('container.contactForm.submit') }}
+                {{ $t(buttonText) }}
               </button>
             </div>
           </div>
