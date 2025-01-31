@@ -86,13 +86,13 @@
     },
     "news": {
       "headline": "Neuigkeiten",
-      "content": "Wir sind bald live",
-      "bottom_text": "Eine Woche noch!"
+      "content": "Wir sind live",
+      "bottom_text": "Die Livestellung findet bald statt!"
     },
     "appointments": {
       "headline": "Termine",
-      "content": "- Präsentation der Website",
-      "bottom_text": "Das kann ja was werden..."
+      "content": "Livestellung der Website",
+      "bottom_text": "Präsentation der Website"
     },
     "aboutUs": {
       "imageAltText": "Bild mit Spielbausteinen",
@@ -155,7 +155,6 @@
   },
   "teamContainer": {
     "title": "Das Team",
-    "content": "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam volup",
     "classPhotoAlt": "Gruppenfoto der Klasse bzw. der Schülerfirma"
   },
   "footer": {
