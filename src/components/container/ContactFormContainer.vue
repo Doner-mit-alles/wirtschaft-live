@@ -66,6 +66,10 @@ const sendEmail = async (event: Event) => {
   }
 }
 
+/**
+ * check if the email has a valid format
+ * @param email to check
+ */
 const isValidEmail = (email: string): boolean => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
   return emailRegex.test(email)
