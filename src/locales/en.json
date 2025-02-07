@@ -18,13 +18,13 @@
   "container": {
     "news": {
       "headline": "News",
-      "content": "We are live",
-      "bottom_text": "Nothing here..."
+      "content": "We are now live at the Wirtschaft-Live-Messe! We're excited to see you",
+      "bottom_text": "<br>"
     },
     "appointments": {
       "headline": "Appointments",
-      "content": "We are live",
-      "bottom_text": "Nothing in near future"
+      "content": "19.03.2025 8 a.m. - 2 p.m. Wirtschaft-Live-Messe BBS-I Lüneburg",
+      "bottom_text": "<br>"
     },
     "privacyPolice": {
       "headline": "Privacy Policy",

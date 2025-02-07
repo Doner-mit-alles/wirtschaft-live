@@ -12,9 +12,7 @@
             <p>{{ $t('container.news.content') }}</p>
           </div>
         </div>
-        <div id="news-bottom-text">
-          <div>{{ $t('container.news.bottom_text') }}</div>
-        </div>
+        <div id="news-bottom-text" v-html="$t('container.appointments.bottom_text')"></div>
       </div>
     </div>
     <div class="col-lg-5 col-12 ms-auto">
@@ -27,9 +25,7 @@
             <p>{{ $t('container.appointments.content') }}</p>
           </div>
         </div>
-        <div id="appointments-bottom-text">
-          {{ $t('container.appointments.bottom_text') }}
-        </div>
+        <div id="appointments-bottom-text" v-html="$t('container.appointments.bottom_text')"></div>
       </div>
     </div>
   </div>

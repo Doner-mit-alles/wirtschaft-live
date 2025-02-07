@@ -86,13 +86,13 @@
     },
     "news": {
       "headline": "Neuigkeiten",
-      "content": "Wir sind live",
-      "bottom_text": "Die Livestellung findet bald statt!"
+      "content": "Wir sind jetzt live auf der Wirtschaft-Live-Messe! Wir freuen uns euch zu sehen",
+      "bottom_text": "<br>"
     },
     "appointments": {
       "headline": "Termine",
-      "content": "Livestellung der Website",
-      "bottom_text": "Präsentation der Website"
+      "content": "19.03.2025 8-14 Uhr Wirtschaft-Live-Messe BBS-I Lüneburg",
+      "bottom_text": "<br>"
     },
     "aboutUs": {
       "imageAltText": "Bild mit Spielbausteinen",
