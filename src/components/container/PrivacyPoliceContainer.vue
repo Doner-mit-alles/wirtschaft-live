@@ -68,7 +68,7 @@
       <h6>{{ $t('container.privacyPolice.fourthHeadline') }}</h6>
       <p>
         {{ $t('container.privacyPolice.fourthContent') }}
-        <a tabindex="401" class="break" href="https://www.emailjs.com/legal/privacy-policy/"
+        <a tabindex="401" class="break" target="_blank" href="https://www.emailjs.com/legal/privacy-policy/"
           >https://www.emailjs.com/legal/privacy-policy/</a
         >
       </p>

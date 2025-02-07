@@ -51,6 +51,7 @@
         <h2 class="text-left">{{ $t('teamContainer.title') }}</h2>
         <p class="team-content">
           {{ $t('teamContainer.content') }}
+          <a href="http://wlive.kompetenzbbs2stade.de/cms/" target="_blank">http://wlive.kompetenzbbs2stade.de/cms/</a>
         </p>
       </div>
     </div>
@@ -127,6 +128,6 @@
 
 .team-content {
   text-align: left;
-  font-size: 18px;
+  font-size: 1rem;
 }
 </style>

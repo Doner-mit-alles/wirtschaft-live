@@ -67,6 +67,7 @@ import InstagramElement from '@/assets/icons/instagram.svg'
           <a
             :aria-label="$t('footer.instagramAriaLabel')"
             :title="$t('footer.instagramTitle')"
+            target="_blank"
             href="https://www.instagram.com/bbs1lg/"
             tabindex="50"
           >
