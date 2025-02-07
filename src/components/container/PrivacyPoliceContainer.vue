@@ -52,10 +52,10 @@
         <p v-html="$t('container.privacyPolice.text42')"/>
         <p v-html="$t('container.privacyPolice.text43')"/>
         <ul>
-          <li v-html="$t('container.privacyPolice.text44')"></li>
-          <li v-html="$t('container.privacyPolice.text45')"></li>
-          <li v-html="$t('container.privacyPolice.text46')"></li>
-          <li v-html="$t('container.privacyPolice.text47')"></li>
+          <li v-html="$t('container.privacyPolice.text44Li')"></li>
+          <li v-html="$t('container.privacyPolice.text45Li')"></li>
+          <li v-html="$t('container.privacyPolice.text46Li')"></li>
+          <li v-html="$t('container.privacyPolice.text47Li')"></li>
         </ul>
         <p v-html="$t('container.privacyPolice.text48')"/>
         <p v-html="$t('container.privacyPolice.text49')"/>
@@ -68,7 +68,7 @@
       <h6>{{ $t('container.privacyPolice.fourthHeadline') }}</h6>
       <p>
         {{ $t('container.privacyPolice.fourthContent') }}
-        <a tabindex="401" class="break" href="https://www.emailjs.com/legal/privacy-policy/"
+        <a tabindex="401" class="break" target="_blank" href="https://www.emailjs.com/legal/privacy-policy/"
           >https://www.emailjs.com/legal/privacy-policy/</a
         >
       </p>
