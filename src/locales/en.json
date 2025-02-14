@@ -23,7 +23,7 @@
     },
     "appointments": {
       "headline": "Appointments",
-      "content": "19.03.2025 8 a.m. - 2 p.m. Wirtschaft-Live-Messe BBS-I Lüneburg",
+      "content": "<p style='margin:0' >19.03.2025 8 a.m. - 2 p.m. </p> <p style='margin:0'>Wirtschaft-Live-Messe BBS I Lüneburg</p>",
       "bottom_text": "<br>"
     },
     "privacyPolice": {
@@ -51,7 +51,7 @@
       "text21": "The operators of these pages take the protection of your personal data very seriously. We treat your personal data confidentially and in accordance with legal data protection regulations and this privacy policy. When you use this website, various personal data is collected. Personal data refers to data that can personally identify you. This privacy policy explains what data we collect and how we use it. It also explains how and for what purpose this happens. Please note that data transmission over the Internet (e.g., communication via email) may have security vulnerabilities. A complete protection of data against access by third parties is not possible.",
       "text22": "Notice on the Responsible Party",
       "text23": "The responsible party for data processing on this website is:",
-      "text24": "BBS I Lüneburg<br> Spillbrunnenweg 1<br> 21337 Lüneburg <br> Phone: 04131 / 99 220 600<br> Email: datenschutz@bbs1-lueneburg.de",
+      "text24": "BBS I Lüneburg<br> Spillbrunnenweg 1<br> 21337 Lüneburg <br> Phone: 04131 / 99 220 600<br> Email: datenschutz{'@'}bbs1-lueneburg.de",
       "text25": "The responsible party is the natural or legal person who, alone or jointly with others, determines the purposes and means of processing personal data (e.g., names, email addresses, etc.).",
       "text26": "Storage Duration",
       "text27": "Unless a specific storage period is stated in this privacy policy, your personal data will remain with us until the purpose for data processing no longer applies. If you make a legitimate request for deletion or revoke consent to data processing, your data will be deleted unless we have other legally permissible reasons for storing your personal data (e.g., tax or commercial retention periods); in the latter case, deletion will occur after these reasons no longer apply.",
@@ -86,7 +86,7 @@
       "time": "As of: 01/24/2025"
     },
     "imprint": {
-      "headline": "Imprint",
+      "headline": "Terms of Service",
       "contentOwner": "This is a page of the",
       "agencyHeadline": "Representation",
       "agency": "Principal Heiko Lüdemann",
@@ -167,8 +167,8 @@
     "phoneArialLabel": "Contact BBS 1 Lüneburg by phone",
     "phoneTitle": "phone number",
     "mailTitle": "Send e-mail to {email}",
-    "impressum": "Imprint & Privacy Policy",
-    "impressumTitle": "Go to imprint and data protection",
+    "impressum": "Terms of Service & Privacy Policy",
+    "impressumTitle": "Go to terms of service and data protection",
     "instagramTitle": "Instagram profile of BBS 1 Lüneburg",
     "instagramAriaLabel": "Open the Instagram profile of BBS 1 Lüneburg"
   }
