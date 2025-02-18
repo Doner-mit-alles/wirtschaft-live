@@ -22,11 +22,11 @@ This template should help get you started developing with Vue 3 in Vite.
 ## Docker
 ### Build the image
 ```sh
-docker build -t ballerlos/vue .
+  docker build -t ballerlos/vue .
 ```
 ### Run the container
 ```sh
-docker run -d -p 8080:80 --name vue-service ballerlos/vue
+  docker run -d -p 8080:80 --name vue-service ballerlos/vue
 ```
 
 ## Recommended IDE Setup
