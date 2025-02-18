@@ -41,7 +41,7 @@
       "text21": "Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre\n personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften sowie\n dieser Datenschutzerklärung.\n Wenn Sie diese Website benutzen, werden verschiedene personenbezogene Daten erhoben.\n Personenbezogene Daten sind Daten, mit denen Sie persönlich identifiziert werden können. Die vorliegende\n Datenschutzerklärung erläutert, welche Daten wir erheben und wofür wir sie nutzen. Sie erläutert auch, wie\n und zu welchem Zweck das geschieht.\n Wir weisen darauf hin, dass die Datenübertragung im Internet (z. B. bei der Kommunikation per E-Mail)\n Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht\n möglich",
       "text22": "Hinweis zur verantwortlichen Stelle\n",
       "text23": "Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:\n",
-      "text24": "BBS I Lüneburg<br> Spillbrunnenweg 1<br> 21337 Lüneburg <br> Telefon: 04131 / 99 220 600<br> E-Mail: datenschutz@bbs1-lueneburg.de",
+      "text24": "BBS I Lüneburg<br> Spillbrunnenweg 1<br> 21337 Lüneburg <br> Telefon: 04131 / 99 220 600<br> E-Mail: datenschutz{'@'}bbs1-lueneburg.de",
       "text25": "Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über\n die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z. B. Namen, E-Mail-Adressen o. Ä.)\n entscheidet.",
       "text26": "Speicherdauer\n",
       "text27": "Soweit innerhalb dieser Datenschutzerklärung keine speziellere Speicherdauer genannt wurde, verbleiben\n Ihre personenbezogenen Daten bei uns, bis der Zweck für die Datenverarbeitung entfällt. Wenn Sie ein\n berechtigtes Löschersuchen geltend machen oder eine Einwilligung zur Datenverarbeitung widerrufen,\n werden Ihre Daten gelöscht, sofern wir keine anderen rechtlich zulässigen Gründe für die Speicherung Ihrer\n personenbezogenen Daten haben (z. B. steuer- oder handelsrechtliche Aufbewahrungsfristen); im\n letztgenannten Fall erfolgt die Löschung nach Fortfall dieser Gründe",
@@ -91,13 +91,15 @@
     },
     "appointments": {
       "headline": "Termine",
-      "content": "19.03.2025 8-14 Uhr Wirtschaft-Live-Messe BBS-I Lüneburg",
+      "content": "<p style='margin:0'> 19.03.2025 8-14 Uhr </p>  <p style='margin:0'> Wirtschaft-Live-Messe BBS 1 Lüneburg </p>",
       "bottom_text": "<br>"
     },
     "aboutUs": {
       "imageAltText": "Bild mit Spielbausteinen",
       "headline": "Wir über uns...",
-      "content": "<p>Moin, wir sind die HA24B und das ist unsere Schülerfirma „Baller los,“ was so viel wie mit voller Kraft loslegen bedeutet – und das machen wir.</p>\n\n<p>Wir sind 24 Schülerinnen und Schüler im Alter von 15 bis 18 Jahren. Diese Schülerfirma haben wir im Rahmen der einjährigen Berufsfachschule Wirtschaft an der BBS I Lüneburg gegründet.</p>\n\n<p>Wir stellen ein eigenes Spiel her und wollen mit diesem Spiel auf den Umweltschutz, besonders bei den Gewässern, aufmerksam machen. Daher ist es selbstverständlich, dass wir unser Spiel so umweltfreundlich und hochwertig wie möglich produzieren.</p>\n\n<p>Wir nutzen einen 3D-Drucker mit recyclefähigem und sogar Recycling-Filament, um unsere Figuren selbst herstellen zu können. Auch die anderen Materialien wie Spielbrett und Verpackung sind recyclefähig oder bestehen aus Recyclingmaterial.</p>\n\n<p>Zusätzlich untersuchen wir die Verschmutzung der Ilmenau (dieser Fluss fließt durch Lüneburg), indem wir Plastikmüll einsammeln und zählen.</p>\n\n<p>Für diese Website kooperieren wir mit dem Lüneburger IT-Unternehmen „webnetz“ und den Auszubildenden zum Fachinformatiker im 3. Lehrjahr aus der Klasse IT22B von unserer Schule.</p>",
+      "content": "<p>Moin, wir sind die HA24B und das ist unsere Schülerfirma „Baller los,“ was so viel wie mit voller Kraft loslegen bedeutet – und das machen wir.</p>\n\n<p>Wir sind 24 Schülerinnen und Schüler im Alter von 15 bis 18 Jahren. Diese Schülerfirma haben wir im Rahmen der einjährigen Berufsfachschule Wirtschaft an der BBS I Lüneburg gegründet.</p>\n\n<p>Wir stellen ein eigenes Spiel her und wollen mit diesem Spiel auf den Umweltschutz, besonders bei den Gewässern, aufmerksam machen. Daher ist es selbstverständlich, dass wir unser Spiel so umweltfreundlich und hochwertig wie möglich produzieren.</p>\n\n<p>Wir nutzen einen 3D-Drucker mit recyclefähigem und sogar Recycling-Filament, um unsere Figuren selbst herstellen zu können. Auch die anderen Materialien wie Spielbrett und Verpackung sind recyclefähig oder bestehen aus Recyclingmaterial.</p>\n\n<p>Zusätzlich untersuchen wir die Verschmutzung der Ilmenau (dieser Fluss fließt durch Lüneburg), indem wir Plastikmüll einsammeln und zählen.</p>\n\n<p>Für diese Website kooperieren wir mit den Auszubildenden zum Fachinformatiker im 3. Lehrjahr aus der Klasse IT22B von unserer Schule.</p>",
+
+
       "socialMedia1": "Ihr wollt noch mehr erfahren?",
       "socialMedia2": "Besucht uns auch gerne auf",
       "socialMedia2Bold": "Social Media!"
@@ -155,13 +157,13 @@
   },
   "teamContainer": {
     "title": "Das Team",
-    "content": "Unser Team nimmt am 19.03.2025 an der Wirtschaft-Live-Messe bei uns in der BBS I Lüneburg teil. Dort werden 20 Schülerunternehmen aus ganz Niedersachsen ausstellen und an den vier Wettbewerben Messestand, Messeband, Foto und Imagefilm teilnehmen. Mit viel Arbeit und etwas Glück werden wir zu den Preisträgern gehören. Drückt uns die Daumen! Link zur Homepage der Wirtschaft-Live-Messe:",
+    "content": "Unser Team nimmt am 19.03.2025 an der Wirtschaft-Live-Messe bei uns in der BBS-1 Lüneburg teil. Dort werden 20 Schülerunternehmen aus ganz Niedersachsen ausstellen und an den vier Wettbewerben Messestand, Messeband, Foto und Imagefilm teilnehmen. Mit viel Arbeit und etwas Glück werden wir zu den Preisträgern gehören. Drückt uns die Daumen! Link zur Homepage der Wirtschaft-Live-Messe:",
     "classPhotoAlt": "Gruppenfoto der Klasse bzw. der Schülerfirma"
   },
   "footer": {
     "street": "Spillbrunnenweg 1",
     "streetTitle": "Adresse der BBS 1 Lüneburg auf Google Maps anzeigen",
-    "location": "Lüneburg",
+    "location": " Lüneburg",
     "zipCode": "21337",
     "phone": "04131 99220600",
     "phoneArialLabel": "BBS 1 Lüneburg telefonisch kontaktieren",

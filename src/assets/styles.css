@@ -66,6 +66,7 @@ p {
 a {
   transition: opacity 0.3s ease;
   color: #4bc3b6;
+  word-wrap: break-word;
 }
 
 a:hover {

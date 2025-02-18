@@ -22,7 +22,7 @@
             <h2>{{ $t('container.appointments.headline') }}</h2>
           </div>
           <div class="leftpad">
-            <p>{{ $t('container.appointments.content') }}</p>
+            <p v-html="$t('container.appointments.content')"></p>
           </div>
         </div>
         <div id="appointments-bottom-text" v-html="$t('container.appointments.bottom_text')"></div>

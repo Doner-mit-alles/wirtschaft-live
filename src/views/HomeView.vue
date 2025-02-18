@@ -1,4 +1,11 @@
 <script setup lang="ts">
+/**
+ * Develop by
+ * Cassandra Fischer
+ * Niklas Hartig
+ * Felix Harder
+ * Hussein Osman
+ */
 import TextAndImageContainer from '@/components/container/AboutUsContainer.vue'
 import HeadlineContainer from '@/components/container/HeadlineContainer.vue'
 import NewsAndAppointmentsContainer from '@/components/container/NewsAndAppointmentsContainer.vue'

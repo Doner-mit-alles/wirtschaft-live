@@ -1,8 +1,6 @@
 <script setup lang="ts"></script>
 
 <template>
-  <!-- TODO noch in einzelne Komponenten einbauen!!! -->
-
   <!-- Row mit 1 Spalte -->
   <div class="row mb-4">
     <div class="col-12 bg-success text-white text-center p-3">Überschrift (100%)</div>

@@ -62,6 +62,7 @@ const sendEmail = async (event: Event) => {
       message: ''
     }
     buttonText.value = 'container.contactForm.submit'
+    isCheckBoxClicked.value = false
     alert('E-mail sent successfully')
   } catch (error) {
     console.error('Error sending email:', error)

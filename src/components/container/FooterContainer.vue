@@ -78,7 +78,6 @@ const bbsPhoneNumber = '+49413199220600'
               <router-link
                 :to="{ path: '/impressum-und-datenschutz', query: $route.query }"
                 :aria-label="$t('footer.impressumTitle')"
-                target="_blank"
                 :title="$t('footer.impressumTitle')"
                 tabindex="503"
               >

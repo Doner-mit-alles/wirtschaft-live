@@ -31,7 +31,7 @@
         <p v-html="$t('container.privacyPolice.text21')"/>
         <p v-html="$t('container.privacyPolice.text22')"/>
         <p v-html="$t('container.privacyPolice.text23')"/>
-        <p v-html="$t('container.privacyPolice.text24')"/>
+        <p v-html="$t('container.privacyPolice.text24', { emailDomain: 'bbs1-lueneburg.de' })"/>
         <p v-html="$t('container.privacyPolice.text25')"/>
         <p v-html="$t('container.privacyPolice.text26')"/>
         <p v-html="$t('container.privacyPolice.text27')"/>
